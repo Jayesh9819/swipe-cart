@@ -89,8 +89,8 @@
                                                 </div>
                                             </div>
                                             <?php 
-$cover_image[] = $row['cover_img'];
-?>
+                                                $cover_image[] = $row['cover_img'];
+                                            ?>
 
                                             <div>
                                                 <?php foreach ($cover_image as $index => $cover_image): ?>
@@ -105,51 +105,6 @@ $cover_image[] = $row['cover_img'];
 
                                         </div>
 
-                                        <div class="col-xxl-2 col-lg-12 col-md-2 order-xxl-1 order-lg-2 order-md-1">
-                                            <div class="left-slider-image-2 left-slider no-arrow slick-top">
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/1.jpg"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/2.jpg"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/3.jpg"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/4.jpg"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/5.jpg"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/6.jpg"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
