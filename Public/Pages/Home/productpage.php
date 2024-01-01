@@ -111,14 +111,17 @@
                                             <div class="left-slider-image-2 left-slider no-arrow slick-top">
                                                 <div>
                                                     <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/1.jpg"
+                                                        <img src="<?php echo $row['main_img']; ?>"
                                                             class="img-fluid blur-up lazyload" alt="">
                                                     </div>
                                                 </div>
 
                                                 <div>
+                                                <?php foreach ($cover_image as $index => $cover_image): ?>
+
                                                     <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/2.jpg"
+                                                    <img src="<?php echo $cover_image; ?>"
+
                                                             class="img-fluid blur-up lazyload" alt="">
                                                     </div>
                                                 </div>
