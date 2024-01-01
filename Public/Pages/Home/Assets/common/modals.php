@@ -11,7 +11,7 @@
                     <div class="row g-sm-4 g-2">
                         <div class="col-lg-6">
                             <div class="slider-image">
-                                <img src="../Other/Home_assets/assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
+                                <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload"
                                     alt="">
                             </div>
                         </div>
