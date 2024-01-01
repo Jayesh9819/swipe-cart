@@ -99,7 +99,7 @@
                                 <div class="col-12 px-0">
                                     <div class="product-box">
                                         <div class="product-image">
-                                            <a href="product-left-thumbnail.html">
+                                            <a href="./productpage?id=<?php echo $row['id']; ?>">
                                                 <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
                                             </a>
                                         </div>
