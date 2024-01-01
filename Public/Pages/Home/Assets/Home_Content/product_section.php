@@ -37,6 +37,38 @@
                     </div>
 
 
+
+                        </div>
+                    </div>
+
+                    <div class="section-t-space">
+                        <div class="category-menu">
+                            <h3>Customer Comment</h3>
+
+                            <div class="review-box">
+                                <div class="review-contain">
+                                    <h5 class="w-75">We Care About Our Customer Experience</h5>
+                                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly
+                                        used to demonstrate the visual form of a document or a typeface without
+                                        relying on meaningful content.</p>
+                                </div>
+
+                                <div class="review-profile">
+                                    <div class="review-image">
+                                        <img src="../Other/Home_assets/assets/images/vegetable/review/1.jpg" class="img-fluid blur-up lazyload" alt="">
+                                    </div>
+                                    <div class="review-detail">
+                                        <h5>Tina Mcdonnale</h5>
+                                        <h6>Sale Manager</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="title">
                 <h2>Bowse by Categories</h2>
                 <span class="title-leaf">
