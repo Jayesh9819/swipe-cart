@@ -75,70 +75,12 @@
                         <div>
                             <img src="<?php echo $imagePath; ?>"
                                 class="blur-up lazyload" alt="">
-                            <h5>Vegetables & Fruit</h5>
+                            <h5><?php echo $categoryName; ?></h5>
                         </div>
                     </a>
                 </div>
                 <?php } ?>
-                <div>
-                    <a href="shop-left-sidebar.html" class="category-box category-dark">
-                        <div>
-                            <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/cup.svg"
-                                class="blur-up lazyload" alt="">
-                            <h5>Beverages</h5>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <a href="shop-left-sidebar.html" class="category-box category-dark">
-                        <div>
-                            <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/meats.svg"
-                                class="blur-up lazyload" alt="">
-                            <h5>Meats & Seafood</h5>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <a href="shop-left-sidebar.html" class="category-box category-dark">
-                        <div>
-                            <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/breakfast.svg"
-                                class="blur-up lazyload" alt="">
-                            <h5>Breakfast</h5>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <a href="shop-left-sidebar.html" class="category-box category-dark">
-                        <div>
-                            <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/frozen.svg"
-                                class="blur-up lazyload" alt="">
-                            <h5>Frozen Foods</h5>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <a href="shop-left-sidebar.html" class="category-box category-dark">
-                        <div>
-                            <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/milk.svg"
-                                class="blur-up lazyload" alt="">
-                            <h5>Milk & Dairies</h5>
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <a href="shop-left-sidebar.html" class="category-box category-dark">
-                        <div>
-                            <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/pet.svg"
-                                class="blur-up lazyload" alt="">
-                            <h5>Pet Food</h5>
-                        </div>
-                    </a>
-                </div>
+                
             </div>
 
             <div class="section-t-space section-b-space">
