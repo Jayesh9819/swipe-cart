@@ -43,7 +43,6 @@
                     <!-- </div> -->
 
                 </div>
-            </div>
 
 
             <div class="title">
@@ -161,6 +160,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
             <div class="title d-block">
