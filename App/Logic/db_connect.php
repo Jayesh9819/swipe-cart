@@ -1,13 +1,25 @@
 <?php
 $servername = "localhost";
-$username = "u114668675_root";
-$password = "Swipecart@2023";
+$usernames = ["u114668675_swipecart", "evms1ryy46do"];
+$password = "Hen0z@2023";
 $dbname = "u114668675_swipcart";
 
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Initialize connection variable
+$conn = null;
 
-// Check the connection
+// Loop through each username
+foreach ($usernames as $username) {
+    // Create a connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check the connection
+    if (!$conn->connect_error) {
+        // If connection is successful, break the loop
+        break;
+    }
+}
+
+// Check the final connection status
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
