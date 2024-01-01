@@ -104,7 +104,7 @@
                                             </a>
                                             <ul class="product-option">
                                                 <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-                                                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#view" id="<?php echo $row['id']; ?>">
+                                                <!-- <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#view" id="<?php echo $row['id']; ?>"> -->
                                                         <i data-feather="eye"></i>
                                                     </a>
                                                 </li>
