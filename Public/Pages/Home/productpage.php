@@ -68,7 +68,6 @@
             </div>
         </div>
     </section>
-    <?php }?>
     <!-- Breadcrumb Section End -->
 
     <!-- Product Left Sidebar Start -->
@@ -84,19 +83,24 @@
                                         <div class="product-main-2 no-arrow">
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="../assets/images/product/category/1.jpg" id="img-1"
+                                                    <img src="<?php echo $row['main_img']; ?>" id="img-1"
                                                         data-zoom-image="../assets/images/product/category/1.jpg"
                                                         class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
+                                            <?php 
+$cover_image[] = $row['cover_image'];
+?>
 
-                                            <div>
-                                                <div class="slider-image">
-                                                    <img src="../assets/images/product/category/2.jpg"
-                                                        data-zoom-image="../assets/images/product/category/2.jpg"
-                                                        class="img-fluid image_zoom_cls-1 blur-up lazyload" alt="">
-                                                </div>
-                                            </div>
+<div>
+    <?php foreach ($cover_image as $index => $cover_image): ?>
+        <div class="slider-image">
+            <img src="<?php echo $cover_image; ?>"
+                data-zoom-image="<?php echo $cover_image; ?>"
+                class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
+        </div>
+    <?php endforeach; ?>
+</div>
 
                                             <div>
                                                 <div class="slider-image">
