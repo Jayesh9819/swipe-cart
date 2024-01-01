@@ -2,7 +2,7 @@
 $servername = "localhost";
 $usernames = ["u114668675_swipecart", "evms1ryy46do"];
 $password = "Hen0z@2023";
-$dbname = "u114668675_swipcart";
+$dbname = "u114668675_swipecart";
 
 // Initialize connection variable
 $conn = null;
