@@ -1,0 +1,1 @@
+<?php require "./Public/Pages/Home/Assets/common/404.php" ?>
