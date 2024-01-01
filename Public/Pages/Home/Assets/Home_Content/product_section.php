@@ -75,8 +75,7 @@
                         <div>
                             <img src="<?php echo $imagePath; ?>"
                                 class="blur-up lazyload" alt="">
-                            <h5><a
-                                            href="<?php echo "./category=" . $categoryName; ?>"><?php echo $categoryName; ?></a></h5>
+                            <h5>Vegetables & Fruit</h5>
                         </div>
                     </a>
                 </div>
