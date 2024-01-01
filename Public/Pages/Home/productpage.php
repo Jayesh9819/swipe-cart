@@ -89,7 +89,7 @@
                                                 </div>
                                             </div>
                                             <?php 
-$cover_image[] = $row['cover_image'];
+$cover_image[] = $row['cover_img'];
 ?>
 
                                             <div>
