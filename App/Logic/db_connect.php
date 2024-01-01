@@ -16,11 +16,16 @@ foreach ($usernames as $username) {
     if (!$conn->connect_error) {
         // If connection is successful, break the loop
         break;
+    } else {
+        // Print detailed error for debugging (remove in production)
+        echo "Connection failed for $username: " . $conn->connect_error . "<br>";
     }
 }
 
 // Check the final connection status
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+} else {
+    echo "Connected successfully!";
 }
 ?>
