@@ -57,16 +57,30 @@
             </div>
 
             <div class="category-slider-2 product-wrapper no-arrow">
+            <?php
+                            include "./App/Logic/db_connect.php";
+
+                            $sql = "SELECT * FROM category";
+                            $result = $conn->query($sql);
+
+                            // Loop through the category data and generate HTML
+                            while ($row = $result->fetch_assoc()) {
+                                $imagePath = $row['image'];
+                                $categoryName = $row['name'];
+                                //$categoryLink = $row['category_link'];
+                            ?>
+
                 <div>
                     <a href="shop-left-sidebar.html" class="category-box category-dark">
                         <div>
-                            <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/vegetable.svg"
+                            <img src="<?php echo $imagePath; ?>"
                                 class="blur-up lazyload" alt="">
-                            <h5>Vegetables & Fruit</h5>
+                            <h5><a
+                                            href="<?php echo "./category=" . $categoryName; ?>"><?php echo $categoryName; ?></a></h5>
                         </div>
                     </a>
                 </div>
-
+                <?php } ?>
                 <div>
                     <a href="shop-left-sidebar.html" class="category-box category-dark">
                         <div>
