@@ -71,7 +71,7 @@
                             ?>
 
                 <div>
-                    <a href="shop/category=<?php echo $categoryName; ?>" class="category-box category-dark">
+                    <a href="Shop?category=<?php echo $categoryName; ?>" class="category-box category-dark">
                         <div>
                             <img src="<?php echo $imagePath; ?>"
                                 class="blur-up lazyload" alt="">
