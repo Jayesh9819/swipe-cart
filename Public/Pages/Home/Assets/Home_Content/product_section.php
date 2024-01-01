@@ -4,7 +4,7 @@
         <div class="row g-sm-4 g-3">
             <div class="col-xxl-3 col-xl-4 d-none d-xl-block">
                 <div class="p-sticky">
-                    <div class="category-menu">
+                    <!-- <div class="category-menu">
                         <h3>Category</h3>
                         <ul>
 
@@ -35,7 +35,7 @@
 
                         </ul>
 
-                    </div>
+                    </div> -->
 
 
 
@@ -43,6 +43,7 @@
                     <!-- </div> -->
 
                 </div>
+            </div>
 
 
             <div class="title">
@@ -160,7 +161,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
 
             <div class="title d-block">
