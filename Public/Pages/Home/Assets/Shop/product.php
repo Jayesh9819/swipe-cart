@@ -1,7 +1,7 @@
         <div class="row g-sm-4 g-3 row-cols-xxl-5 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section">
             <?php
-            //echo 
-            include("./App/Logic/db_connect.php");
+            //echo
+            include "./App/Logic/db_connect.php";
             if ($categoryFilter == null && $sort == null) {
                 $sql = "SELECT * FROM product where status =1";
             } else if ($categoryFilter == null && $sort !== null) {
@@ -98,4 +98,3 @@
         // Close the database connection
         $conn->close();
         ?>
-
