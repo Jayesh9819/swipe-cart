@@ -102,25 +102,6 @@
                                             <a href="product-left-thumbnail.html">
                                                 <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
                                             </a>
-                                            <ul class="product-option">
-                                                <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-                                                <!-- <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#view" id="<?php echo $row['id']; ?>"> -->
-                                                        <i data-feather="eye"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-                                                    <a href="compare.html">
-                                                        <i data-feather="refresh-cw"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-                                                    <a href="wishlist.html" class="notifi-wishlist">
-                                                        <i data-feather="heart"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                         <div class="product-detail">
                                             <a href="product-left-thumbnail.html">
