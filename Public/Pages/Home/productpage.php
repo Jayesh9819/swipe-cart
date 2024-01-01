@@ -124,6 +124,8 @@
 
                                                             class="img-fluid blur-up lazyload" alt="">
                                                     </div>
+                                                    <?php endforeach; ?>
+
                                                 </div>
 
                                                 <div>
