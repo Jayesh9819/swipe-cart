@@ -87,24 +87,20 @@
                                                     </div>
                                                 </div>
                                                 <?php
-                                                $cover_image = $row['cover_img'];
-                                                $cover_image = str_replace('../', '', $cover_image);
-
-                                                $cover_image = explode(', ', $cover_image);
-
+                                                $cover_images = $row['cover_img'];
+                                                $cover_images = str_replace('../', '', $cover_images);
+                                                $cover_images = explode(', ', $cover_images);
                                                 ?>
 
                                                 <div>
-                                                    <?php foreach ($cover_image as $index => $cover_image) : ?>
+                                                    <?php foreach ($cover_images as $index => $cover_image) : ?>
                                                         <div class="slider-image">
                                                             <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
                                                         </div>
                                                     <?php endforeach; ?>
                                                 </div>
-
                                             </div>
                                         </div>
-
 
                                         <div class="col-xxl-2 col-lg-12 col-md-2 order-xxl-1 order-lg-2 order-md-1">
                                             <div class="left-slider-image-2 left-slider no-arrow slick-top">
@@ -114,26 +110,17 @@
                                                     </div>
                                                 </div>
                                                 <?php
-                                                $cover_img = $row['cover_img'];
-                                                $cover_img = str_replace('../', '', $cover_img);
-
-                                                $cover_img = explode(', ', $cover_img);
-
-                                                // print_r($cover_img);
+                                                $sidebar_images = $row['cover_img'];
+                                                $sidebar_images = str_replace('../', '', $sidebar_images);
+                                                $sidebar_images = explode(', ', $sidebar_images);
                                                 ?>
 
-
                                                 <div>
-                                                    <?php foreach ($cover_img as $index => $cover_img) :  ?>
+                                                    <?php foreach ($sidebar_images as $index => $sidebar_image) :  ?>
                                                         <div class="sidebar-image">
-                                                            <img src="<?php
-                                                                        print_r($cover_img);
-                                                                        echo '../' . $cover_img;
-                                                                        print_r($cover_img);
-                                                                        ?>" class="img-fluid blur-up lazyload" alt="">
+                                                            <img src="<?php echo '../' . $sidebar_image; ?>" class="img-fluid blur-up lazyload" alt="">
                                                         </div>
                                                     <?php endforeach; ?>
-
                                                 </div>
 
                                                 <div>
