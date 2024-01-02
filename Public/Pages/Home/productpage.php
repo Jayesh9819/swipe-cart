@@ -139,7 +139,7 @@
                                     <h2 class="name"><?php echo $row['product_name']; ?></h2>
                                     <div class="price-rating">
                                         <h3 class="theme-color price"><?php echo $row['coust_price']; ?> <del class="text-content"><?php echo $row['MRP']; ?></del>
-                                            <span class="offer theme-color">(8% off)</span>
+                                            <span class="offer theme-color"></span>
                                         </h3>
                                         <div class="product-rating custom-rate">
                                             <ul class="rating">
@@ -295,7 +295,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>Brand</td>
-                                                                <td><?php echo $row['brand']; ?></td>
+                                                                <td><?php echo $row['Brand']; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Form</td>
