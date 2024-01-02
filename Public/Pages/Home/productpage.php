@@ -127,6 +127,27 @@
                                     </div>
                                 </div>
                             </div>
+                            <script>
+    // Initialize the main image slider
+    $('.product-main-2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.left-slider-image-2'
+    });
+
+    // Initialize the sidebar image slider
+    $('.left-slider-image-2').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.product-main-2',
+        dots: false,
+        centerMode: false,
+        focusOnSelect: true
+    });
+</script>
+
 
                             <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="right-box-contain">
