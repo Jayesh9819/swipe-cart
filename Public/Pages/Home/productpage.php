@@ -11,7 +11,7 @@
     <meta name="description" content="Fastkart">
     <meta name="keywords" content="Fastkart">
     <meta name="author" content="Fastkart">
-    <link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+    <link rel="icon" href="../Other/Home_assets/assetsimages/favicon/1.png" type="image/x-icon">
     <title>Product </title>
 
     <!-- Google font -->
@@ -477,7 +477,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left.html">
-                                            <img src="../assets/images/cake/product/11.png" class="img-fluid blur-up lazyload" alt="">
+                                            <img src="../Other/Home_assets/assetsimages/cake/product/11.png" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -559,7 +559,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left-thumbnail.html">
-                                            <img src="../assets/images/cake/product/2.png" class="img-fluid blur-up lazyload" alt="">
+                                            <img src="../Other/Home_assets/assetsimages/cake/product/2.png" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -640,7 +640,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left-thumbnail.html">
-                                            <img src="../assets/images/cake/product/3.png" class="img-fluid blur-up lazyload" alt="">
+                                            <img src="../Other/Home_assets/assetsimages/cake/product/3.png" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -722,7 +722,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left-thumbnail.html">
-                                            <img src="../assets/images/cake/product/4.png" class="img-fluid blur-up lazyload" alt="">
+                                            <img src="../Other/Home_assets/assetsimages/cake/product/4.png" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -804,7 +804,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left-thumbnail.html">
-                                            <img src="../assets/images/cake/product/5.png" class="img-fluid blur-up lazyload" alt="">
+                                            <img src="../Other/Home_assets/assetsimages/cake/product/5.png" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -886,7 +886,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left-thumbnail.html">
-                                            <img src="../assets/images/cake/product/6.png" class="img-fluid blur-up lazyload" alt="">
+                                            <img src="../Other/Home_assets/assetsimages/cake/product/6.png" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -970,7 +970,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left-thumbnail.html">
-                                            <img src="../assets/images/cake/product/7.png" class="img-fluid" alt="">
+                                            <img src="../Other/Home_assets/assetsimages/cake/product/7.png" class="img-fluid" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -1112,7 +1112,7 @@
                         <div class="footer-logo">
                             <div class="theme-logo">
                                 <a href="index.html">
-                                    <img src="../assets/images/logo/1.png" class="blur-up lazyload" alt="">
+                                    <img src="../Other/Home_assets/assetsimages/logo/1.png" class="blur-up lazyload" alt="">
                                 </a>
                             </div>
 
@@ -1272,7 +1272,7 @@
                 </div>
 
                 <div class="payment">
-                    <img src="../assets/images/payment/1.png" class="blur-up lazyload" alt="">
+                    <img src="../Other/Home_assets/assetsimages/payment/1.png" class="blur-up lazyload" alt="">
                 </div>
 
                 <div class="social-link">
@@ -1318,7 +1318,7 @@
                     <div class="row g-sm-4 g-2">
                         <div class="col-lg-6">
                             <div class="slider-image">
-                                <img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload" alt="">
+                                <img src="../Other/Home_assets/assetsimages/product/category/1.jpg" class="img-fluid blur-up lazyload" alt="">
                             </div>
                         </div>
 
@@ -1525,7 +1525,7 @@
                             <li class="list-1">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload" alt="">
+                                        <img src="../Other/Home_assets/assetsimages/vegetable/product/10.png" class="blur-up lazyload" alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.html" class="deal-contain">
@@ -1538,7 +1538,7 @@
                             <li class="list-2">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload" alt="">
+                                        <img src="../Other/Home_assets/assetsimages/vegetable/product/11.png" class="blur-up lazyload" alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.html" class="deal-contain">
@@ -1551,7 +1551,7 @@
                             <li class="list-3">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload" alt="">
+                                        <img src="../Other/Home_assets/assetsimages/vegetable/product/12.png" class="blur-up lazyload" alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.html" class="deal-contain">
@@ -1564,7 +1564,7 @@
                             <li class="list-1">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload" alt="">
+                                        <img src="../Other/Home_assets/assetsimages/vegetable/product/13.png" class="blur-up lazyload" alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.html" class="deal-contain">
@@ -1584,7 +1584,7 @@
     <!-- Add to cart Modal Start -->
     <div class="add-cart-box">
         <div class="add-iamge">
-            <img src="../assets/images/cake/pro/1.jpg" class="img-fluid" alt="">
+            <img src="../Other/Home_assets/assetsimages/cake/pro/1.jpg" class="img-fluid" alt="">
         </div>
 
         <div class="add-contain">
@@ -1654,7 +1654,7 @@
                 <div class="col-12">
                     <div class="cart-content">
                         <div class="product-image">
-                            <img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload" alt="">
+                            <img src="../Other/Home_assets/assetsimages/product/category/1.jpg" class="img-fluid blur-up lazyload" alt="">
                             <div class="content">
                                 <h5>Creamy Chocolate Cake</h5>
                                 <h6>$32.96<del class="text-danger">$96.00</del><span>55% off</span></h6>
@@ -1697,57 +1697,57 @@
     <!-- Bg overlay End -->
 
     <!-- latest jquery-->
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/jquery-3.6.0.min.js"></script>
 
     <!-- jquery ui-->
-    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/jquery-ui.min.js"></script>
 
     <!-- Bootstrap js-->
-    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/bootstrap/bootstrap-notify.min.js"></script>
-    <script src="../assets/js/bootstrap/popper.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/bootstrap/popper.min.js"></script>
 
     <!-- feather icon js-->
-    <script src="../assets/js/feather/feather.min.js"></script>
-    <script src="../assets/js/feather/feather-icon.js"></script>
+    <script src="../Other/Home_assets/assetsjs/feather/feather.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/feather/feather-icon.js"></script>
 
     <!-- Lazyload Js -->
-    <script src="../assets/js/lazysizes.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/lazysizes.min.js"></script>
 
     <!-- Slick js-->
-    <script src="../assets/js/slick/slick.js"></script>
-    <script src="../assets/js/slick/slick-animation.min.js"></script>
-    <script src="../assets/js/custom-slick-animated.js"></script>
-    <script src="../assets/js/slick/custom_slick.js"></script>
+    <script src="../Other/Home_assets/assetsjs/slick/slick.js"></script>
+    <script src="../Other/Home_assets/assetsjs/slick/slick-animation.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/custom-slick-animated.js"></script>
+    <script src="../Other/Home_assets/assetsjs/slick/custom_slick.js"></script>
 
     <!-- Price Range Js -->
-    <script src="../assets/js/ion.rangeSlider.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/ion.rangeSlider.min.js"></script>
 
     <!-- sidebar open js -->
-    <script src="../assets/js/filter-sidebar.js"></script>
+    <script src="../Other/Home_assets/assetsjs/filter-sidebar.js"></script>
 
     <!-- Quantity js -->
-    <script src="../assets/js/quantity-2.js"></script>
+    <script src="../Other/Home_assets/assetsjs/quantity-2.js"></script>
 
     <!-- Zoom Js -->
-    <script src="../assets/js/jquery.elevatezoom.js"></script>
-    <script src="../assets/js/zoom-filter.js"></script>
+    <script src="../Other/Home_assets/assetsjs/jquery.elevatezoom.js"></script>
+    <script src="../Other/Home_assets/assetsjs/zoom-filter.js"></script>
 
     <!-- Timer Js -->
-    <script src="../assets/js/timer1.js"></script>
+    <script src="../Other/Home_assets/assetsjs/timer1.js"></script>
 
     <!-- Sticky-bar js -->
-    <script src="../assets/js/sticky-cart-bottom.js"></script>
+    <script src="../Other/Home_assets/assetsjs/sticky-cart-bottom.js"></script>
 
     <!-- WOW js -->
-    <script src="../assets/js/wow.min.js"></script>
-    <script src="../assets/js/custom-wow.js"></script>
+    <script src="../Other/Home_assets/assetsjs/wow.min.js"></script>
+    <script src="../Other/Home_assets/assetsjs/custom-wow.js"></script>
 
     <!-- script js -->
-    <script src="../assets/js/script.js"></script>
+    <script src="../Other/Home_assets/assetsjs/script.js"></script>
 
     <!-- thme setting js -->
-    <script src="../assets/js/theme-setting.js"></script>
+    <script src="../Other/Home_assets/assetsjs/theme-setting.js"></script>
 
 </body>
 
