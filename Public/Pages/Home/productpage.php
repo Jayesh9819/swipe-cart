@@ -79,204 +79,204 @@
                             <div class="col-xl-6 wow fadeInUp">
                                 <div class="product-left-box">
                                     <center>
-                                    <div class="row g-2">
-                                        <div class="col-12">
-                                            <div class="product-main-1 no-arrow" style="height: 600px;">
-                                                <div>
-                                                    <div class="slider-image">
-                                                        <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-                                                <?php
-                                                $cover_images = $row['cover_img'];
-                                                $cover_images = str_replace('../', '', $cover_images);
-                                                $cover_images = explode(', ', $cover_images);
-                                                ?>
-
-                                                <?php foreach ($cover_images as $index => $cover_image) : ?>
+                                        <div class="row g-2">
+                                            <div class="col-12">
+                                                <div class="product-main-1 no-arrow" style="height: 600px;">
                                                     <div>
                                                         <div class="slider-image">
-                                                            <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
-                                                        </div>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 50px;">
-                                                    <div>
-                                                        <div class="sidebar-image">
-                                                            <img src="<?php echo $row['main_img']; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid blur-up lazyload" alt="">
+                                                            <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                         </div>
                                                     </div>
                                                     <?php
-                                                    $sidebar_images = $row['cover_img'];
-                                                    $sidebar_images = str_replace('../', '', $sidebar_images);
-                                                    $sidebar_images = explode(', ', $sidebar_images);
+                                                    $cover_images = $row['cover_img'];
+                                                    $cover_images = str_replace('../', '', $cover_images);
+                                                    $cover_images = explode(', ', $cover_images);
                                                     ?>
-                                                    <?php foreach ($sidebar_images as $index => $sidebar_image) : ?>
+
+                                                    <?php foreach ($cover_images as $index => $cover_image) : ?>
                                                         <div>
-                                                            <div class="sidebar-image">
-                                                                <img src="<?php echo '../' . $sidebar_image; ?>" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid blur-up lazyload" alt="">
+                                                            <div class="slider-image">
+                                                                <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
                                                             </div>
                                                         </div>
                                                     <?php endforeach; ?>
                                                 </div>
+
+                                                <div class="col-12">
+                                                    <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 50px;">
+                                                        <div>
+                                                            <div class="sidebar-image">
+                                                                <img src="<?php echo $row['main_img']; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid blur-up lazyload" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <?php
+                                                        $sidebar_images = $row['cover_img'];
+                                                        $sidebar_images = str_replace('../', '', $sidebar_images);
+                                                        $sidebar_images = explode(', ', $sidebar_images);
+                                                        ?>
+                                                        <?php foreach ($sidebar_images as $index => $sidebar_image) : ?>
+                                                            <div>
+                                                                <div class="sidebar-image">
+                                                                    <img src="<?php echo '../' . $sidebar_image; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid blur-up lazyload" alt="">
+                                                                </div>
+                                                            </div>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     </center>
                                 </div>
                             </div>
-                        <!-- </div>
+                            <!-- </div>
                         </div> -->
 
 
 
-                        <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="right-box-contain">
-                                <h6 class="offer-top"><?php echo $row['Discount']; ?></h6>
-                                <h2 class="name"><?php echo $row['product_name']; ?></h2>
-                                <div class="price-rating">
-                                    <h3 class="theme-color price"><?php echo $row['coust_price']; ?> <del class="text-content"><?php echo $row['MRP']; ?></del>
-                                        <span class="offer theme-color">(8% off)</span>
-                                    </h3>
-                                    <div class="product-rating custom-rate">
-                                        <ul class="rating">
-                                            <?php
-                                            $rating = $row['rating'];
-                                            for ($i = 1; $i <= $rating; $i++) {
-                                                echo '<li><i data-feather="star" class="fill"></i></li>';
-                                            }
-                                            ?>
-                                        </ul>
-                                        <!-- <span class="review">23 Customer Review</span> -->
+                            <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="right-box-contain">
+                                    <h6 class="offer-top"><?php echo $row['Discount']; ?></h6>
+                                    <h2 class="name"><?php echo $row['product_name']; ?></h2>
+                                    <div class="price-rating">
+                                        <h3 class="theme-color price"><?php echo $row['coust_price']; ?> <del class="text-content"><?php echo $row['MRP']; ?></del>
+                                            <span class="offer theme-color">(8% off)</span>
+                                        </h3>
+                                        <div class="product-rating custom-rate">
+                                            <ul class="rating">
+                                                <?php
+                                                $rating = $row['rating'];
+                                                for ($i = 1; $i <= $rating; $i++) {
+                                                    echo '<li><i data-feather="star" class="fill"></i></li>';
+                                                }
+                                                ?>
+                                            </ul>
+                                            <!-- <span class="review">23 Customer Review</span> -->
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- <div class="procuct-contain">
+                                    <!-- <div class="procuct-contain">
                                         <p><?php echo $row['']; ?> </p>
                                     </div> -->
 
 
-                                <div class="note-box product-packege">
-                                    <div class="cart_qty qty-box product-qty">
-                                        <div class="input-group">
-                                            <button type="button" class="qty-right-plus" data-type="plus" data-field="">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                            <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                            <button type="button" class="qty-left-minus" data-type="minus" data-field="">
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                            </button>
+                                    <div class="note-box product-packege">
+                                        <div class="cart_qty qty-box product-qty">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
+                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
                                         </div>
+
+                                        <button onclick="location.href = 'cart.html';" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>
                                     </div>
 
-                                    <button onclick="location.href = 'cart.html';" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>
-                                </div>
+                                    <div class="buy-box">
+                                        <a href="wishlist.html">
+                                            <i data-feather="heart"></i>
+                                            <span>Add To Wishlist</span>
+                                        </a>
 
-                                <div class="buy-box">
-                                    <a href="wishlist.html">
-                                        <i data-feather="heart"></i>
-                                        <span>Add To Wishlist</span>
-                                    </a>
-
-                                    <a href="compare.html">
-                                        <i data-feather="shuffle"></i>
-                                        <span>Add To Compare</span>
-                                    </a>
-                                </div>
-
-                                <div class="pickup-box">
-                                    <div class="product-title">
-                                        <h4>Store Information</h4>
+                                        <a href="compare.html">
+                                            <i data-feather="shuffle"></i>
+                                            <span>Add To Compare</span>
+                                        </a>
                                     </div>
 
-                                    <!-- <div class="pickup-detail">
+                                    <div class="pickup-box">
+                                        <div class="product-title">
+                                            <h4>Store Information</h4>
+                                        </div>
+
+                                        <!-- <div class="pickup-detail">
                                             <h4 class="text-content">Lollipop cake chocolate chocolate cake dessert
                                                 jujubes.
                                                 Shortbread sugar plum dessert powder cookie sweet brownie.</h4>
                                         </div> -->
 
-                                    <div class="product-info">
-                                        <ul class="product-info-list product-info-list-2">
-                                            <li>Type : <a href="javascript:void(0)"><?php echo $row['sub_category']; ?></a></li>
-                                            <li>SKU : <a href="javascript:void(0)"><?php echo $row['sku']; ?></a></li>
-                                            <!-- <li>MFG : <a href="javascript:void(0)"></a></li> -->
-                                            <?php
-                                            $stockstatus = $row['stock_status'];
-                                            if ($stockstatus == 1) {
-                                                echo '<li>Stock : <a href="javascript:void(0)">' . $row['net_quantity'] . ' Items Left</a></li>';
-                                            } else {
-                                                echo '<li>Stock : <a href="javascript:void(0)"> Out of stock</a></li>';
-                                            }
-                                            ?>
-                                            <!-- <li>Tags : <a href="javascript:void(0)">Cake,</a> <a href="javascript:void(0)">Backery</a></li> -->
+                                        <div class="product-info">
+                                            <ul class="product-info-list product-info-list-2">
+                                                <li>Type : <a href="javascript:void(0)"><?php echo $row['sub_category']; ?></a></li>
+                                                <li>SKU : <a href="javascript:void(0)"><?php echo $row['sku']; ?></a></li>
+                                                <!-- <li>MFG : <a href="javascript:void(0)"></a></li> -->
+                                                <?php
+                                                $stockstatus = $row['stock_status'];
+                                                if ($stockstatus == 1) {
+                                                    echo '<li>Stock : <a href="javascript:void(0)">' . $row['net_quantity'] . ' Items Left</a></li>';
+                                                } else {
+                                                    echo '<li>Stock : <a href="javascript:void(0)"> Out of stock</a></li>';
+                                                }
+                                                ?>
+                                                <!-- <li>Tags : <a href="javascript:void(0)">Cake,</a> <a href="javascript:void(0)">Backery</a></li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="paymnet-option">
+                                        <div class="product-title">
+                                            <h4>Guaranteed Safe Checkout</h4>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/1.svg" class="blur-up lazyload" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/2.svg" class="blur-up lazyload" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/3.svg" class="blur-up lazyload" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/4.svg" class="blur-up lazyload" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/5.svg" class="blur-up lazyload" alt="">
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="paymnet-option">
-                                    <div class="product-title">
-                                        <h4>Guaranteed Safe Checkout</h4>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/1.svg" class="blur-up lazyload" alt="">
-                                            </a>
+                            <div class="col-12">
+                                <div class="product-section-box">
+                                    <ul class="nav nav-tabs custom-nav" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
                                         </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/2.svg" class="blur-up lazyload" alt="">
-                                            </a>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="false">Additional info</button>
                                         </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/3.svg" class="blur-up lazyload" alt="">
-                                            </a>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="false">Care Instuctions</button>
                                         </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/4.svg" class="blur-up lazyload" alt="">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/5.svg" class="blur-up lazyload" alt="">
-                                            </a>
+
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Review</button>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-12">
-                            <div class="product-section-box">
-                                <ul class="nav nav-tabs custom-nav" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
-                                    </li>
-
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="false">Additional info</button>
-                                    </li>
-
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="false">Care Instuctions</button>
-                                    </li>
-
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Review</button>
-                                    </li>
-                                </ul>
-
-                                <div class="tab-content custom-tab" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                                        <div class="product-description">
-                                            <div class="nav-desh">
-                                                <p><?php echo $row['Description']; ?></p>
-                                            </div>
+                                    <div class="tab-content custom-tab" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                            <div class="product-description">
+                                                <div class="nav-desh">
+                                                    <p><?php echo $row['Description']; ?></p>
+                                                </div>
                                             </div>
 
 
