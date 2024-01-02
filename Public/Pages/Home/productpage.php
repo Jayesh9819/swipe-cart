@@ -39,7 +39,7 @@
     include "./App/Logic/db_connect.php";
     $id = isset($_GET['id']) ? $_GET['id'] : '';
 
-    $sql = "SELECT * FROM product WHERE id=$id";
+    $sql = "SELECT * FROM product WHERE id=$id ORDER BY `product`.`id` DESC";
     $result = $conn->query($sql);
 
     // Loop through the category data and generate HTML
