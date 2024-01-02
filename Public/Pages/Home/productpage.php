@@ -277,6 +277,8 @@
                                             <div class="nav-desh">
                                                 <p><?php echo $row['Description']; ?></p>
                                             </div>
+                                            </div>
+
 
 
                                             <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
