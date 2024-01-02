@@ -122,30 +122,6 @@
                                                         </div>
                                                     <?php endforeach; ?>
                                                 </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/3.jpg" class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/4.jpg" class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/5.jpg" class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="../assets/images/product/category/6.jpg" class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
