@@ -83,8 +83,8 @@
                                         <div class="product-main-1 no-arrow">
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="../Other/Home_assets/assets/images/product/category/1.jpg" id="img-1"
-                                                        data-zoom-image="../Other/Home_assets/assets/images/product/category/1.jpg"
+                                                    <img src="<?php echo $row['main_img']; ?>" id="img-1"
+                                                        data-zoom-image="<?php echo $row['main_img']; ?>"
                                                         class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
@@ -135,7 +135,7 @@
                                         <div class="bottom-slider-image left-slider no-arrow slick-top">
                                             <div>
                                                 <div class="sidebar-image">
-                                                    <img src="../Other/Home_assets/assets/images/product/category/1.jpg"
+                                                    <img src="<?php echo $row['main_img']; ?>"
                                                         class="img-fluid blur-up lazyload" alt="">
                                                 </div>
                                             </div>
