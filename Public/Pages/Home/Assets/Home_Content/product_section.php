@@ -88,7 +88,7 @@
                     <?php
                     include "./App/Logic/db_connect.php";
 
-                    $sql = "SELECT * FROM product WHERE status=1";
+                    $sql = "SELECT * FROM product WHERE status=1 ORDER BY `product`.`id` DESC";
                     $result = $conn->query($sql);
 
                     // Loop through the category data and generate HTML
