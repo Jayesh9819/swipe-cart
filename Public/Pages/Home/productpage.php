@@ -127,6 +127,8 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+
 
 
                         <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
