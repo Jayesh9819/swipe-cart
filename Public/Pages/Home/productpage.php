@@ -92,13 +92,13 @@
                                                 $cover_images = explode(', ', $cover_images);
                                                 ?>
 
-                                                <div>
-                                                    <?php foreach ($cover_images as $index => $cover_image) : ?>
+                                                <?php foreach ($cover_images as $index => $cover_image) : ?>
+                                                    <div>
                                                         <div class="slider-image">
                                                             <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
                                                         </div>
-                                                    <?php endforeach; ?>
-                                                </div>
+                                                    </div>
+                                                <?php endforeach; ?>
 
 
                                                 <div>
@@ -145,14 +145,14 @@
                                                 $sidebar_images = str_replace('../', '', $sidebar_images);
                                                 $sidebar_images = explode(', ', $sidebar_images);
                                                 ?>
+                                                <?php foreach ($sidebar_images as $index => $sidebar_image) :  ?>
 
-                                                <div>
-                                                    <?php foreach ($sidebar_images as $index => $sidebar_image) :  ?>
+                                                    <div>
                                                         <div class="sidebar-image">
                                                             <img src="<?php echo '../' . $sidebar_image; ?>" class="img-fluid blur-up lazyload" alt="">
                                                         </div>
-                                                    <?php endforeach; ?>
-                                                </div>
+                                                    </div> <?php endforeach; ?>
+
 
 
                                                 <div>
