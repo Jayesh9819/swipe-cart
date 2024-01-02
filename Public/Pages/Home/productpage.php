@@ -78,12 +78,13 @@
                         <div class="row g-4">
                             <div class="col-xl-6 wow fadeInUp">
                                 <div class="product-left-box">
+                                    <center>
                                     <div class="row g-2">
                                         <div class="col-12">
-                                            <div class="product-main-1 no-arrow" style="height: 400px;">
+                                            <div class="product-main-1 no-arrow" style="height: 600px;">
                                                 <div>
                                                     <div class="slider-image">
-                                                        <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
+                                                        <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                     </div>
                                                 </div>
                                                 <?php
@@ -95,17 +96,17 @@
                                                 <?php foreach ($cover_images as $index => $cover_image) : ?>
                                                     <div>
                                                         <div class="slider-image">
-                                                            <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
+                                                            <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
                                                         </div>
                                                     </div>
                                                 <?php endforeach; ?>
                                             </div>
 
                                             <div class="col-12">
-                                                <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 100px;">
+                                                <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 50px;">
                                                     <div>
                                                         <div class="sidebar-image">
-                                                            <img src="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid blur-up lazyload" alt="">
+                                                            <img src="<?php echo $row['main_img']; ?>" style="width: 70%; height: 70%; object-fit: cover;" class="img-fluid blur-up lazyload" alt="">
                                                         </div>
                                                     </div>
                                                     <?php
@@ -124,6 +125,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </center>
                                 </div>
                             </div>
                         <!-- </div>
