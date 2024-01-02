@@ -216,7 +216,7 @@ switch ($sort) {
                     <div class="product-box-3 h-100 wow fadeInUp">
                         <div class="product-header">
                             <div class="product-image">
-                                <a href="product-left-thumbnail.html">
+                                <a href="./productpage?id=<?php echo $row['id']; ?>">
                                     <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
                                 </a>
 
