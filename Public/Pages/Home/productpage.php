@@ -76,78 +76,110 @@
                 <div class="row">
                     <div class="col-xxl-9 col-xl-8 col-lg-7 wow fadeInUp">
                         <div class="row g-4">
-                            <div class="col-xl-6 wow fadeInUp">
-                                <div class="product-left-box">
-                                    <div class="row g-2">
-                                        <div class="col-xxl-10 col-lg-12 col-md-10 order-xxl-2 order-lg-1 order-md-2">
-                                            <div class="product-main-2 no-arrow">
-                                                <div>
-                                                    <div class="slider-image">
-                                                        <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
-                                                    </div>
+                        <div class="col-xl-6 wow fadeInUp">
+                            <div class="product-left-box">
+                                <div class="row g-2">
+                                    <div class="col-12">
+                                        <div class="product-main-1 no-arrow">
+                                            <div>
+                                                <div class="slider-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/1.jpg" id="img-1"
+                                                        data-zoom-image="../Other/Home_assets/assets/images/product/category/1.jpg"
+                                                        class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                 </div>
-                                                <?php
-                                                $cover_images = $row['cover_img'];
-                                                $cover_images = str_replace('../', '', $cover_images);
-                                                $cover_images = explode(', ', $cover_images);
-                                                ?>
+                                            </div>
 
-                                                <div>
-                                                    <?php foreach ($cover_images as $index => $cover_image) : ?>
-                                                        <div class="slider-image">
-                                                            <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
-                                                        </div>
-                                                    <?php endforeach; ?>
+                                            <div>
+                                                <div class="slider-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/2.jpg"
+                                                        data-zoom-image="../Other/Home_assets/assets/images/product/category/2.jpg"
+                                                        class="img-fluid image_zoom_cls-1 blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="slider-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/3.jpg"
+                                                        data-zoom-image="../Other/Home_assets/assets/images/product/category/3.jpg"
+                                                        class="img-fluid image_zoom_cls-2 blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="slider-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/4.jpg"
+                                                        data-zoom-image="../Other/Home_assets/assets/images/product/category/4.jpg"
+                                                        class="img-fluid image_zoom_cls-3 blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="slider-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/5.jpg"
+                                                        data-zoom-image="../Other/Home_assets/assets/images/product/category/5.jpg"
+                                                        class="img-fluid image_zoom_cls-4 blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="slider-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/6.jpg"
+                                                        data-zoom-image="../Other/Home_assets/assets/images/product/category/6.jpg"
+                                                        class="img-fluid image_zoom_cls-5 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="col-xxl-2 col-lg-12 col-md-2 order-xxl-1 order-lg-2 order-md-1">
-                                            <div class="left-slider-image-2 left-slider no-arrow slick-top">
-                                                <div>
-                                                    <div class="sidebar-image">
-                                                        <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
+                                    <div class="col-12">
+                                        <div class="bottom-slider-image left-slider no-arrow slick-top">
+                                            <div>
+                                                <div class="sidebar-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/1.jpg"
+                                                        class="img-fluid blur-up lazyload" alt="">
                                                 </div>
-                                                <?php
-                                                $sidebar_images = $row['cover_img'];
-                                                $sidebar_images = str_replace('../', '', $sidebar_images);
-                                                $sidebar_images = explode(', ', $sidebar_images);
-                                                ?>
+                                            </div>
 
-                                                <div>
-                                                    <?php foreach ($sidebar_images as $index => $sidebar_image) :  ?>
-                                                        <div class="sidebar-image">
-                                                            <img src="<?php echo '../' . $sidebar_image; ?>" class="img-fluid blur-up lazyload" alt="">
-                                                        </div>
-                                                    <?php endforeach; ?>
+                                            <div>
+                                                <div class="sidebar-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/2.jpg"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="sidebar-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/3.jpg"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="sidebar-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/4.jpg"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="sidebar-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/5.jpg"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="sidebar-image">
+                                                    <img src="../Other/Home_assets/assets/images/product/category/6.jpg"
+                                                        class="img-fluid blur-up lazyload" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <script>
-    // Initialize the main image slider
-    $('.product-main-2').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.left-slider-image-2'
-    });
-
-    // Initialize the sidebar image slider
-    $('.left-slider-image-2').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: '.product-main-2',
-        dots: false,
-        centerMode: false,
-        focusOnSelect: true
-    });
-</script>
-
+                        </div>
+ 
 
                             <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="right-box-contain">
