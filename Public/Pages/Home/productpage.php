@@ -1697,57 +1697,7 @@
     <!-- Bg overlay End -->
 
     <!-- latest jquery-->
-    <script src="../Other/Home_assets/assetsjs/jquery-3.6.0.min.js"></script>
-
-    <!-- jquery ui-->
-    <script src="../Other/Home_assets/assetsjs/jquery-ui.min.js"></script>
-
-    <!-- Bootstrap js-->
-    <script src="../Other/Home_assets/assetsjs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../Other/Home_assets/assetsjs/bootstrap/bootstrap-notify.min.js"></script>
-    <script src="../Other/Home_assets/assetsjs/bootstrap/popper.min.js"></script>
-
-    <!-- feather icon js-->
-    <script src="../Other/Home_assets/assetsjs/feather/feather.min.js"></script>
-    <script src="../Other/Home_assets/assetsjs/feather/feather-icon.js"></script>
-
-    <!-- Lazyload Js -->
-    <script src="../Other/Home_assets/assetsjs/lazysizes.min.js"></script>
-
-    <!-- Slick js-->
-    <script src="../Other/Home_assets/assetsjs/slick/slick.js"></script>
-    <script src="../Other/Home_assets/assetsjs/slick/slick-animation.min.js"></script>
-    <script src="../Other/Home_assets/assetsjs/custom-slick-animated.js"></script>
-    <script src="../Other/Home_assets/assetsjs/slick/custom_slick.js"></script>
-
-    <!-- Price Range Js -->
-    <script src="../Other/Home_assets/assetsjs/ion.rangeSlider.min.js"></script>
-
-    <!-- sidebar open js -->
-    <script src="../Other/Home_assets/assetsjs/filter-sidebar.js"></script>
-
-    <!-- Quantity js -->
-    <script src="../Other/Home_assets/assetsjs/quantity-2.js"></script>
-
-    <!-- Zoom Js -->
-    <script src="../Other/Home_assets/assetsjs/jquery.elevatezoom.js"></script>
-    <script src="../Other/Home_assets/assetsjs/zoom-filter.js"></script>
-
-    <!-- Timer Js -->
-    <script src="../Other/Home_assets/assetsjs/timer1.js"></script>
-
-    <!-- Sticky-bar js -->
-    <script src="../Other/Home_assets/assetsjs/sticky-cart-bottom.js"></script>
-
-    <!-- WOW js -->
-    <script src="../Other/Home_assets/assetsjs/wow.min.js"></script>
-    <script src="../Other/Home_assets/assetsjs/custom-wow.js"></script>
-
-    <!-- script js -->
-    <script src="../Other/Home_assets/assetsjs/script.js"></script>
-
-    <!-- thme setting js -->
-    <script src="../Other/Home_assets/assetsjs/theme-setting.js"></script>
+    <?php require "./Public/Pages/Home/Assets/common/js.php" ?>
 
 </body>
 
