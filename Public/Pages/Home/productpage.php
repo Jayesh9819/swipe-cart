@@ -69,7 +69,7 @@
             </div>
         </section>
         <!-- Breadcrumb Section End -->
-
+<php private $category; ?>
         <!-- Product Left Sidebar Start -->
         <section class="product-section">
             <div class="container-fluid-lg">
@@ -441,6 +441,7 @@
                                                                     <label for="review1">Review Title</label>
                                                                 </div>
                                                             </div>
+                                                            <?php $category=$row['category']; ?>
 
                                                             <div class="col-12">
                                                                 <div class="form-floating theme-form-floating">
@@ -482,7 +483,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="slider-6_1 product-wrapper">
-                        <?php $category=$row['Discount']; echo $category; ?>
+                        <?php  echo $category; ?>
                         <?php 
                         include './App/Logic/db_connect.php';
                         $sql="select * from product where status = 1 AND category=$category";
