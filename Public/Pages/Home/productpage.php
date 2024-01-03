@@ -502,25 +502,6 @@ print_r($result);
                                             <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
-                                        <ul class="product-option">
-                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-                                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
-                                                    <i data-feather="eye"></i>
-                                                </a>
-                                            </li>
-
-                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-                                                <a href="compare.html">
-                                                    <i data-feather="refresh-cw"></i>
-                                                </a>
-                                            </li>
-
-                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-                                                <a href="wishlist.html" class="notifi-wishlist">
-                                                    <i data-feather="heart"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
 
@@ -528,30 +509,22 @@ print_r($result);
                                     <div class="product-detail">
                                         <span class="span-name">Cake</span>
                                         <a href="product-left-thumbnail.html">
-                                            <h5 class="name">Chocolate Chip Cookies 250 g</h5>
+                                            <h5 class="name"><?php echo $row['product_name']; ?></h5>
                                         </a>
                                         <div class="product-rating mt-2">
-                                            <ul class="rating">
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                            </ul>
+                                        <ul class="rating">
+                                                                    <?php
+                                                                    $rating = $row['rating'];
+                                                                    for ($i = 1; $i <= $rating; $i++) {
+                                                                        echo '<li><i data-feather="star" class="fill"></i></li>';
+                                                                    }
+                                                                    ?>
+                                                                </ul>
+
                                             <span>(5.0)</span>
                                         </div>
-                                        <h6 class="unit">500 G</h6>
-                                        <h5 class="price"><span class="theme-color">$10.25</span> <del>$12.57</del>
+                                        <h6 class="unit"><?php echo $row['unit']; ?></h6>
+                                        <h5 class="price"><span class="theme-color">₹.<?php echo $row['coust_price']; ?></span> <del>₹.<?php echo $row['MRP']; ?></del>
                                         </h5>
                                         <div class="add-to-cart-box bg-white">
                                             <button class="btn btn-add-cart addcart-button">Add
