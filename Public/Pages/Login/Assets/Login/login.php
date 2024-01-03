@@ -41,22 +41,23 @@
                        <img src="../Other/Home_assets/assets/images/inner-page/log-in.png" class="img-fluid" alt="">
                    </div>
                </div>
-               <?php
-                $act = isset($_GET['act']) ? $_GET['act'] : '';
-                switch ($act) {
-                    case 'sucess':
-                        echo '<div class="alert alert-sucess d-flex align-items-center" role="alert">
+
+               <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
+                   <div class="log-in-box">
+                       <?php
+                        $act = isset($_GET['act']) ? $_GET['act'] : '';
+                        switch ($act) {
+                            case 'sucess':
+                                echo '<div class="alert alert-success d-flex align-items-center" role="alert">
                                         <div>
                                           Registerd Sucessfully
                                         </div>
                                       </div>
                                       ';
-                        break;
-                }
-                ?>
+                                break;
+                        }
+                        ?>
 
-               <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
-                   <div class="log-in-box">
                        <div class="log-in-title">
                            <h3>Welcome To <?php echo $site['Site-name']; ?> </h3>
                            <h4>Log In Your Account</h4>
