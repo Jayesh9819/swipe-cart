@@ -81,9 +81,9 @@
                                     <center>
                                         <div class="row g-2">
                                             <div class="col-12">
-                                                <div class="product-main-1 no-arrow" style="height: 600px;">
+                                                <div class="product-main-1 no-arrow" style="height: 300px; width: 200px; overflow: hidden; margin: 0 auto;">
                                                     <div>
-                                                        <div class="slider-image" style="height: 300px; width: 200px; overflow: hidden; margin: 0 auto;>
+                                                        <div class="slider-image" >
                                                             <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                         </div>
                                                     </div>
