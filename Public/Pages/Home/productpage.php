@@ -486,11 +486,11 @@
                         <?php  echo $category; ?>
                         <?php 
                         include './App/Logic/db_connect.php';
-                        $sql="SELECT * FROM product WHERE status = 1 AND category=$category";
+                        $sql="SELECT * FROM product WHERE status = 1 AND category='$category'";
 echo $sql;
                         $result = $conn->query($sql);
 print_r($result);
-                        // while ($row = $result->fetch_assoc()) {
+                        while ($row = $result->fetch_assoc()) {
                     
                         
                         ?>
@@ -499,7 +499,7 @@ print_r($result);
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left.html">
-                                            <!-- <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt=""> -->
+                                            <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
                                         </a>
 
                                         <ul class="product-option">
@@ -575,7 +575,7 @@ print_r($result);
                                 </div>
                             </div>
                         </div>
-                        <!-- <?php //} ?> -->
+                        <?php } ?>
 
                         <div>
                             <div class="product-box-3 wow fadeInUp" data-wow-delay="0.05s">
