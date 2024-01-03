@@ -574,7 +574,7 @@ print_r($result);
                                 </div>
                             </div>
                         </div>
-                        <?php } ?>
+                        <!-- <?php } ?> -->
 
                         <div>
                             <div class="product-box-3 wow fadeInUp" data-wow-delay="0.05s">
