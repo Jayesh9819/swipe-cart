@@ -83,7 +83,7 @@
                                             <div class="col-12">
                                                 <div class="product-main-1 no-arrow" style="height: 500px; width: 250px; object-fit: contain;">
                                                     <div>
-                                                        <div class="slider-image" >
+                                                        <div class="slider-image">
                                                             <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 300px; height: 500px; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                         </div>
                                                     </div>
@@ -95,7 +95,7 @@
 
                                                     <?php foreach ($cover_images as $index => $cover_image) : ?>
                                                         <div>
-                                                            <div class="slider-image" >
+                                                            <div class="slider-image">
                                                                 <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 300px; height: 500px; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
                                                             </div>
                                                         </div>
@@ -138,7 +138,7 @@
                                     <h6 class="offer-top"><?php echo $row['Discount']; ?>% OFF</h6>
                                     <h2 class="name"><?php echo $row['product_name']; ?></h2>
                                     <div class="price-rating">
-                                        <h3 class="theme-color price">₹<?php echo $row['coust_price']; ?> <del class="text-content">₹<?php echo $row['MRP']; ?></del>
+                                        <h3 class="theme-color price">₹.<?php echo $row['coust_price']; ?> <del class="text-content">₹.<?php echo $row['MRP']; ?></del>
                                             <span class="offer theme-color"><?php echo $row['Discount']; ?>% OFF</span>
                                         </h3>
                                         <div class="product-rating custom-rate">
@@ -278,178 +278,180 @@
                                                     <p><?php echo $row['Description']; ?></p>
                                                 </div>
                                             </div>
+                                        </div>
 
 
 
-                                            <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
-                                                <div class="table-responsive">
-                                                    <table class="table info-table">
-                                                        <tbody>
-                                                            <!-- <tr>
+
+
+                                        <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                                            <div class="table-responsive">
+                                                <table class="table info-table">
+                                                    <tbody>
+                                                        <!-- <tr>
                                                             <td>Specialty</td>
                                                             <td>Vegetarian</td>
                                                         </tr> -->
-                                                            <tr>
-                                                                <td> Material</td>
-                                                                <td><?php echo $row['material']; ?></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Brand</td>
-                                                                <td><?php echo $row['Brand']; ?></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Form</td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Package Information</td>
-                                                                <td>Box</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Manufacturer</td>
-                                                                <td>Prayagh Nutri Product Pvt Ltd</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Item part number</td>
-                                                                <td>LE 014 - 20pcs Crème Bakes (Pack of 2)</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Net Quantity</td>
-                                                                <td>40.00 count</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                        <tr>
+                                                            <td> Material</td>
+                                                            <td><?php echo $row['material']; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brand</td>
+                                                            <td><?php echo $row['Brand']; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Form</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Package Information</td>
+                                                            <td>Box</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Manufacturer</td>
+                                                            <td>Prayagh Nutri Product Pvt Ltd</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Item part number</td>
+                                                            <td>LE 014 - 20pcs Crème Bakes (Pack of 2)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Net Quantity</td>
+                                                            <td>40.00 count</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
+                                        </div>
 
 
-                                            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                                <div class="review-box">
-                                                    <div class="row g-4">
-                                                        <div class="col-xl-6">
-                                                            <div class="review-title">
-                                                                <h4 class="fw-500">Customer reviews</h4>
-                                                            </div>
+                                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                                            <div class="review-box">
+                                                <div class="row g-4">
+                                                    <div class="col-xl-6">
+                                                        <div class="review-title">
+                                                            <h4 class="fw-500">Customer reviews</h4>
+                                                        </div>
 
-                                                            <div class="d-flex">
-                                                                <div class="product-rating">
-                                                                    <ul class="rating">
-                                                                        <?php
-                                                                        $rating = $row['rating'];
-                                                                        for ($i = 1; $i <= $rating; $i++) {
-                                                                            echo '<li><i data-feather="star" class="fill"></i></li>';
-                                                                        }
-                                                                        ?>
-                                                                    </ul>
-                                                                </div>
-                                                                <!-- <h6 class="ms-3">4.2 Out Of 5</h6> -->
-                                                            </div>
-
-                                                            <div class="rating-box">
-                                                                <ul>
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>5 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 68%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    68%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>4 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 67%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    67%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>3 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 42%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    42%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>2 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    30%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>1 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 24%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    24%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
+                                                        <div class="d-flex">
+                                                            <div class="product-rating">
+                                                                <ul class="rating">
+                                                                    <?php
+                                                                    $rating = $row['rating'];
+                                                                    for ($i = 1; $i <= $rating; $i++) {
+                                                                        echo '<li><i data-feather="star" class="fill"></i></li>';
+                                                                    }
+                                                                    ?>
                                                                 </ul>
                                                             </div>
+                                                            <!-- <h6 class="ms-3">4.2 Out Of 5</h6> -->
                                                         </div>
 
-                                                        <div class="col-xl-6">
-                                                            <div class="review-title">
-                                                                <h4 class="fw-500">Add a review</h4>
-                                                            </div>
-
-                                                            <div class="row g-4">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="text" class="form-control" id="name" placeholder="Name">
-                                                                        <label for="name">Your Name</label>
+                                                        <div class="rating-box">
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="rating-list">
+                                                                        <h5>5 Star</h5>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar" role="progressbar" style="width: 68%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                                68%
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                </li>
 
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="email" class="form-control" id="email" placeholder="Email Address">
-                                                                        <label for="email">Email Address</label>
+                                                                <li>
+                                                                    <div class="rating-list">
+                                                                        <h5>4 Star</h5>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar" role="progressbar" style="width: 67%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                                67%
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                </li>
 
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="url" class="form-control" id="website" placeholder="Website">
-                                                                        <label for="website">Website</label>
+                                                                <li>
+                                                                    <div class="rating-list">
+                                                                        <h5>3 Star</h5>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar" role="progressbar" style="width: 42%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                                42%
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                </li>
 
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="url" class="form-control" id="review1" placeholder="Give your review a title">
-                                                                        <label for="review1">Review Title</label>
+                                                                <li>
+                                                                    <div class="rating-list">
+                                                                        <h5>2 Star</h5>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                                30%
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                </li>
 
-                                                                <div class="col-12">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
-                                                                        <label for="floatingTextarea2">Write Your
-                                                                            Comment</label>
+                                                                <li>
+                                                                    <div class="rating-list">
+                                                                        <h5>1 Star</h5>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar" role="progressbar" style="width: 24%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                                24%
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
-
                                                     </div>
+
+                                                    <div class="col-xl-6">
+                                                        <div class="review-title">
+                                                            <h4 class="fw-500">Add a review</h4>
+                                                        </div>
+
+                                                        <div class="row g-4">
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating theme-form-floating">
+                                                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                                                    <label for="name">Your Name</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating theme-form-floating">
+                                                                    <input type="email" class="form-control" id="email" placeholder="Email Address">
+                                                                    <label for="email">Email Address</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating theme-form-floating">
+                                                                    <input type="url" class="form-control" id="website" placeholder="Website">
+                                                                    <label for="website">Website</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating theme-form-floating">
+                                                                    <input type="url" class="form-control" id="review1" placeholder="Give your review a title">
+                                                                    <label for="review1">Review Title</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-12">
+                                                                <div class="form-floating theme-form-floating">
+                                                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+                                                                    <label for="floatingTextarea2">Write Your
+                                                                        Comment</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -457,9 +459,10 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
+            </div>
         </section>
     <?php } ?>
 
