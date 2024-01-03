@@ -1,4 +1,13 @@
    <!-- Breadcrumb Section Start -->
+   <?php 
+   include './App/Logic/db_connect.php';
+   $sql = "SELECT * FROM settings";
+   $result = $conn->query($sql);
+   while($row=$result->fetch_assoc()){
+
+   
+
+   ?>
    <section class="breadscrumb-section pt-0">
         <div class="container-fluid-lg">
             <div class="row">
@@ -35,12 +44,12 @@
                 <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
                     <div class="log-in-box">
                         <div class="log-in-title">
-                            <h3>Welcome To Fastkart</h3>
+                            <h3>Welcome To <?php echo $row['Site-name']; ?> </h3>
                             <h4>Log In Your Account</h4>
                         </div>
 
                         <div class="input-box">
-                            <form class="row g-4">
+                            <form class="row g-4" action="./">
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
                                         <input type="email" class="form-control" id="email" placeholder="Email Address">
@@ -63,7 +72,7 @@
                                                 id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                                         </div>
-                                        <a href="forgot.html" class="forgot-password">Forgot Password?</a>
+                                        <a href="./Forgot-Password" class="forgot-password">Forgot Password?</a>
                                     </div>
                                 </div>
 
@@ -101,11 +110,12 @@
 
                         <div class="sign-up-box">
                             <h4>Don't have an account?</h4>
-                            <a href="sign-up.html">Sign Up</a>
+                            <a href="./SignUp">Sign Up</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <?php  }?>
     <!-- log in section end -->
