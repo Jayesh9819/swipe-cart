@@ -1,6 +1,7 @@
 <?php 
 class Login{
     public function create_user(){
+        include './db_connect.php';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST["name"];
             $email = $_POST["email"];
@@ -15,6 +16,24 @@ class Login{
             if ($password !== $confirmPassword) {
                 header('Location: ../../../index.php/SignUp?act=pass');
             }
+            $stmt = $conn->prepare("INSERT INTO users (name, email,contact,password) VALUES (?, ?,?,?)");
+
+            if ($stmt) {
+                $stmt->bind_param("ssss", $name, $email, $mobile,$password);
+
+                if ($stmt->execute()) {
+                    header('Location: ../../../index.php/Login?act=sucess');
+                    $response['success'] = true;
+                    $response['message'] = "Category deleted successfully!";
+                } else {
+                    echo "Error executing the prepared statement: " . $stmt->error;
+                }
+
+                $stmt->close();
+            } else {
+                echo "Error preparing the statement: " . $conn->error;
+            }
+
                 
 
 
