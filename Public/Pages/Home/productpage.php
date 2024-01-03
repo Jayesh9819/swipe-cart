@@ -83,7 +83,7 @@
                                             <div class="col-12">
                                                 <div class="product-main-1 no-arrow" style="height: 600px;">
                                                     <div>
-                                                        <div class="slider-image" style="height: 300px; width: 200px;>
+                                                        <div class="slider-image" style="height: 300px; width: 200px; overflow: hidden; margin: 0 auto;>
                                                             <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                         </div>
                                                     </div>
@@ -95,7 +95,7 @@
 
                                                     <?php foreach ($cover_images as $index => $cover_image) : ?>
                                                         <div>
-                                                            <div class="slider-image" style="height: 300px; width: 200px;>
+                                                            <div class="slider-image" style="height: 300px; width: 200px; overflow: hidden; margin: 0 auto;>
                                                                 <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
                                                             </div>
                                                         </div>
