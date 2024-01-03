@@ -488,8 +488,7 @@
                         include './App/Logic/db_connect.php';
                         $sql="select * from product where status = 1 AND category=$category";
                         $result = $conn->query($sql);
-
-                        // Loop through the category data and generate HTML
+print_r($result);
                         while ($row = $result->fetch_assoc()) {
                     
                         
@@ -499,7 +498,7 @@
                                 <div class="product-header">
                                     <div class="product-image">
                                         <a href="product-left.html">
-                                            <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
+                                            <!-- <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt=""> -->
                                         </a>
 
                                         <ul class="product-option">
