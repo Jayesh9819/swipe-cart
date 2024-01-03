@@ -3,7 +3,7 @@
    include './App/Logic/db_connect.php';
    $sql = "SELECT * FROM settings";
    $result = $conn->query($sql);
-   while($row=$result->fetch_assoc()){
+   $row=$result->fetch_assoc()
 
    
 
@@ -117,5 +117,4 @@
             </div>
         </div>
     </section>
-    <?php  }?>
     <!-- log in section end -->
