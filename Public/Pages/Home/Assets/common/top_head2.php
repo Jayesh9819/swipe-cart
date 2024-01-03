@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="delivery-detail">
                                                 <h6>24/7 Delivery</h6>
-                                                <h5>+91 888 104 2340</h5>
+                                                <h5></h5>
                                             </div>
                                         </a>
                                     </li>
@@ -105,15 +105,15 @@
                                             <ul class="user-box-name">
                                                 <li class="product-box-contain">
                                                     <i></i>
-                                                    <a href="login.html">Log In</a>
+                                                    <a href="./Login">Log In</a>
                                                 </li>
 
                                                 <li class="product-box-contain">
-                                                    <a href="sign-up.html">Register</a>
+                                                    <a href="./SignUp">Register</a>
                                                 </li>
 
                                                 <li class="product-box-contain">
-                                                    <a href="forgot.html">Forgot Password</a>
+                                                    <a href="./Forgot-Password">Forgot Password</a>
                                                 </li>
                                             </ul>
                                         </div>
