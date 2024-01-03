@@ -135,11 +135,11 @@
 
                             <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="right-box-contain">
-                                    <h6 class="offer-top"><?php echo $row['Discount']; ?></h6>
+                                    <h6 class="offer-top"><?php echo $row['Discount']; ?>% OFF</h6>
                                     <h2 class="name"><?php echo $row['product_name']; ?></h2>
                                     <div class="price-rating">
                                         <h3 class="theme-color price"><?php echo $row['coust_price']; ?> <del class="text-content"><?php echo $row['MRP']; ?></del>
-                                            <span class="offer theme-color"></span>
+                                            <span class="offer theme-color"><?php echo $row['Discount']; ?>% OFF</span>
                                         </h3>
                                         <div class="product-rating custom-rate">
                                             <ul class="rating">
