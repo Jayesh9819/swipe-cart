@@ -1,4 +1,15 @@
    <!-- Breadcrumb Section Start -->
+   <?php 
+
+include './App/Logic/db_connect.php';
+$sql = "SELECT * FROM settings";
+$result = $conn->query($sql);
+global $site;
+$site=$result->fetch_assoc();
+
+
+   ?>
+
    <section class="breadscrumb-section pt-0">
         <div class="container-fluid-lg">
             <div class="row">
