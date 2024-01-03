@@ -103,7 +103,7 @@
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 50px; width: 50px; margin: 0 auto;">
+                                                    <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 50px; width: 50px;">
                                                         <div>
                                                             <div class="sidebar-image">
                                                                 <img src="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid blur-up lazyload" alt="">
