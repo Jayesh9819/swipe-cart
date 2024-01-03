@@ -117,7 +117,7 @@
                                                         <?php foreach ($sidebar_images as $index => $sidebar_image) : ?>
                                                             <div>
                                                                 <div class="sidebar-image">
-                                                                    <img src="<?php echo '../' . $sidebar_image; ?>" style="width: 100%; height: 100%; object-fit: contain;" class="img-fluid blur-up lazyload" alt="">
+                                                                    <img src="<?php echo '../' . $sidebar_image; ?>" style="width: 100px; height: 100px; object-fit: contain;" class="img-fluid blur-up lazyload" alt="">
                                                                 </div>
                                                             </div>
                                                         <?php endforeach; ?>
