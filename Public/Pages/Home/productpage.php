@@ -84,7 +84,7 @@
                                                 <div class="product-main-1 no-arrow" style="height: 500px; width: 250px; object-fit: contain;">
                                                     <div>
                                                         <div class="slider-image" >
-                                                            <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
+                                                            <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 300px; height: 500px; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                         </div>
                                                     </div>
                                                     <?php
@@ -96,7 +96,7 @@
                                                     <?php foreach ($cover_images as $index => $cover_image) : ?>
                                                         <div>
                                                             <div class="slider-image" >
-                                                                <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
+                                                                <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 300px; height: 500px; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
                                                             </div>
                                                         </div>
                                                     <?php endforeach; ?>
@@ -106,7 +106,7 @@
                                                     <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 100px;">
                                                         <div>
                                                             <div class="sidebar-image">
-                                                                <img src="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain;" class="img-fluid blur-up lazyload" alt="">
+                                                                <img src="<?php echo $row['main_img']; ?>" style="width: 100px; height: 100px; object-fit: contain;" class="img-fluid blur-up lazyload" alt="">
                                                             </div>
                                                         </div>
                                                         <?php
