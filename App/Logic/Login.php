@@ -30,7 +30,7 @@ if (isset($_GET['action'])) {
     echo "Action: $action<br>";
 
     switch ($action) {
-        case 'create-user':
+        case 'create_user':
             $Login->create_user();
             break;
 
