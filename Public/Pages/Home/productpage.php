@@ -79,52 +79,52 @@
                             <div class="col-xl-6 wow fadeInUp">
                                 <div class="product-left-box">
                                     <center>
-                                    <div class="row g-2">
-    <div class="col-12">
-        <div class="product-main-1 no-arrow" style="height: 600px;">
-            <div>
-                <div class="slider-image">
-                    <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
-                </div>
-            </div>
-            <?php
-            $cover_images = $row['cover_img'];
-            $cover_images = str_replace('../', '', $cover_images);
-            $cover_images = explode(', ', $cover_images);
-            ?>
+                                        <div class="row g-2">
+                                            <div class="col-12">
+                                                <div class="product-main-1 no-arrow" style="height: 600px;">
+                                                    <div>
+                                                        <div class="slider-image" style="height: 600px; width: 400px;>
+                                                            <img src="<?php echo $row['main_img']; ?>" id="img-1" data-zoom-image="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                    $cover_images = $row['cover_img'];
+                                                    $cover_images = str_replace('../', '', $cover_images);
+                                                    $cover_images = explode(', ', $cover_images);
+                                                    ?>
 
-            <?php foreach ($cover_images as $index => $cover_image) : ?>
-                <div>
-                    <div class="slider-image">
-                        <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 100%; height: 100%; object-fit: contain;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+                                                    <?php foreach ($cover_images as $index => $cover_image) : ?>
+                                                        <div>
+                                                            <div class="slider-image" style="height: 600px; width: 400px;>
+                                                                <img src="<?php echo '../' . $cover_image; ?>" data-zoom-image="<?php echo '../' . $cover_image; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid image_zoom_cls-<?php echo $index + 1; ?> blur-up lazyload" alt="">
+                                                            </div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                </div>
 
-        <div class="col-12">
-            <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 50px;">
-                <div>
-                    <div class="sidebar-image">
-                        <img src="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain;" class="img-fluid blur-up lazyload" alt="">
-                    </div>
-                </div>
-                <?php
-                $sidebar_images = $row['cover_img'];
-                $sidebar_images = str_replace('../', '', $sidebar_images);
-                $sidebar_images = explode(', ', $sidebar_images);
-                ?>
-                <?php foreach ($sidebar_images as $index => $sidebar_image) : ?>
-                    <div>
-                        <div class="sidebar-image">
-                            <img src="<?php echo '../' . $sidebar_image; ?>" style="width: 100%; height: 100%; object-fit: contain;" class="img-fluid blur-up lazyload" alt="">
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-</div>
+                                                <div class="col-12">
+                                                    <div class="bottom-slider-image left-slider no-arrow slick-top" style="height: 50px;">
+                                                        <div>
+                                                            <div class="sidebar-image">
+                                                                <img src="<?php echo $row['main_img']; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid blur-up lazyload" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <?php
+                                                        $sidebar_images = $row['cover_img'];
+                                                        $sidebar_images = str_replace('../', '', $sidebar_images);
+                                                        $sidebar_images = explode(', ', $sidebar_images);
+                                                        ?>
+                                                        <?php foreach ($sidebar_images as $index => $sidebar_image) : ?>
+                                                            <div>
+                                                                <div class="sidebar-image">
+                                                                    <img src="<?php echo '../' . $sidebar_image; ?>" style="width: 100%; height: 100%; object-fit: contain; display: block;" class="img-fluid blur-up lazyload" alt="">
+                                                                </div>
+                                                            </div>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </center>
                                 </div>
                             </div>
