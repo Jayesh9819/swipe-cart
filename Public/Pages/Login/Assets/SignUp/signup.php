@@ -51,7 +51,7 @@ $site=$result->fetch_assoc();
                         </div>
 
                         <div class="input-box">
-                            <form class="row g-4" action="./App/Logic/Login.php?action=create-account">
+                            <form class="row g-4" action="./App/Logic/Login.php?action=create-account " method="post" >
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating">
                                         <input type="text" class="form-control"  name="name" id="fullname" placeholder="Full Name" required>
