@@ -35,32 +35,56 @@
                 <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
                     <div class="log-in-box">
                         <div class="log-in-title">
-                            <h3>Welcome To Fastkart</h3>
+                            <h3>Welcome To <?php echo $site['Site-name']; ?></h3>
                             <h4>Create New Account</h4>
                         </div>
 
                         <div class="input-box">
-                            <form class="row g-4">
+                            <form class="row g-4" action="./App/Logic/Login.php?action=create-account">
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating">
-                                        <input type="text" class="form-control" id="fullname" placeholder="Full Name">
+                                        <input type="text" class="form-control"  name="name" id="fullname" placeholder="Full Name" required>
                                         <label for="fullname">Full Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Email Address">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
                                         <label for="email">Email Address</label>
                                     </div>
                                 </div>
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating">
+                                        <input type="email" class="form-control" name="mobile" id="email" placeholder="Mobile Number" required>
+                                        <label for="email">Mobile Number</label>
+                                    </div>
+                                </div>
+
 
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating">
-                                        <input type="password" class="form-control" id="password"
-                                            placeholder="Password">
+                                        <input type="password" class="form-control" name="pass" id="password"
+                                            placeholder="Password" required>
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
+                                <?php 
+                                $act = isset($_GET['act']) ? $_GET['act'] : '';
+                                switch ($act) {
+                                    case 'pass':
+                                        echo '<script>alert("Password Does Not match");</script>';
+                                        break;
+                                
+                                    }
+                                ?>
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating">
+                                        <input type="password" class="form-control" name="con-pass" id="password"
+                                            placeholder="Password" required>
+                                        <label for="password">Confirm Password</label>
+                                    </div>
+                                </div>
+
 
                                 <div class="col-12">
                                     <div class="forgot-box">
@@ -108,7 +132,7 @@
 
                         <div class="sign-up-box">
                             <h4>Already have an account?</h4>
-                            <a href="login.html">Log In</a>
+                            <a href="./login">Log In</a>
                         </div>
                     </div>
                 </div>

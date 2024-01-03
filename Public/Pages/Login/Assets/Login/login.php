@@ -1,9 +1,5 @@
    <!-- Breadcrumb Section Start -->
    <?php 
-   include './App/Logic/db_connect.php';
-   $sql = "SELECT * FROM settings";
-   $result = $conn->query($sql);
-   $row=$result->fetch_assoc()
 
    
 
@@ -44,7 +40,7 @@
                 <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
                     <div class="log-in-box">
                         <div class="log-in-title">
-                            <h3>Welcome To <?php echo $row['Site-name']; ?> </h3>
+                            <h3>Welcome To <?php echo $site['Site-name']; ?> </h3>
                             <h4>Log In Your Account</h4>
                         </div>
 
