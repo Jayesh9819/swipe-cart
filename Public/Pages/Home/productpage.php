@@ -301,8 +301,8 @@
                                                             <td><?php echo $row['Brand']; ?></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Form</td>
-                                                            <td></td>
+                                                            <td>Category</td>
+                                                            <td><?php echo $row['category']; ?></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Package Information</td>
@@ -482,6 +482,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="slider-6_1 product-wrapper">
+                        <?php $category=$row['Discount']; echo $category; ?>
+                        <?php 
+                        include './App/Logic/db_connect.php';
+                        $sql="select * from product where status = 1 AND category=$category";
+                        
+                        ?>
                         <div>
                             <div class="product-box-3 wow fadeInUp">
                                 <div class="product-header">
