@@ -487,7 +487,7 @@
                         <?php 
                         include './App/Logic/db_connect.php';
                         $sql="SELECT * FROM product WHERE status = 1 AND category=$category";
-
+echo $sql;
                         $result = $conn->query($sql);
 print_r($result);
                         // while ($row = $result->fetch_assoc()) {
