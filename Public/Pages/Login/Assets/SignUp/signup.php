@@ -66,7 +66,7 @@ $site=$result->fetch_assoc();
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating">
-                                        <input type="email" class="form-control" name="mobile" id="email" placeholder="Mobile Number" required>
+                                        <input type="number" class="form-control" name="mobile" id="email" placeholder="Mobile Number" required>
                                         <label for="email">Mobile Number</label>
                                     </div>
                                 </div>
