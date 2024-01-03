@@ -8,12 +8,12 @@ class Login{
             $password = $_POST["pass"];
             $confirmPassword = $_POST["confirm_pass"];
             if (empty($name) || empty($email) || empty($mobile) || empty($password) || empty($confirmPassword)) {
-                header('Location: ../../../index.php/Login?act=req');
+                header('Location: ../../../index.php/SignUp?act=req');
 
             }
         
             if ($password !== $confirmPassword) {
-                header('Location: ../../../index.php/Login?act=pass');
+                header('Location: ../../../index.php/SignUp?act=pass');
             }
                 
 
