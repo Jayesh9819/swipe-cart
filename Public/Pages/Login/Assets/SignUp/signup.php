@@ -83,7 +83,13 @@ $site=$result->fetch_assoc();
                                 $act = isset($_GET['act']) ? $_GET['act'] : '';
                                 switch ($act) {
                                     case 'pass':
-                                        echo '<script>alert("Password Does Not match");</script>';
+                                        echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                        <div>
+                                          An example danger alert with an icon
+                                        </div>
+                                      </div>
+                                      ';
                                         break;
                                 
                                     }
