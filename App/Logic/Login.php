@@ -104,6 +104,9 @@ if (isset($_GET['action'])) {
         case 'create_user':
             $Login->create_user();
             break;
+        case 'login':
+            $Login->login();
+            break;
 
         default:
             echo "Invalid action requested.";

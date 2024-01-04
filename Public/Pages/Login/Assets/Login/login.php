@@ -77,7 +77,7 @@
                        </div>
 
                        <div class="input-box">
-                           <form class="row g-4" action="./">
+                           <form class="row g-4" action="../App/Logic/Login.php?action=login" method="post">
                                <div class="col-12">
                                    <div class="form-floating theme-form-floating log-in-form">
                                        <input type="email" class="form-control" id="email" placeholder="Email Address">
