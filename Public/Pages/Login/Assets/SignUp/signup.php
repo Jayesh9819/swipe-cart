@@ -9,17 +9,6 @@
 
 
     ?>
-   <?php
-   $pass;$duplicate;
-    $act = isset($_SESSION['act']) ? $_SESSION['act'] : '';
-    switch ($act) {
-        case 'pass':
-            echo $pass;
-            break;
-        case 'duplicate':
-            echo $duplicate;
-    }
-    ?>
 
 
    <section class="breadscrumb-section pt-0">
