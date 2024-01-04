@@ -115,7 +115,7 @@
                                             </div>';
     
                                              }else{
-                                                echo '<div class="delivery-detail">
+                                                echo '<div class="onhover-div onhover-div-login">
                                                 <h6>Hello, ' . (isset($_SESSION['name']) ? $_SESSION['name'] : '') . '</h6>
                                                 <h5><a href="./User-Dashboard">My Account</a></h5>
                                               </div>';
