@@ -55,6 +55,9 @@
                                       </div>
                                       ';
                                 break;
+                            default:
+                                echo "Invalid action requested.";
+                                break;
                         }
                         ?>
 
