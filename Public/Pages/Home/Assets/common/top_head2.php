@@ -3,15 +3,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="navbar-top">
-                    <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
-                        data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+                    <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
                         <span class="navbar-toggler-icon">
                             <i class="fa-solid fa-bars"></i>
                         </span>
                     </button>
                     <a href="index.html" class="web-logo nav-logo">
-                        <img src="../Other/Home_assets/assets/images/logo/1.png" class="img-fluid blur-up lazyload"
-                            alt="">
+                        <img src="../Other/Home_assets/assets/images/logo/1.png" class="img-fluid blur-up lazyload" alt="">
                     </a>
 
                     <div class="middle-box">
@@ -27,8 +25,7 @@
 
                         <div class="search-box">
                             <div class="input-group">
-                                <input type="search" class="form-control" placeholder="I'm searching for..."
-                                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input type="search" class="form-control" placeholder="I'm searching for..." aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <button class="btn" type="button" id="button-addon2">
                                     <i data-feather="search"></i>
                                 </button>

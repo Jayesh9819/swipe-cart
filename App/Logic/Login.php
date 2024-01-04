@@ -70,16 +70,16 @@ class Login{
             if ($stmt->num_rows > 0) {
                 // User found, store the name in the session
                 $stmt->bind_result($name);
-                $stmt->bind_result($type);
-                $stmt->bind_result($id);
+                // $stmt->bind_result($type);
+                // $stmt->bind_result($id);
 
 
                 $stmt->fetch();
 
                 session_start();
                 $_SESSION['name'] = $name;
-                $_SESSION['type'] = $type;
-                $_SESSION['id'] = $id;
+                // $_SESSION['type'] = $type;
+                // $_SESSION['id'] = $id;
 
 
                 header('Location: ../../../index.php/Welcome'); // Redirect to home or any other page
