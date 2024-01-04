@@ -29,6 +29,9 @@ class Contact
             // Send the email
             if (mail($to, $subject, $message, $headers)) {
                 echo 'Email sent successfully';
+                header('Location: ../../../index.php/Contact_Us');
+                exit();
+
             } else {
                 echo 'Error sending email';
             }
