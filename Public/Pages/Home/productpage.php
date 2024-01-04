@@ -5,14 +5,6 @@
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/product-left-thumbnail.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Jan 2024 13:00:55 GMT -->
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fastkart">
-    <meta name="keywords" content="Fastkart">
-    <meta name="author" content="Fastkart">
-    <link rel="icon" href="../Other/Home_assets/assetsimages/favicon/1.png" type="image/x-icon">
-    <title>Product </title>
 
     <!-- Google font -->
     <?php require "./Public/Pages/Home/Assets/common/head.php" ?>
