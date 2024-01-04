@@ -8,12 +8,12 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./Welcome" data-bs-toggle="dropdown">Home</a>
+                        <a class="nav-link dropdown-toggle" href="./Welcome" >Home</a>
 
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./Shop" data-bs-toggle="dropdown">Shop</a>
+                        <a class="nav-link dropdown-toggle" href="./Shop" >Shop</a>
 
                     </li>
 
