@@ -32,6 +32,20 @@ $site=$result->fetch_assoc();
         </div>
     </section>
     <!-- Breadcrumb Section End -->
+    <script>
+        $(document).ready(function() {
+            $('#password, #confirm-password').on('input', function() {
+                var password = $('#password').val();
+                var confirmPassword = $('#confirm-password').val();
+
+                if (password !== confirmPassword) {
+                    $('#password-error').html('Passwords do not match');
+                } else {
+                    $('#password-error').html('');
+                }
+            });
+        });
+    </script>
 
     <!-- log in section start -->
     <section class="log-in-section section-b-space">
@@ -93,6 +107,7 @@ $site=$result->fetch_assoc();
                                 
                                     }
                                 ?>
+
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating">
                                         <input type="password" class="form-control" name="con-pass" id="password"
@@ -100,6 +115,7 @@ $site=$result->fetch_assoc();
                                         <label for="password">Confirm Password</label>
                                     </div>
                                 </div>
+    <div id="password-error" class="alert alert-danger d-flex align-items-center" role="alert"></div>
 
 
                                 <div class="col-12">

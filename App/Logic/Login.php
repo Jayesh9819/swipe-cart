@@ -9,12 +9,15 @@ class Login{
             $password = $_POST["pass"];
             $confirmPassword = $_POST["con-pass"];
             if (empty($name) || empty($email) || empty($mobile) || empty($password) || empty($confirmPassword)) {
-                header('Location: ../../../index.php/SignUp?act=req');
+                $_SESSION['act'] = 'req';
+                header('Location: ../../../index.php/SignUp');
 
             }else{
         
             if ($password !== $confirmPassword) {
-                header('Location: ../../../index.php/SignUp?act=pass');
+                $_SESSION['act'] = 'pass';
+
+                header('Location: ../../../index.php/SignUp');
             }else{
             $stmt = $conn->prepare("INSERT INTO users (name, email,contact,password) VALUES (?, ?,?,?)");
 
@@ -22,9 +25,9 @@ class Login{
                 $stmt->bind_param("ssss", $name, $email, $mobile,$password);
 
                 if ($stmt->execute()) {
-                    header('Location: ../../../index.php/Login?act=sucess');
-                    $response['success'] = true;
-                    $response['message'] = "Category deleted successfully!";
+                    $_SESSION['act'] = 'sucess';
+
+                    header('Location: ../../../index.php/Login');
                 } else {
                     echo "Error executing the prepared statement: " . $stmt->error;
                 }
@@ -44,6 +47,7 @@ class Login{
 }
 
 $Login = new Login();
+session_start();
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
 
