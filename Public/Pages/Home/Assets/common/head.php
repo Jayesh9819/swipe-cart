@@ -22,7 +22,7 @@ $pageTitle = ucwords(str_replace('_', ' ', $lastSegment));
     <meta name="keywords" content="<?php echo $site['keyword']; ?>">
     <meta name="author" content="<?php echo $site['author']; ?>">
     <link rel="icon" href="<?php echo $site['favicon']; ?>" type="image/x-icon">
-    <title><?php echo $site['name'];  ?> || <?php echo $pageTitle; ?>  </title>
+    <title><?php echo $site['Site-name'];  ?> || <?php echo $pageTitle; ?>  </title>
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com/">
