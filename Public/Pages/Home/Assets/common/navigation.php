@@ -18,17 +18,17 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./Seller" data-bs-toggle="dropdown">Seller</a>
+                        <a class="nav-link dropdown-toggle" href="./Seller" >Seller</a>
 
                     </li>
 
                     <li class="nav-item dropdown dropdown-mega">
-                        <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="./Contact_Us" data-bs-toggle="dropdown">Contact Us</a>
+                        <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="./Contact_Us" >Contact Us</a>
 
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="About_Us" data-bs-toggle="dropdown">About Us</a>
+                        <a class="nav-link dropdown-toggle" href="About_Us" >About Us</a>
                     </li>
 
                 </ul>
