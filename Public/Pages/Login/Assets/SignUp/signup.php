@@ -64,6 +64,27 @@
                            <h3>Welcome To <?php echo $site['Site-name']; ?></h3>
                            <h4>Create New Account</h4>
                        </div>
+                       <?php
+   $pass;$duplicate;
+    $act = isset($_SESSION['act']) ? $_SESSION['act'] : '';
+    switch ($act) {
+        case 'pass':
+            echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div>
+              Password Does Not match
+            </div>
+          </div>
+          ';;
+            break;
+        case 'duplicate':
+            echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div>
+            Email or phone already Registerd
+            </div>
+          </div>
+          ';;
+    }
+    ?>
 
                        <div class="input-box">
                            <form class="row g-4" action="../App/Logic/Login.php?action=create_user " method="post">
@@ -79,29 +100,12 @@
                                        <label for="email">Email Address</label>
                                    </div>
                                </div>
-                               <?php
-                                $duplicate = '<div class="alert alert-danger d-flex align-items-center" role="alert">
-                                <div>
-                                Email or phone already Registerd
-                                </div>
-                              </div>
-                              ';
-                                ?>
                                <div class="col-12">
                                    <div class="form-floating theme-form-floating">
                                        <input type="number" class="form-control" name="mobile" id="email" placeholder="Mobile Number" required>
                                        <label for="email">Mobile Number</label>
                                    </div>
                                </div>
-                               <?php
-                                $pass = '<div class="alert alert-danger d-flex align-items-center" role="alert">
-                                <div>
-                                  Password Does Not match
-                                </div>
-                              </div>
-                              ';
-                                ?>
-
 
                                <div class="col-12">
                                    <div class="form-floating theme-form-floating">
@@ -170,16 +174,5 @@
            </div>
        </div>
    </section>
-   <?php
-   $pass;$duplicate;
-    $act = isset($_SESSION['act']) ? $_SESSION['act'] : '';
-    switch ($act) {
-        case 'pass':
-            echo $pass;
-            break;
-        case 'duplicate':
-            echo $duplicate;
-    }
-    ?>
 
    <!-- log in section end -->
