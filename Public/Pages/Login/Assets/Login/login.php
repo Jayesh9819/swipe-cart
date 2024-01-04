@@ -45,7 +45,7 @@
                <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
                    <div class="log-in-box">
                        <?php
-                        $act = isset($_GET['act']) ? $_GET['act'] : '';
+                        $act = isset($_SESSION['act']) ? $_SESSION['act'] : '';
                         switch ($act) {
                             case 'sucess':
                                 echo '<div class="alert alert-success d-flex align-items-center" role="alert">
