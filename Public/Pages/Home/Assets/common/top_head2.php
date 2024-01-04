@@ -1,5 +1,16 @@
 <div class="top-nav top-header sticky-header">
-    <div class="container-fluid-lg">
+<?php
+
+include './App/Logic/db_connect.php';
+$sql = "SELECT * FROM settings";
+$result = $conn->query($sql);
+global $site;
+$site = $result->fetch_assoc();
+
+
+?>
+
+<div class="container-fluid-lg">
         <div class="row">
             <div class="col-12">
                 <div class="navbar-top">
@@ -8,8 +19,8 @@
                             <i class="fa-solid fa-bars"></i>
                         </span>
                     </button>
-                    <a href="index.html" class="web-logo nav-logo">
-                        <img src="../Other/Home_assets/assets/images/logo/1.png" class="img-fluid blur-up lazyload" alt="">
+                    <a href="./Welcome" class="web-logo nav-logo">
+                        <img src="<?php echo $site['logo']; ?>" class="img-fluid blur-up lazyload" alt="">
                     </a>
 
                     <div class="middle-box">
