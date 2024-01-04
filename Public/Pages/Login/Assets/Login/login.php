@@ -58,7 +58,7 @@
                             case 'Invalid':
                                 echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
                                 <div>
-                                  Registerd Sucessfully
+                                  Invalid Details
                                 </div>
                               </div>
                               ';
@@ -80,14 +80,14 @@
                            <form class="row g-4" action="../App/Logic/Login.php?action=login" method="post">
                                <div class="col-12">
                                    <div class="form-floating theme-form-floating log-in-form">
-                                       <input type="email" class="form-control" id="email" placeholder="Email Address">
+                                       <input type="email" class="form-control" name="user" id="email" placeholder="Email Address">
                                        <label for="email">Email Address</label>
                                    </div>
                                </div>
 
                                <div class="col-12">
                                    <div class="form-floating theme-form-floating log-in-form">
-                                       <input type="password" class="form-control" id="password" placeholder="Password">
+                                       <input type="password" class="form-control" name="pass" id="password" placeholder="Password">
                                        <label for="password">Password</label>
                                    </div>
                                </div>
