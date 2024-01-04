@@ -95,7 +95,9 @@
                                     if (isset($_SESSION['name'])) {
                                         echo '<div class="onhover-div onhover-div-login">
                 <h6>Hello, ' . $_SESSION['name'] . '</h6>
-                <h5><a href="./User-Dashboard">My Account</a></h5>
+                <h6><a href="./User-Dashboard">My Account</a></h6>
+                <h6><a href="./App/Logic/Login.php?action=logout">Log Out</a></h6>
+
               </div>';
                                     } else {
                                         echo '<div class="onhover-div onhover-div-login">
