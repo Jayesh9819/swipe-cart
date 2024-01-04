@@ -96,6 +96,11 @@ class Login
     }
     public function logout(){
         session_destroy();
+        header('Location: ../../../index.php/Welcome');
+exit();
+
+
+        
     }
 }
 $Login = new Login();
