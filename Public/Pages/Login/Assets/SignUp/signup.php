@@ -85,7 +85,7 @@ $site=$result->fetch_assoc();
                                     </div>
                                 </div>
                                 <?php 
-                                $act = isset($_SESSION['act']);
+                                $act = isset($_SESSION['act'])? $_SESSION['act']:'';
                                 switch ($act) {
                                     case 'pass':
                                         echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
