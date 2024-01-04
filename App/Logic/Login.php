@@ -15,7 +15,7 @@ class Login{
         
             if ($password !== $confirmPassword) {
                 header('Location: ../../../index.php/SignUp?act=pass');
-            }
+            }else{
             $stmt = $conn->prepare("INSERT INTO users (name, email,contact,password) VALUES (?, ?,?,?)");
 
             if ($stmt) {
@@ -33,6 +33,7 @@ class Login{
             } else {
                 echo "Error preparing the statement: " . $conn->error;
             }
+        }
 
                 
 
