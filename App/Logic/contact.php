@@ -6,7 +6,8 @@ class Contact
         include './db_connect.php';
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = $_POST["name"];
+            $name = $_POST["Firstname"];
+            $last=$_POST["lastname"];
             $email = $_POST["email"];
             $mobile = $_POST["mobile"];
             $to = $_POST["to"];
@@ -16,7 +17,7 @@ class Contact
             $subject = 'Contact Form Submission';
 
             // Compose the email message
-            $message = "Name: $name\n";
+            $message = "Name: $name $last\n ";
             $message .= "Email: $email\n";
             $message .= "Mobile: $mobile\n\n";
             $message .= "Message:\n$msg";
