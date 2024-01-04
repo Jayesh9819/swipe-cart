@@ -62,14 +62,14 @@ class Login{
             $pass = $_POST["pass"];
 
             // Check if the provided email/mobile and password match a user
-            $stmt = $conn->prepare("SELECT name FROM users WHERE (email = ? OR contact = ?) AND password = ?");
+            $stmt = $conn->prepare("SELECT id,name,type FROM users WHERE (email = ? OR contact = ?) AND password = ?");
             $stmt->bind_param("sss", $emailOrMobile, $emailOrMobile, $pass);
             $stmt->execute();
             $stmt->store_result();
 
             if ($stmt->num_rows > 0) {
                 // User found, store the name in the session
-                $stmt->bind_result($name);
+                $stmt->bind_result($id,$name,$type);
                 // $stmt->bind_result($type);
                 // $stmt->bind_result($id);
 
@@ -78,8 +78,8 @@ class Login{
 
                 session_start();
                 $_SESSION['name'] = $name;
-                // $_SESSION['type'] = $type;
-                // $_SESSION['id'] = $id;
+                 $_SESSION['type'] = $type;
+                $_SESSION['id'] = $id;
 
 
                 header('Location: ../../../index.php/Welcome'); // Redirect to home or any other page
