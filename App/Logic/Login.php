@@ -77,7 +77,7 @@ class Login{
                 $stmt->fetch();
 
                 session_start();
-                $_SESSION['user_name'] = $name;
+                $_SESSION['name'] = $name;
                 $_SESSION['type'] = $type;
                 $_SESSION['id'] = $id;
 

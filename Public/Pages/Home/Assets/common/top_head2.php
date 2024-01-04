@@ -95,28 +95,37 @@
                                             <div class="delivery-icon">
                                                 <i data-feather="user"></i>
                                             </div>
-                                            <div class="delivery-detail">
-                                                <h6>Hello,</h6>
-                                                <h5>My Account</h5>
-                                            </div>
+                                            <?php 
+                                             if(isset($_SESSION['name'])===null){
+                                               echo  '<div class="onhover-div onhover-div-login">
+                                                <ul class="user-box-name">
+                                                    <li class="product-box-contain">
+                                                        <i></i>
+                                                        <a href="./Login">Log In</a>
+                                                    </li>
+    
+                                                    <li class="product-box-contain">
+                                                        <a href="./SignUp">Register</a>
+                                                    </li>
+    
+                                                    <li class="product-box-contain">
+                                                        <a href="./Forgot-Password">Forgot Password</a>
+                                                    </li>
+                                                </ul>
+                                            </div>';
+    
+                                             }else{
+                                                echo '<div class="delivery-detail">
+                                                <h6>Hello, ' . (isset($_SESSION['name']) ? $_SESSION['name'] : '') . '</h6>
+                                                <h5><a href="./User-Dashboard">My Account</a></h5>
+                                              </div>';
+                                        
+
+                                             }
+
+                                            ?>
                                         </div>
 
-                                        <div class="onhover-div onhover-div-login">
-                                            <ul class="user-box-name">
-                                                <li class="product-box-contain">
-                                                    <i></i>
-                                                    <a href="./Login">Log In</a>
-                                                </li>
-
-                                                <li class="product-box-contain">
-                                                    <a href="./SignUp">Register</a>
-                                                </li>
-
-                                                <li class="product-box-contain">
-                                                    <a href="./Forgot-Password">Forgot Password</a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </li>
                                 </ul>
                             </div>
