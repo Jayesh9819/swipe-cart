@@ -24,8 +24,8 @@
                     ?>
                     <li class="onhover-category-list">
                 <a href="javascript:void(0)" class="category-name">
-                    <img src="https://themes.pixelstrap.com/fastkart/assets/svg/1/vegetable.svg" alt="">
-                    <h6>Vegetables & Fruit</h6>
+                    <img src="<?php echo $row['image']; ?>" alt="">
+                    <h6><?php echo $row['name']; ?></h6>
                     <i class="fa-solid fa-angle-right"></i>
                 </a>
                     </li>
