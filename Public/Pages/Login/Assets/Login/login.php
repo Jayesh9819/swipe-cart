@@ -47,7 +47,7 @@
                        <?php
                         $act = isset($_SESSION['act']) ? $_SESSION['act'] : '';
                         switch ($act) {
-                            case 'sucess':
+                            case 'success':
                                 echo '<div class="alert alert-success d-flex align-items-center" role="alert">
                                         <div>
                                           Registerd Sucessfully
@@ -55,6 +55,16 @@
                                       </div>
                                       ';
                                 break;
+                            case 'Invalid':
+                                echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                <div>
+                                  Registerd Sucessfully
+                                </div>
+                              </div>
+                              ';
+                                break;
+
+
                             default:
                                 echo "Invalid action requested.";
                                 break;

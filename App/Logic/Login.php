@@ -8,6 +8,8 @@ class Login{
             $mobile = $_POST["mobile"];
             $password = $_POST["pass"];
             $confirmPassword = $_POST["con-pass"];
+            $type='user';
+            $status=1;
             
             // Check if email or mobile already exists
             $checkQuery = $conn->prepare("SELECT * FROM users WHERE email = ? OR contact = ?");
@@ -30,10 +32,10 @@ class Login{
                         $_SESSION['act'] = 'pass';
                         header('Location: ../../../index.php/SignUp');
                     } else {
-                        $stmt = $conn->prepare("INSERT INTO users (name, email, contact, password) VALUES (?, ?, ?, ?)");
+                        $stmt = $conn->prepare("INSERT INTO users (name, email, contact, password,type,status) VALUES (?, ?, ?, ?,?,?)");
 
                         if ($stmt) {
-                            $stmt->bind_param("ssss", $name, $email, $mobile, $password);
+                            $stmt->bind_param("ssssss", $name, $email, $mobile, $password,$type,$status);
 
                             if ($stmt->execute()) {
                                 $_SESSION['act'] = 'success';
@@ -53,8 +55,44 @@ class Login{
             $checkQuery->close();
         }
     }
-}
+    public function login(){
+        include './db_connect.php';
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $emailOrMobile = $_POST["user"];
+            $pass = $_POST["pass"];
 
+            // Check if the provided email/mobile and password match a user
+            $stmt = $conn->prepare("SELECT name FROM users WHERE (email = ? OR contact = ?) AND password = ?");
+            $stmt->bind_param("sss", $emailOrMobile, $emailOrMobile, $pass);
+            $stmt->execute();
+            $stmt->store_result();
+
+            if ($stmt->num_rows > 0) {
+                // User found, store the name in the session
+                $stmt->bind_result($name);
+                $stmt->bind_result($type);
+                $stmt->bind_result($id);
+
+
+                $stmt->fetch();
+
+                session_start();
+                $_SESSION['user_name'] = $name;
+                $_SESSION['type'] = $type;
+                $_SESSION['id'] = $id;
+
+
+                header('Location: ../../../index.php/Welcome'); // Redirect to home or any other page
+            } else {
+                // User not found or incorrect credentials
+                $_SESSION['act'] = 'Invalid';
+                header('Location: ../../../index.php/Login');
+            }
+
+            $stmt->close();
+        }
+}
+}
 $Login = new Login();
 session_start();
 if (isset($_GET['action'])) {
