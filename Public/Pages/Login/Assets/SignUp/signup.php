@@ -10,6 +10,7 @@
 
     ?>
    <?php
+   $pass;$duplicate;
     $act = isset($_SESSION['act']) ? $_SESSION['act'] : '';
     switch ($act) {
         case 'pass':
