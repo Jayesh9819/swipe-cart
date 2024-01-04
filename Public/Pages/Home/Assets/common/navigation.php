@@ -3,7 +3,7 @@
         <div class="offcanvas offcanvas-collapse order-xl-2" id="primaryMenu">
             <div class="offcanvas-header navbar-shadow">
                 <h5>Menu</h5>
-                <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <!-- <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
