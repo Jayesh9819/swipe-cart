@@ -7,7 +7,7 @@ class Login{
             $email = $_POST["email"];
             $mobile = $_POST["mobile"];
             $password = $_POST["pass"];
-            $confirmPassword = $_POST["confirm_pass"];
+            $confirmPassword = $_POST["con-pass"];
             if (empty($name) || empty($email) || empty($mobile) || empty($password) || empty($confirmPassword)) {
                 header('Location: ../../../index.php/SignUp?act=req');
 
