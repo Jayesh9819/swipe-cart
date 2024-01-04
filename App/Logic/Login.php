@@ -11,7 +11,7 @@ class Login{
             if (empty($name) || empty($email) || empty($mobile) || empty($password) || empty($confirmPassword)) {
                 header('Location: ../../../index.php/SignUp?act=req');
 
-            }
+            }else{
         
             if ($password !== $confirmPassword) {
                 header('Location: ../../../index.php/SignUp?act=pass');
@@ -34,7 +34,7 @@ class Login{
                 echo "Error preparing the statement: " . $conn->error;
             }
         }
-
+    }
                 
 
 
