@@ -1,13 +1,28 @@
+<?php
+
+include './App/Logic/db_connect.php';
+$sql = "SELECT * FROM settings";
+$result = $conn->query($sql);
+global $site;
+$site = $result->fetch_assoc();
+
+$segments = explode('/', rtrim($uri, '/'));
+$lastSegment = end($segments);
+
+// Replace underscores with spaces and capitalize the first letter of each word
+$pageTitle = ucwords(str_replace('_', ' ', $lastSegment));
+
+?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fastkart">
-    <meta name="keywords" content="Fastkart">
-    <meta name="author" content="Fastkart">
-    <link rel="icon" href="../Other/Home_assets/assets/images/favicon/1.png" type="image/x-icon">
-    <title>On-demand last-mile delivery</title>
+    <meta name="description" content="<?php echo $site['description']; ?>">
+    <meta name="keywords" content="<?php echo $site['keyword']; ?>">
+    <meta name="author" content="<?php echo $site['author']; ?>">
+    <link rel="icon" href="<?php echo $site['favicon']; ?>" type="image/x-icon">
+    <title><?php echo $site['name'];  ?> || <?php echo $pageTitle; ?>  </title>
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com/">
