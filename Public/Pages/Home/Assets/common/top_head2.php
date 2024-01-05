@@ -67,7 +67,7 @@ $site = $result->fetch_assoc();
                                 </div>
                             </li>
                             <li class="right-side">
-                                <a href="contact-us.html" class="delivery-login-box">
+                                <a href="./Contact_Us" class="delivery-login-box">
                                     <div class="delivery-icon">
                                         <i data-feather="phone-call"></i>
                                     </div>
@@ -78,7 +78,7 @@ $site = $result->fetch_assoc();
                                 </a>
                             </li>
                             <li class="right-side">
-                                <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">
+                                <a href="./Your_Wishlist" class="btn p-0 position-relative header-wishlist">
                                     <i data-feather="heart"></i>
                                 </a>
                             </li>
