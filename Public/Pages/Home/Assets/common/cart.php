@@ -1,10 +1,10 @@
 <div class="onhover-div">
     <ul class="cart-list">
-        <?php 
-        if(isset($_SESSION['name'])){
+        <?php
+        if (isset($_SESSION['name'])) {
 
-        
-        echo '<li class="product-box-contain">
+
+            echo '<li class="product-box-contain">
             <div class="drop-cart">
                 <a href="product-left-thumbnail.html" class="drop-image">
                     <img src="../Other/Home_assets/assets/images/vegetable/product/1.png" class="blur-up lazyload"
@@ -21,30 +21,36 @@
                     </button>
                 </div>
             </div>
-        </li>';}else{
-            echo                ' <div class="drop-contain">
+        </li>
+        </ul>
+
+        <div class="price-box">
+            <h5>Total :</h5>
+            <h4 class="theme-color fw-bold">$106.58</h4>
+        </div>
+    
+        <div class="button-group">
+            <a href="./Cart" class="btn btn-sm cart-button">View Cart</a>
+            <a href="./Checkout" class="btn btn-sm cart-button theme-bg-color
+                                                        text-white">Checkout</a>
+        </div>
+    </div>';
+        } else {
+            echo                '    <ul class="cart-list">
+ 
+            <div class="drop-contain">
             <a href="./Login">
                 <h5>Login First</h5>
             </a>
-        </div>';
+        </div>
+        </ul>
 
+        ';
         }
 
         ?>
 
 
-    </ul>
 
-    <div class="price-box">
-        <h5>Total :</h5>
-        <h4 class="theme-color fw-bold">$106.58</h4>
-    </div>
-
-    <div class="button-group">
-        <a href="./Cart" class="btn btn-sm cart-button">View Cart</a>
-        <a href="./Checkout" class="btn btn-sm cart-button theme-bg-color
-                                                    text-white">Checkout</a>
-    </div>
-</div>
 </div>
 </li>
