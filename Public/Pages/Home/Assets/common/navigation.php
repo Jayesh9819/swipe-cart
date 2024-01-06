@@ -13,7 +13,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./Shop" >Shop</a>
+                        <a class="nav-link dropdown-toggle" href="./Shop" >Product</a>
 
                     </li>
 
