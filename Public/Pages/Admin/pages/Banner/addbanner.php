@@ -29,33 +29,33 @@
                                         </div>
                                     </div>
                                 </div>
-                                                            <div class="mb-4 row align-items-center">
-                                <label class="col-sm-3 col-form-label form-label-title">Position of the Banner
+                                <div class="mb-4 row align-items-center">
+                                    <label class="col-sm-3 col-form-label form-label-title">Position of the Banner
                                     </label>
-                                <div class="col-sm-9">
-                                    <select class="js-example-basic-single w-100" name="position">
-                                        <option disabled selected>Position Menu</option>
-                                        <option value="fullScreen">Full Screen</option>
-                                        <option value="sideUp">Side-up</option>
-                                        <option value="sideDown">Side-Down</option>
-
-                                    </select>
-                                </div>
-                                                                <div class="mb-4 row align-items-center">
-                                    <label class="form-label-title col-sm-3 mb-0">Discount</label>
                                     <div class="col-sm-9">
-                                        <input name="discount" class="form-control" type="number" placeholder="Discount Percent">
+                                        <select class="js-example-basic-single w-100" name="position">
+                                            <option disabled selected>Position Menu</option>
+                                            <option value="fullScreen">Full Screen</option>
+                                            <option value="sideUp">Side-up</option>
+                                            <option value="sideDown">Side-Down</option>
+
+                                        </select>
                                     </div>
-                                </div>
-                                                                <div class="mb-4 row align-items-center">
-                                    <label class="form-label-title col-sm-3 mb-0"> Button Link</label>
-                                    <div class="col-sm-9">
-                                        <input name="link" class="form-control" type="text" placeholder=" Button Link">
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="form-label-title col-sm-3 mb-0">Discount</label>
+                                        <div class="col-sm-9">
+                                            <input name="discount" class="form-control" type="number" placeholder="Discount Percent">
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="form-label-title col-sm-3 mb-0"> Button Link</label>
+                                        <div class="col-sm-9">
+                                            <input name="link" class="form-control" type="text" placeholder=" Button Link">
+                                        </div>
+                                    </div>
 
 
-                            </div>
+                                </div>
 
 
                                 <div class="mb-4 row align-items-center">

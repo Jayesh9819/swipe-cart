@@ -50,13 +50,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-3 mb-0">Discount</label>
+                                    <div class="col-sm-9">
+                                        <input name="discount" class="form-control" type="number" value="<?php echo $row['Discount']; ?>" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-3 mb-0"> Button Link</label>
+                                    <div class="col-sm-9">
+                                        <input name="link" class="form-control" type="text" value="<?php echo $row['link']; ?>" placeholder=" Button Link">
+                                    </div>
+                                </div>
+
 
                                 <!-- ... (similar structure for other fields) -->
 
                                 <div class="mb-4 row align-items-center">
                                     <label class="form-label-title col-sm-3 mb-0">Slider Info</label>
                                     <div class="col-sm-9">
-                                        <textarea name="info" class="textarea" placeholder="Slider Info"><?php echo $row['link']; ?></textarea>
+                                        <textarea name="info" class="textarea" placeholder="Slider Info"><?php echo $row['content']; ?></textarea>
                                     </div>
                                 </div>
 
