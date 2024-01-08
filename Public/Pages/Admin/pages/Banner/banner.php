@@ -57,7 +57,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:void(0)">
+                                                            <a href="./Editbanner?id=<?php echo $row['id']; ?>"onclick="return confirm('Are you sure you want to Edit this product?')">
                                                                 <i class="ri-pencil-line"></i>
                                                             </a>
                                                         </li>
