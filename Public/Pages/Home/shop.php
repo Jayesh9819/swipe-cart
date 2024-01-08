@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
 <?php require "./Public/Pages/Home/Assets/common/head.php" ?>
+</head>
 
 <body class="bg-effect">
 
