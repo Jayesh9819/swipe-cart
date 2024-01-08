@@ -11,7 +11,7 @@ if ($uri =="" || $uri =="/index.php"  ) {
    die();
 }else{
 
-    $prefix ="/swipecart";
+    $prefix ="";
     $root = "/index.php";
     $routes = [
         
