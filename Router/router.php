@@ -1,17 +1,17 @@
 <?php
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-// echo $uri;
+ echo $uri;
 
 
-if ($uri =="/" || $uri =="/index.php"  ) {
+if ($uri =="" || $uri =="/index.php"  ) {
     echo '<script type="text/JavaScript"> 
     window.location.replace("./index.php/Welcome");
     </script>';
    die();
 }else{
 
-    $prefix ="";
+    $prefix ="/swipecart";
     $root = "/index.php";
     $routes = [
         
