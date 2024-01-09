@@ -154,500 +154,839 @@
                                         <div class="note-box product-packege">
                                             <div class="cart_qty qty-box product-qty">
                                                 <div class="input-group">
-                                                    <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                    <button type="button" class="qty-btn qty-right-plus" data-type="plus" data-field="">
                                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                                     </button>
                                                     <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                    <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                    <button type="button" class="qty-btn qty-left-minus" data-type="minus" data-field="">
                                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                                     </button>
                                                 </div>
                                             </div>
 
-                                            <button onclick="location.href = 'cart.html';" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>
+                                            <button onclick="addToCart();" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>
                                         </div>
 
-                                        <div class="buy-box">
-                                            <a href="wishlist.html">
-                                                <i data-feather="heart"></i>
-                                                <span>Add To Wishlist</span>
-                                            </a>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $(".qty-btn").on("click", function() {
+                                                    var inputField = $(this).siblings(".qty-input");
+                                                    var currentVal = parseInt(inputField.val());
 
-                                            <a href="compare.html">
-                                                <i data-feather="shuffle"></i>
-                                                <span>Add To Compare</span>
-                                            </a>
-                                        </div>
-
-                                        <div class="pickup-box">
-                                            <div class="product-title">
-                                                <h4>Store Information</h4>
-                                            </div>
-
-                                            <!-- <div class="pickup-detail">
-                                            <h4 class="text-content">Lollipop cake chocolate chocolate cake dessert
-                                                jujubes.
-                                                Shortbread sugar plum dessert powder cookie sweet brownie.</h4>
-                                        </div> -->
-
-                                            <div class="product-info">
-                                                <ul class="product-info-list product-info-list-2">
-                                                    <li>Type : <a href="javascript:void(0)"><?php echo $row['sub_category']; ?></a>
-                                                    </li>
-                                                    <li>SKU : <a href="javascript:void(0)"><?php echo $row['sku']; ?></a>
-                                                    </li>
-                                                    <!-- <li>MFG : <a href="javascript:void(0)"></a></li> -->
-                                                    <?php
-                                                    $stockstatus = $row['stock_status'];
-                                                    if ($stockstatus == 1) {
-                                                        echo '<li>Stock : <a href="javascript:void(0)">' . $row['net_quantity'] . ' Items Left</a></li>';
-                                                    } else {
-                                                        echo '<li>Stock : <a href="javascript:void(0)"> Out of stock</a></li>';
+                                                    if ($(this).data("type") === "plus") {
+                                                        inputField.val(currentVal + 1);
+                                                    } else if ($(this).data("type") === "minus" && currentVal > 0) {
+                                                        inputField.val(currentVal - 1);
                                                     }
-                                                    ?>
-                                                    <!-- <li>Tags : <a href="javascript:void(0)">Cake,</a> <a href="javascript:void(0)">Backery</a></li> -->
-                                                </ul>
-                                            </div>
-                                        </div>
+                                                });
+                                            });
 
-                                        <div class="paymnet-option">
-                                            <div class="product-title">
-                                                <h4>Guaranteed Safe Checkout</h4>
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/1.svg" class="blur-up lazyload" alt="">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/2.svg" class="blur-up lazyload" alt="">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/3.svg" class="blur-up lazyload" alt="">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/4.svg" class="blur-up lazyload" alt="">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/5.svg" class="blur-up lazyload" alt="">
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <
+                                            div class = "buy-box" >
+                                            <
+                                            a href = "wishlist.html" >
+                                                <
+                                                i data - feather = "heart" > < /i> <
+                                                span > Add To Wishlist < /span> <
+                                                /a>
 
-                                <div class="col-12">
-                                    <div class="product-section-box">
-                                        <ul class="nav nav-tabs custom-nav" id="myTab" role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
-                                            </li>
+                                                <
+                                                a href = "compare.html" >
+                                                <
+                                                i data - feather = "shuffle" > < /i> <
+                                                span > Add To Compare < /span> <
+                                                /a> <
+                                                /div>
 
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="false">Additional info</button>
-                                            </li>
+                                                <
+                                                div class = "pickup-box" >
+                                                <
+                                                div class = "product-title" >
+                                                <
+                                                h4 > Store Information < /h4> <
+                                                /div>
 
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="false">Care Instuctions</button>
-                                            </li>
+                                                <
+                                                !-- < div class = "pickup-detail" >
+                                                <
+                                                h4 class = "text-content" > Lollipop cake chocolate chocolate cake dessert
+                                            jujubes.
+                                            Shortbread sugar plum dessert powder cookie sweet brownie. < /h4> <
+                                                /div> -->
 
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Review</button>
-                                            </li>
-                                        </ul>
+                                                <
+                                                div class = "product-info" >
+                                                <
+                                                ul class = "product-info-list product-info-list-2" >
+                                                <
+                                                li > Type: < a href = "javascript:void(0)" > <?php echo $row['sub_category']; ?> < /a> <
+                                                /li> <
+                                                li > SKU: < a href = "javascript:void(0)" > <?php echo $row['sku']; ?> < /a> <
+                                                /li> <
+                                                !-- < li > MFG: < a href = "javascript:void(0)" > < /a></li > -- >
+                                                <?php
+                                                $stockstatus = $row['stock_status'];
+                                                if ($stockstatus == 1) {
+                                                    echo '<li>Stock : <a href="javascript:void(0)">' . $row['net_quantity'] . ' Items Left</a></li>';
+                                                } else {
+                                                    echo '<li>Stock : <a href="javascript:void(0)"> Out of stock</a></li>';
+                                                }
+                                                ?> <
+                                                !-- < li > Tags: < a href = "javascript:void(0)" > Cake, < /a> <a href="javascript:void(0)">Backery</a > < /li> --> <
+                                                /ul> <
+                                                /div> <
+                                                /div>
 
-                                        <div class="tab-content custom-tab" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                                                <div class="product-description">
-                                                    <div class="nav-desh">
-                                                        <p><?php echo $row['Description']; ?></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                <
+                                                div class = "paymnet-option" >
+                                                <
+                                                div class = "product-title" >
+                                                <
+                                                h4 > Guaranteed Safe Checkout < /h4> <
+                                                /div> <
+                                                ul >
+                                                <
+                                                li >
+                                                <
+                                                a href = "javascript:void(0)" >
+                                                <
+                                                img src = "https://themes.pixelstrap.com/fastkart/assets/images/product/payment/1.svg"
+                                            class = "blur-up lazyload"
+                                            alt = "" >
+                                                <
+                                                /a> <
+                                                /li> <
+                                                li >
+                                                <
+                                                a href = "javascript:void(0)" >
+                                                <
+                                                img src = "https://themes.pixelstrap.com/fastkart/assets/images/product/payment/2.svg"
+                                            class = "blur-up lazyload"
+                                            alt = "" >
+                                                <
+                                                /a> <
+                                                /li> <
+                                                li >
+                                                <
+                                                a href = "javascript:void(0)" >
+                                                <
+                                                img src = "https://themes.pixelstrap.com/fastkart/assets/images/product/payment/3.svg"
+                                            class = "blur-up lazyload"
+                                            alt = "" >
+                                                <
+                                                /a> <
+                                                /li> <
+                                                li >
+                                                <
+                                                a href = "javascript:void(0)" >
+                                                <
+                                                img src = "https://themes.pixelstrap.com/fastkart/assets/images/product/payment/4.svg"
+                                            class = "blur-up lazyload"
+                                            alt = "" >
+                                                <
+                                                /a> <
+                                                /li> <
+                                                li >
+                                                <
+                                                a href = "javascript:void(0)" >
+                                                <
+                                                img src = "https://themes.pixelstrap.com/fastkart/assets/images/product/payment/5.svg"
+                                            class = "blur-up lazyload"
+                                            alt = "" >
+                                                <
+                                                /a> <
+                                                /li> <
+                                                /ul> <
+                                                /div> <
+                                                /div> <
+                                                /div>
 
+                                                <
+                                                div class = "col-12" >
+                                                <
+                                                div class = "product-section-box" >
+                                                <
+                                                ul class = "nav nav-tabs custom-nav"
+                                            id = "myTab"
+                                            role = "tablist" >
+                                                <
+                                                li class = "nav-item"
+                                            role = "presentation" >
+                                                <
+                                                button class = "nav-link active"
+                                            id = "description-tab"
+                                            data - bs - toggle = "tab"
+                                            data - bs - target = "#description"
+                                            type = "button"
+                                            role = "tab"
+                                            aria - controls = "description"
+                                            aria - selected = "true" > Description < /button> <
+                                                /li>
 
+                                                <
+                                                li class = "nav-item"
+                                            role = "presentation" >
+                                                <
+                                                button class = "nav-link"
+                                            id = "info-tab"
+                                            data - bs - toggle = "tab"
+                                            data - bs - target = "#info"
+                                            type = "button"
+                                            role = "tab"
+                                            aria - controls = "info"
+                                            aria - selected = "false" > Additional info < /button> <
+                                                /li>
 
+                                                <
+                                                li class = "nav-item"
+                                            role = "presentation" >
+                                                <
+                                                button class = "nav-link"
+                                            id = "care-tab"
+                                            data - bs - toggle = "tab"
+                                            data - bs - target = "#care"
+                                            type = "button"
+                                            role = "tab"
+                                            aria - controls = "care"
+                                            aria - selected = "false" > Care Instuctions < /button> <
+                                                /li>
 
+                                                <
+                                                li class = "nav-item"
+                                            role = "presentation" >
+                                                <
+                                                button class = "nav-link"
+                                            id = "review-tab"
+                                            data - bs - toggle = "tab"
+                                            data - bs - target = "#review"
+                                            type = "button"
+                                            role = "tab"
+                                            aria - controls = "review"
+                                            aria - selected = "false" > Review < /button> <
+                                                /li> <
+                                                /ul>
 
-                                            <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
-                                                <div class="table-responsive">
-                                                    <table class="table info-table">
-                                                        <tbody>
-                                                            <!-- <tr>
-                                                            <td>Specialty</td>
-                                                            <td>Vegetarian</td>
-                                                        </tr> -->
-                                                            <tr>
-                                                                <td> Material</td>
-                                                                <td><?php echo $row['material']; ?></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Brand</td>
-                                                                <td><?php echo $row['Brand']; ?></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Category</td>
-                                                                <td><?php echo $row['category']; ?></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Package Information</td>
-                                                                <td>Box</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Manufacturer</td>
-                                                                <td>Prayagh Nutri Product Pvt Ltd</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Item part number</td>
-                                                                <td>LE 014 - 20pcs Crème Bakes (Pack of 2)</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Net Quantity</td>
-                                                                <td>40.00 count</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                                <div class="review-box">
-                                                    <div class="row g-4">
-                                                        <div class="col-xl-6">
-                                                            <div class="review-title">
-                                                                <h4 class="fw-500">Customer reviews</h4>
-                                                            </div>
-
-                                                            <div class="d-flex">
-                                                                <div class="product-rating">
-                                                                    <ul class="rating">
-                                                                        <?php
-                                                                        $rating = $row['rating'];
-                                                                        for ($i = 1; $i <= $rating; $i++) {
-                                                                            echo '<li><i data-feather="star" class="fill"></i></li>';
-                                                                        }
-                                                                        ?>
-                                                                    </ul>
-                                                                </div>
-                                                                <!-- <h6 class="ms-3">4.2 Out Of 5</h6> -->
-                                                            </div>
-
-                                                            <div class="rating-box">
-                                                                <ul>
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>5 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 68%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    68%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>4 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 67%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    67%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>3 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 42%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    42%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>2 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    30%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <div class="rating-list">
-                                                                            <h5>1 Star</h5>
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar" role="progressbar" style="width: 24%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                                                    24%
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-xl-6">
-                                                            <div class="review-title">
-                                                                <h4 class="fw-500">Add a review</h4>
-                                                            </div>
-
-                                                            <div class="row g-4">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="text" class="form-control" id="name" placeholder="Name">
-                                                                        <label for="name">Your Name</label>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="email" class="form-control" id="email" placeholder="Email Address">
-                                                                        <label for="email">Email Address</label>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="url" class="form-control" id="website" placeholder="Website">
-                                                                        <label for="website">Website</label>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <input type="url" class="form-control" id="review1" placeholder="Give your review a title">
-                                                                        <label for="review1">Review Title</label>
-                                                                    </div>
-                                                                </div>
-                                                                <?php $category = $row['category']; ?>
-
-                                                                <div class="col-12">
-                                                                    <div class="form-floating theme-form-floating">
-                                                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
-                                                                        <label for="floatingTextarea2">Write Your
-                                                                            Comment</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        <?php } ?>
-
-        <!-- Product Left Sidebar End -->
-
-        <!-- Releted Product Section Start -->
-        <section class="product-list-section section-b-space">
-            <div class="container-fluid-lg">
-                <div class="title">
-                    <h2>Related Products</h2>
-                    <span class="title-leaf">
-                        <svg class="icon-width">
-                            <use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
-                        </svg>
-                    </span>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="slider-6_1 product-wrapper">
-                            <?php echo $category; ?>
-                            <?php
-                            include './App/Logic/db_connect.php';
-                            $sql = "SELECT * FROM product WHERE status = 1 AND category='$category'";
-                            // echo $sql;
-                            $result = $conn->query($sql);
-                            // print_r($result);
-                            while ($row = $result->fetch_assoc()) {
-
-
-                            ?>
-                                <div>
-                                    <div class="product-box-3 wow fadeInUp">
-                                        <div class="product-header">
-                                            <div class="product-image">
-                                                <a href="product-left.html">
-                                                    <img src="<?php echo $row['main_img']; ?>" class="img-fluid blur-up lazyload" alt="">
-                                                </a>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="product-footer">
-                                            <div class="product-detail">
-                                                <span class="span-name"><?php echo $row['category']; ?></span>
-                                                <a href="product-left-thumbnail.html">
-                                                    <h5 class="name"><?php echo $row['product_name']; ?></h5>
-                                                </a>
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <?php
-                                                        $rating = $row['rating'];
-                                                        for ($i = 1; $i <= $rating; $i++) {
-                                                            echo '<li><i data-feather="star" class="fill"></i></li>';
-                                                        }
-                                                        ?>
-                                                    </ul>
-
-                                                    <span>(5.0)</span>
-                                                </div>
-                                                <h6 class="unit"><?php echo $row['unit']; ?></h6>
-                                                <h5 class="price"><span class="theme-color">₹.<?php echo $row['coust_price']; ?></span>
-                                                    <del>₹.<?php echo $row['MRP']; ?></del>
-                                                </h5>
-                                                <div class="add-to-cart-box bg-white">
-                                                    <button class="btn btn-add-cart addcart-button">Add
-                                                        <span class="add-icon bg-light-gray">
-                                                            <i class="fa-solid fa-plus"></i>
-                                                        </span>
-                                                    </button>
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group bg-white">
-                                                            <button type="button" class="qty-left-minus bg-gray" data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                            <button type="button" class="qty-right-plus bg-gray" data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php } ?>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        <!-- Releted Product Section End -->
-
-        <!-- Footer Section Start -->
-        <?php require "./Public/Pages/Home/Assets/common/footer.php" ?>
-
-        <!-- Footer Section End -->
-
-        <!-- Quick View Modal Box Start -->
-        <!-- Quick View Modal Box End -->
-
-        <!-- Location Modal Start -->
-        <?php require "./Public/Pages/Home/Assets/common/modals.php" ?>
-
-        <!-- Location Modal End -->
-
-        <!-- Deal Box Modal Start -->
-        <!-- Deal Box Modal End -->
-
-        <!-- Add to cart Modal Start -->
-        <div class="add-cart-box">
-            <div class="add-iamge">
-                <img src="../Other/Home_assets/assetsimages/cake/pro/1.jpg" class="img-fluid" alt="">
-            </div>
-
-            <div class="add-contain">
-                <h6>Added to Cart</h6>
-            </div>
-        </div>
-        <!-- Add to cart Modal End -->
-
-        <!-- Tap to top start -->
-        <div class="theme-option theme-option-2">
-            <div class="setting-box">
-                <button class="btn setting-button">
-                    <i class="fa-solid fa-gear"></i>
-                </button>
-
-                <div class="theme-setting-2">
-                    <div class="theme-box">
-                        <ul>
-                            <li>
-                                <div class="setting-name">
-                                    <h4>Color</h4>
-                                </div>
-                                <div class="theme-setting-button color-picker">
-                                    <form class="form-control">
-                                        <label for="colorPick" class="form-label mb-0">Theme Color</label>
-                                        <input type="color" class="form-control form-control-color" id="colorPick" value="#0da487" title="Choose your color">
-                                    </form>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="setting-name">
-                                    <h4>Dark</h4>
-                                </div>
-                                <div class="theme-setting-button">
-                                    <button class="btn btn-2 outline" id="darkButton">Dark</button>
-                                    <button class="btn btn-2 unline" id="lightButton">Light</button>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="setting-name">
-                                    <h4>RTL</h4>
-                                </div>
-                                <div class="theme-setting-button rtl">
-                                    <button class="btn btn-2 rtl-unline">LTR</button>
-                                    <button class="btn btn-2 rtl-outline">RTL</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="back-to-top">
-                <a id="back-to-top" href="#">
-                    <i class="fas fa-chevron-up"></i>
-                </a>
-            </div>
-        </div>
-        <!-- Tap to top end -->
-
-        <!-- Sticky Cart Box Start -->
-        <!-- Sticky Cart Box End -->
-
-        <!-- Bg overlay Start -->
-        <div class="bg-overlay"></div>
-        <!-- Bg overlay End -->
-
-        <!-- latest jquery-->
-        <?php require "./Public/Pages/Home/Assets/common/js.php" ?>
-        </div>
-
-</body>
+                                                <
+                                                div class = "tab-content custom-tab"
+                                            id = "myTabContent" >
+                                                <
+                                                div class = "tab-pane fade show active"
+                                            id = "description"
+                                            role = "tabpanel"
+                                            aria - labelledby = "description-tab" >
+                                                <
+                                                div class = "product-description" >
+                                                <
+                                                div class = "nav-desh" >
+                                                <
+                                                p > <?php echo $row['Description']; ?> < /p> <
+                                                /div> <
+                                                /div> <
+                                                /div>
 
 
 
-</html>
+
+
+                                                <
+                                                div class = "tab-pane fade"
+                                            id = "info"
+                                            role = "tabpanel"
+                                            aria - labelledby = "info-tab" >
+                                                <
+                                                div class = "table-responsive" >
+                                                <
+                                                table class = "table info-table" >
+                                                <
+                                                tbody >
+                                                <
+                                                !-- < tr >
+                                                <
+                                                td > Specialty < /td> <
+                                                td > Vegetarian < /td> <
+                                                /tr> --> <
+                                                tr >
+                                                <
+                                                td > Material < /td> <
+                                                td > <?php echo $row['material']; ?> < /td> <
+                                                /tr> <
+                                                tr >
+                                                <
+                                                td > Brand < /td> <
+                                                td > <?php echo $row['Brand']; ?> < /td> <
+                                                /tr> <
+                                                tr >
+                                                <
+                                                td > Category < /td> <
+                                                td > <?php echo $row['category']; ?> < /td> <
+                                                /tr> <
+                                                tr >
+                                                <
+                                                td > Package Information < /td> <
+                                                td > Box < /td> <
+                                                /tr> <
+                                                tr >
+                                                <
+                                                td > Manufacturer < /td> <
+                                                td > Prayagh Nutri Product Pvt Ltd < /td> <
+                                                /tr> <
+                                                tr >
+                                                <
+                                                td > Item part number < /td> <
+                                                td > LE 014 - 20 pcs Crème Bakes(Pack of 2) < /td> <
+                                                /tr> <
+                                                tr >
+                                                <
+                                                td > Net Quantity < /td> <
+                                                td > 40.00 count < /td> <
+                                                /tr> <
+                                                /tbody> <
+                                                /table> <
+                                                /div> <
+                                                /div>
+
+
+                                                <
+                                                div class = "tab-pane fade"
+                                            id = "review"
+                                            role = "tabpanel"
+                                            aria - labelledby = "review-tab" >
+                                                <
+                                                div class = "review-box" >
+                                                <
+                                                div class = "row g-4" >
+                                                <
+                                                div class = "col-xl-6" >
+                                                <
+                                                div class = "review-title" >
+                                                <
+                                                h4 class = "fw-500" > Customer reviews < /h4> <
+                                                /div>
+
+                                                <
+                                                div class = "d-flex" >
+                                                <
+                                                div class = "product-rating" >
+                                                <
+                                                ul class = "rating" >
+                                                <?php
+                                                $rating = $row['rating'];
+                                                for ($i = 1; $i <= $rating; $i++) {
+                                                    echo '<li><i data-feather="star" class="fill"></i></li>';
+                                                }
+                                                ?> <
+                                                /ul> <
+                                                /div> <
+                                                !-- < h6 class = "ms-3" > 4.2 Out Of 5 < /h6> --> <
+                                                /div>
+
+                                                <
+                                                div class = "rating-box" >
+                                                <
+                                                ul >
+                                                <
+                                                li >
+                                                <
+                                                div class = "rating-list" >
+                                                <
+                                                h5 > 5 Star < /h5> <
+                                                div class = "progress" >
+                                                <
+                                                div class = "progress-bar"
+                                            role = "progressbar"
+                                            style = "width: 68%"
+                                            aria - valuenow = "100"
+                                            aria - valuemin = "0"
+                                            aria - valuemax = "100" >
+                                                68 %
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /li>
+
+                                                <
+                                                li >
+                                                <
+                                                div class = "rating-list" >
+                                                <
+                                                h5 > 4 Star < /h5> <
+                                                div class = "progress" >
+                                                <
+                                                div class = "progress-bar"
+                                            role = "progressbar"
+                                            style = "width: 67%"
+                                            aria - valuenow = "100"
+                                            aria - valuemin = "0"
+                                            aria - valuemax = "100" >
+                                                67 %
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /li>
+
+                                                <
+                                                li >
+                                                <
+                                                div class = "rating-list" >
+                                                <
+                                                h5 > 3 Star < /h5> <
+                                                div class = "progress" >
+                                                <
+                                                div class = "progress-bar"
+                                            role = "progressbar"
+                                            style = "width: 42%"
+                                            aria - valuenow = "100"
+                                            aria - valuemin = "0"
+                                            aria - valuemax = "100" >
+                                                42 %
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /li>
+
+                                                <
+                                                li >
+                                                <
+                                                div class = "rating-list" >
+                                                <
+                                                h5 > 2 Star < /h5> <
+                                                div class = "progress" >
+                                                <
+                                                div class = "progress-bar"
+                                            role = "progressbar"
+                                            style = "width: 30%"
+                                            aria - valuenow = "100"
+                                            aria - valuemin = "0"
+                                            aria - valuemax = "100" >
+                                                30 %
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /li>
+
+                                                <
+                                                li >
+                                                <
+                                                div class = "rating-list" >
+                                                <
+                                                h5 > 1 Star < /h5> <
+                                                div class = "progress" >
+                                                <
+                                                div class = "progress-bar"
+                                            role = "progressbar"
+                                            style = "width: 24%"
+                                            aria - valuenow = "100"
+                                            aria - valuemin = "0"
+                                            aria - valuemax = "100" >
+                                                24 %
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /li> <
+                                                /ul> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                div class = "col-xl-6" >
+                                                <
+                                                div class = "review-title" >
+                                                <
+                                                h4 class = "fw-500" > Add a review < /h4> <
+                                                /div>
+
+                                                <
+                                                div class = "row g-4" >
+                                                <
+                                                div class = "col-md-6" >
+                                                <
+                                                div class = "form-floating theme-form-floating" >
+                                                <
+                                                input type = "text"
+                                            class = "form-control"
+                                            id = "name"
+                                            placeholder = "Name" >
+                                                <
+                                                label
+                                            for = "name" > Your Name < /label> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                div class = "col-md-6" >
+                                                <
+                                                div class = "form-floating theme-form-floating" >
+                                                <
+                                                input type = "email"
+                                            class = "form-control"
+                                            id = "email"
+                                            placeholder = "Email Address" >
+                                                <
+                                                label
+                                            for = "email" > Email Address < /label> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                div class = "col-md-6" >
+                                                <
+                                                div class = "form-floating theme-form-floating" >
+                                                <
+                                                input type = "url"
+                                            class = "form-control"
+                                            id = "website"
+                                            placeholder = "Website" >
+                                                <
+                                                label
+                                            for = "website" > Website < /label> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                div class = "col-md-6" >
+                                                <
+                                                div class = "form-floating theme-form-floating" >
+                                                <
+                                                input type = "url"
+                                            class = "form-control"
+                                            id = "review1"
+                                            placeholder = "Give your review a title" >
+                                                <
+                                                label
+                                            for = "review1" > Review Title < /label> <
+                                                /div> <
+                                                /div>
+                                            <?php $category = $row['category']; ?>
+
+                                                <
+                                                div class = "col-12" >
+                                                <
+                                                div class = "form-floating theme-form-floating" >
+                                                <
+                                                textarea class = "form-control"
+                                            placeholder = "Leave a comment here"
+                                            id = "floatingTextarea2"
+                                            style = "height: 150px" > < /textarea> <
+                                                label
+                                            for = "floatingTextarea2" > Write Your
+                                            Comment < /label> <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /section>
+                                            <?php } ?>
+
+                                                <
+                                                !--Product Left Sidebar End-- >
+
+                                                <
+                                                !--Releted Product Section Start-- >
+                                                <
+                                                section class = "product-list-section section-b-space" >
+                                                <
+                                                div class = "container-fluid-lg" >
+                                                <
+                                                div class = "title" >
+                                                <
+                                                h2 > Related Products < /h2> <
+                                                span class = "title-leaf" >
+                                                <
+                                                svg class = "icon-width" >
+                                                <
+                                                use xlink: href = "https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf" > < /use> <
+                                                /svg> <
+                                                /span> <
+                                                /div> <
+                                                div class = "row" >
+                                                <
+                                                div class = "col-12" >
+                                                <
+                                                div class = "slider-6_1 product-wrapper" >
+                                                <?php echo $category; ?>
+                                            <?php
+                                            include './App/Logic/db_connect.php';
+                                            $sql = "SELECT * FROM product WHERE status = 1 AND category='$category'";
+                                            // echo $sql;
+                                            $result = $conn->query($sql);
+                                            // print_r($result);
+                                            while ($row = $result->fetch_assoc()) {
+
+
+                                            ?>
+                                                    <
+                                                    div >
+                                                    <
+                                                    div class = "product-box-3 wow fadeInUp" >
+                                                    <
+                                                    div class = "product-header" >
+                                                    <
+                                                    div class = "product-image" >
+                                                    <
+                                                    a href = "product-left.html" >
+                                                    <
+                                                    img src = "<?php echo $row['main_img']; ?>"
+                                                class = "img-fluid blur-up lazyload"
+                                                alt = "" >
+                                                    <
+                                                    /a>
+
+                                                    <
+                                                    /div> <
+                                                    /div>
+
+                                                    <
+                                                    div class = "product-footer" >
+                                                    <
+                                                    div class = "product-detail" >
+                                                    <
+                                                    span class = "span-name" > <?php echo $row['category']; ?> < /span> <
+                                                    a href = "product-left-thumbnail.html" >
+                                                    <
+                                                    h5 class = "name" > <?php echo $row['product_name']; ?> < /h5> <
+                                                    /a> <
+                                                    div class = "product-rating mt-2" >
+                                                    <
+                                                    ul class = "rating" >
+                                                    <?php
+                                                    $rating = $row['rating'];
+                                                    for ($i = 1; $i <= $rating; $i++) {
+                                                        echo '<li><i data-feather="star" class="fill"></i></li>';
+                                                    }
+                                                    ?> <
+                                                    /ul>
+
+                                                    <
+                                                    span > (5.0) < /span> <
+                                                    /div> <
+                                                    h6 class = "unit" > <?php echo $row['unit']; ?> < /h6> <
+                                                    h5 class = "price" > < span class = "theme-color" > ₹.<?php echo $row['coust_price']; ?> < /span> <
+                                                    del > ₹.<?php echo $row['MRP']; ?> < /del> <
+                                                    /h5> <
+                                                    div class = "add-to-cart-box bg-white" >
+                                                    <
+                                                    button class = "btn btn-add-cart addcart-button" > Add <
+                                                    span class = "add-icon bg-light-gray" >
+                                                    <
+                                                    i class = "fa-solid fa-plus" > < /i> <
+                                                    /span> <
+                                                    /button> <
+                                                    div class = "cart_qty qty-box" >
+                                                    <
+                                                    div class = "input-group bg-white" >
+                                                    <
+                                                    button type = "button"
+                                                class = "qty-left-minus bg-gray"
+                                                data - type = "minus"
+                                                data - field = "" >
+                                                    <
+                                                    i class = "fa fa-minus"
+                                                aria - hidden = "true" > < /i> <
+                                                    /button> <
+                                                    input class = "form-control input-number qty-input"
+                                                type = "text"
+                                                name = "quantity"
+                                                value = "0" >
+                                                    <
+                                                    button type = "button"
+                                                class = "qty-right-plus bg-gray"
+                                                data - type = "plus"
+                                                data - field = "" >
+                                                    <
+                                                    i class = "fa fa-plus"
+                                                aria - hidden = "true" > < /i> <
+                                                    /button> <
+                                                    /div> <
+                                                    /div> <
+                                                    /div> <
+                                                    /div> <
+                                                    /div> <
+                                                    /div> <
+                                                    /div>
+                                            <?php } ?>
+
+                                                <
+                                                /div> <
+                                                /div> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                /section> <
+                                                !--Releted Product Section End-- >
+
+                                                <
+                                                !--Footer Section Start-- >
+                                                <?php require "./Public/Pages/Home/Assets/common/footer.php" ?>
+
+                                                <
+                                                !--Footer Section End-- >
+
+                                                <
+                                                !--Quick View Modal Box Start-- >
+                                                <
+                                                !--Quick View Modal Box End-- >
+
+                                                <
+                                                !--Location Modal Start-- >
+                                                <?php require "./Public/Pages/Home/Assets/common/modals.php" ?>
+
+                                                <
+                                                !--Location Modal End-- >
+
+                                                <
+                                                !--Deal Box Modal Start-- >
+                                                <
+                                                !--Deal Box Modal End-- >
+
+                                                <
+                                                !--Add to cart Modal Start-- >
+                                                <
+                                                div class = "add-cart-box" >
+                                                <
+                                                div class = "add-iamge" >
+                                                <
+                                                img src = "../Other/Home_assets/assetsimages/cake/pro/1.jpg"
+                                            class = "img-fluid"
+                                            alt = "" >
+                                                <
+                                                /div>
+
+                                                <
+                                                div class = "add-contain" >
+                                                <
+                                                h6 > Added to Cart < /h6> <
+                                                /div> <
+                                                /div> <
+                                                !--Add to cart Modal End-- >
+
+                                                <
+                                                !--Tap to top start-- >
+                                                <
+                                                div class = "theme-option theme-option-2" >
+                                                <
+                                                div class = "setting-box" >
+                                                <
+                                                button class = "btn setting-button" >
+                                                <
+                                                i class = "fa-solid fa-gear" > < /i> <
+                                                /button>
+
+                                                <
+                                                div class = "theme-setting-2" >
+                                                <
+                                                div class = "theme-box" >
+                                                <
+                                                ul >
+                                                <
+                                                li >
+                                                <
+                                                div class = "setting-name" >
+                                                <
+                                                h4 > Color < /h4> <
+                                                /div> <
+                                                div class = "theme-setting-button color-picker" >
+                                                <
+                                                form class = "form-control" >
+                                                <
+                                                label
+                                            for = "colorPick"
+                                            class = "form-label mb-0" > Theme Color < /label> <
+                                                input type = "color"
+                                            class = "form-control form-control-color"
+                                            id = "colorPick"
+                                            value = "#0da487"
+                                            title = "Choose your color" >
+                                                <
+                                                /form> <
+                                                /div> <
+                                                /li>
+
+                                                <
+                                                li >
+                                                <
+                                                div class = "setting-name" >
+                                                <
+                                                h4 > Dark < /h4> <
+                                                /div> <
+                                                div class = "theme-setting-button" >
+                                                <
+                                                button class = "btn btn-2 outline"
+                                            id = "darkButton" > Dark < /button> <
+                                                button class = "btn btn-2 unline"
+                                            id = "lightButton" > Light < /button> <
+                                                /div> <
+                                                /li>
+
+                                                <
+                                                li >
+                                                <
+                                                div class = "setting-name" >
+                                                <
+                                                h4 > RTL < /h4> <
+                                                /div> <
+                                                div class = "theme-setting-button rtl" >
+                                                <
+                                                button class = "btn btn-2 rtl-unline" > LTR < /button> <
+                                                button class = "btn btn-2 rtl-outline" > RTL < /button> <
+                                                /div> <
+                                                /li> <
+                                                /ul> <
+                                                /div> <
+                                                /div> <
+                                                /div>
+
+                                                <
+                                                div class = "back-to-top" >
+                                                <
+                                                a id = "back-to-top"
+                                            href = "#" >
+                                                <
+                                                i class = "fas fa-chevron-up" > < /i> <
+                                                /a> <
+                                                /div> <
+                                                /div> <
+                                                !--Tap to top end-- >
+
+                                                <
+                                                !--Sticky Cart Box Start-- >
+                                                <
+                                                !--Sticky Cart Box End-- >
+
+                                                <
+                                                !--Bg overlay Start-- >
+                                                <
+                                                div class = "bg-overlay" > < /div> <
+                                                !--Bg overlay End-- >
+
+                                                <
+                                                !--latest jquery-- >
+                                                <?php require "./Public/Pages/Home/Assets/common/js.php" ?> <
+                                                /div>
+
+                                                <
+                                                /body>
+
+
+
+                                                <
+                                                /html>
