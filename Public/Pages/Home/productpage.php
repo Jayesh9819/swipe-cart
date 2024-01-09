@@ -167,6 +167,7 @@
                                             <button onclick="addToCart();" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>
                                         </div>
 
+                                        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
                                         <script>
                                             $(document).ready(function() {
                                                 $(".qty-btn").on("click", function() {
