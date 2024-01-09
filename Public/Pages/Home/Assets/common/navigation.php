@@ -8,19 +8,19 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./Welcome" >Home</a>
+                        <a class="nav-link " href="./Welcome" >Home</a>
 
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./Shop" >Product</a>
+                        <a class="nav-link " href="./Shop" >Product</a>
 
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="./Seller" >Seller</a>
 
-                    </li>
+                    </li> -->
 
                     <li class="nav-item dropdown dropdown-mega">
                         <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="./Contact_Us" >Contact Us</a>
