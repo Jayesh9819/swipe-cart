@@ -41,7 +41,7 @@
 
                 <?php
                 $page = $_GET['page'];
-                 print_r($page);
+                //  print_r($page);
                 switch ($page) {
                     case 'view':
                         include './Public/Pages/Admin/pages/Banner/banner.php';
