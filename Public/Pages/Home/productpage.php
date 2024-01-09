@@ -167,9 +167,9 @@
 
                                             if (isset($_SESSION['name'])) {
                                                 $uid =$_SESSION['id'];
-                                                echo '<button onclick="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>';
+                                                echo '<button href="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>';
                                             } else {
-                                                echo '<button onclick="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</button>';
+                                                echo '<button href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</button>';
 
                                             }
                                             ?>
