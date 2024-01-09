@@ -64,7 +64,6 @@
                                 </div>
 
 
-                                <!-- ... (similar structure for other fields) -->
 
                                 <div class="mb-4 row align-items-center">
                                     <label class="form-label-title col-sm-3 mb-0">Slider Info</label>

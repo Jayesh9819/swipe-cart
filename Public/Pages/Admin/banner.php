@@ -5,15 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description" content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <title>Fastkart - All Category</title>
-    
+
     <?php include './Public/Pages/Admin/common/link.php' ?>
 
 </head>
@@ -40,7 +38,25 @@
             <!-- Container-fluid starts-->
             <div class="page-body">
                 <!-- All User Table Start -->
-                <?php include './Public/Pages/Admin/pages/Banner/banner.php' ?>
+
+                <?php
+                $page = isset($_GET['page']);
+                switch ($page) {
+                    case 'view':
+                        include './Public/Pages/Admin/pages/Banner/banner.php';
+                        break;
+                    case 'edit':
+                        include './Public/Pages/Admin/pages/Banner/editbanner.php';
+                        break;
+                    default:
+                        include './Public/Pages/Admin/pages/Banner/banner.php';
+                        break;
+                }
+
+
+
+
+                // include './Public/Pages/Admin/pages/Banner/banner.php' ?>
                 <!-- All User Table Ends-->
 
                 <div class="container-fluid">
@@ -59,7 +75,7 @@
     <?php include './Public/Pages/Admin/Modals/delete.php' ?>
 
     <?php include './Public/Pages/Admin/common/scripts.php' ?>
-    
+
 </body>
 
 </html>
