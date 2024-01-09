@@ -40,8 +40,8 @@
                 <!-- All User Table Start -->
 
                 <?php
-                $page = $_GET['page'];
-                //  print_r($page);
+                            $page = isset($_GET['page']) ? $_GET['page'] : '';
+                            //  print_r($page);
                 switch ($page) {
                     case 'view':
                         include './Public/Pages/Admin/pages/Banner/banner.php';
