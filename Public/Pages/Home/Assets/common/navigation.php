@@ -7,12 +7,12 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item ">
                         <a class="nav-link dropdown-toggle" href="./Welcome" >Home</a>
 
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item ">
                         <a class="nav-link dropdown-toggle" href="./Shop" >Product</a>
 
                     </li>
@@ -22,12 +22,12 @@
 
                     </li> -->
 
-                    <li class="nav-item dropdown dropdown-mega">
+                    <li class="nav-item ">
                         <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="./Contact_Us" >Contact Us</a>
 
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item ">
                         <a class="nav-link dropdown-toggle" href="About_Us" >About Us</a>
                     </li>
 
