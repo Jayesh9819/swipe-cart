@@ -41,7 +41,7 @@
 
                 <?php
                 $page = isset($_GET['page']);
-                echo $page;
+                 print_r($page);
                 switch ($page) {
                     case 'view':
                         include './Public/Pages/Admin/pages/Banner/ebbanner.php';
