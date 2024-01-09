@@ -7,28 +7,28 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="" href="./Welcome" >Home</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="./Welcome" >Home</a>
 
                     </li>
 
-                    <li class="nav-item ">
-                        <a class="" href="./Shop" >Product</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="./Shop" >Product</a>
 
                     </li>
 
-                    <!-- <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="./Seller" >Seller</a>
 
-                    </li> -->
+                    </li>
 
-                    <li class="nav-item ">
-                        <a class="" href="./Contact_Us" >Contact Us</a>
+                    <li class="nav-item dropdown dropdown-mega">
+                        <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="./Contact_Us" >Contact Us</a>
 
                     </li>
 
-                    <li class="nav-item ">
-                        <a class="" href="About_Us" >About Us</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="About_Us" >About Us</a>
                     </li>
 
                 </ul>
