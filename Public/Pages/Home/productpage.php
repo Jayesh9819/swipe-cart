@@ -157,17 +157,16 @@
                                                     <button type="button" class="qty-btn qty-right-plus" data-type="plus" data-field="">
                                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                                     </button>
-                                                    <input class="form-control input-number qty-input" type="text" name="quantity" value="1">
+                                                    <input class="form-control input-number qty-input" type="text" id="quantity" name="quantity" value="1">
                                                     <button type="button" class="qty-btn qty-left-minus" data-type="minus" data-field="">
                                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                                     </button>
                                                 </div>
                                             </div>
                                             <?php
-
                                             if (isset($_SESSION['name'])) {
                                                 $uid = $_SESSION['id'];
-                                                echo '<a href="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</a>';
+                                                echo '<a href="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '&quantity=" class="btn btn-md bg-dark cart-button text-white w-100" id="addToCartBtn">Add To Cart</a>';
                                             } else {
                                                 echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                             }
@@ -177,15 +176,27 @@
                                         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
                                         <script>
                                             $(document).ready(function() {
+                                                // Initial quantity value
+                                                var quantityValue = 1;
+
                                                 $(".qty-btn").on("click", function() {
-                                                    var inputField = $(this).siblings(".qty-input");
+                                                    var inputField = $("#quantity");
                                                     var currentVal = parseInt(inputField.val());
 
                                                     if ($(this).data("type") === "plus") {
                                                         inputField.val(currentVal + 1);
+                                                        quantityValue = currentVal + 1;
                                                     } else if ($(this).data("type") === "minus" && currentVal > 1) {
                                                         inputField.val(currentVal - 1);
+                                                        quantityValue = currentVal - 1;
                                                     }
+                                                });
+
+                                                // Update the quantity in the URL when "Add To Cart" is clicked
+                                                $("#addToCartBtn").on("click", function() {
+                                                    var addToCartUrl = $(this).attr("href");
+                                                    addToCartUrl += quantityValue;
+                                                    $(this).attr("href", addToCartUrl);
                                                 });
                                             });
                                         </script>
