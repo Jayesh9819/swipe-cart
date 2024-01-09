@@ -41,9 +41,10 @@
 
                 <?php
                 $page = isset($_GET['page']);
+                echo $page;
                 switch ($page) {
                     case 'view':
-                        include './Public/Pages/Admin/pages/Banner/banner.php';
+                        include './Public/Pages/Admin/pages/Banner/ebbanner.php';
                         break;
                     case 'edit':
                         include './Public/Pages/Admin/pages/Banner/editbanner.php';
