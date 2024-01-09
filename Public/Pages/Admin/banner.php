@@ -44,7 +44,7 @@
                  print_r($page);
                 switch ($page) {
                     case 'view':
-                        include './Public/Pages/Admin/pages/Banner/ebbanner.php';
+                        include './Public/Pages/Admin/pages/Banner/banner.php';
                         break;
                     case 'edit':
                         include './Public/Pages/Admin/pages/Banner/editbanner.php';
