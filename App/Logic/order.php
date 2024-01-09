@@ -1,7 +1,7 @@
 <?php 
 class order{
     public function addtocart(){
-        $pid=$_GET['id'];
+        $pid=$_GET['pid'];
         $uid=$_GET['uid'];
         $quantity=$_GET['quantity'];
         if (empty($pid) || empty($uid) || empty($quantity) || !is_numeric($pid) || !is_numeric($uid) || !is_numeric($quantity)) {
