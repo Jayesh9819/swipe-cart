@@ -8,12 +8,12 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link dropdown-toggle" href="./Welcome" >Home</a>
+                        <a class="" href="./Welcome" >Home</a>
 
                     </li>
 
                     <li class="nav-item ">
-                        <a class="nav-link dropdown-toggle" href="./Shop" >Product</a>
+                        <a class="" href="./Shop" >Product</a>
 
                     </li>
 
@@ -23,12 +23,12 @@
                     </li> -->
 
                     <li class="nav-item ">
-                        <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="./Contact_Us" >Contact Us</a>
+                        <a class="" href="./Contact_Us" >Contact Us</a>
 
                     </li>
 
                     <li class="nav-item ">
-                        <a class="nav-link dropdown-toggle" href="About_Us" >About Us</a>
+                        <a class="" href="About_Us" >About Us</a>
                     </li>
 
                 </ul>
