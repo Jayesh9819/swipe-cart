@@ -12,7 +12,7 @@ class order{
 
         // Insert data into the cart table using prepared statement
         $sql = "INSERT INTO cart (product_id, user_id, quantity) VALUES (?, ?, ?)";
-        $stmt = conn->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if ($stmt) {
             $stmt->bind_param("iii", $pid, $uid, $quantity);
@@ -30,9 +30,6 @@ class order{
             echo "Error preparing statement: " . $this->conn->error;
         }
     }
-
-
-
     
 }
 $order=new order();
