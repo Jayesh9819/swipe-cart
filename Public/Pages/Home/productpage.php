@@ -166,11 +166,10 @@
                                             <?php
 
                                             if (isset($_SESSION['name'])) {
-                                                $uid =$_SESSION['id'];
-                                                echo '<button href="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>';
+                                                $uid = $_SESSION['id'];
+                                                echo '<a href="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</a>';
                                             } else {
-                                                echo '<button href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</button>';
-
+                                                echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                             }
                                             ?>
                                         </div>
@@ -184,7 +183,7 @@
 
                                                     if ($(this).data("type") === "plus") {
                                                         inputField.val(currentVal + 1);
-                                                    } else if ($(this).data("type") === "minus" && currentVal > 0) {
+                                                    } else if ($(this).data("type") === "minus" && currentVal > 1) {
                                                         inputField.val(currentVal - 1);
                                                     }
                                                 });
