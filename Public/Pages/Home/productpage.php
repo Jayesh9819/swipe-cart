@@ -157,14 +157,22 @@
                                                     <button type="button" class="qty-btn qty-right-plus" data-type="plus" data-field="">
                                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                                     </button>
-                                                    <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
+                                                    <input class="form-control input-number qty-input" type="text" name="quantity" value="1">
                                                     <button type="button" class="qty-btn qty-left-minus" data-type="minus" data-field="">
                                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                                     </button>
                                                 </div>
                                             </div>
+                                            <?php
 
-                                            <button onclick="addToCart();" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>
+                                            if (isset($_SESSION['name'])) {
+                                                $uid =$_SESSION['id'];
+                                                echo '<button onclick="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '" class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>';
+                                            } else {
+                                                echo '<button onclick="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</button>';
+
+                                            }
+                                            ?>
                                         </div>
 
                                         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
