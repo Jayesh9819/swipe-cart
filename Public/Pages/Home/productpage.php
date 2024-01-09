@@ -166,7 +166,7 @@
                                             <?php
                                             if (isset($_SESSION['name'])) {
                                                 $uid = $_SESSION['id'];
-                                                echo '<a href="./App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '&quantity=" class="btn btn-md bg-dark cart-button text-white w-100" id="addToCartBtn">Add To Cart</a>';
+                                                echo '<a href="../App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '&quantity=" class="btn btn-md bg-dark cart-button text-white w-100" id="addToCartBtn">Add To Cart</a>';
                                             } else {
                                                 echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                             }
@@ -200,6 +200,7 @@
                                                 });
                                             });
                                         </script>
+
 
 
                                         <div class="buy-box">
