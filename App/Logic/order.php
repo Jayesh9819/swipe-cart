@@ -1,6 +1,7 @@
 <?php 
 class order{
     public function addtocart(){
+        include './db_connect.php';
         $pid=$_GET['pid'];
         $uid=$_GET['uid'];
         $quantity=$_GET['quantity'];
