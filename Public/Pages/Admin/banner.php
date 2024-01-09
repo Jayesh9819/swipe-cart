@@ -40,7 +40,7 @@
                 <!-- All User Table Start -->
 
                 <?php
-                $page = isset($_GET['page']);
+                $page = $_GET['page'];
                  print_r($page);
                 switch ($page) {
                     case 'view':
