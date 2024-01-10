@@ -26,15 +26,15 @@
             echo '<li class="product-box-contain">
             <div class="drop-cart">
                 <a href="product-left-thumbnail.html" class="drop-image">
-                    <img src=".$cart['main_image']." class="blur-up lazyload"
+                    <img src="'.$cart['main_img'].'" class="blur-up lazyload"
                         alt="">
                 </a>
 
                 <div class="drop-contain">
-                    <a href="product-left-thumbnail.html">
-                        <h5>Fantasy Crunchy Choco Chip Cookies</h5>
+                    <a href="./productpage?id='.$cart['id'].'">
+                        <h5>'.$cart['product_name'].'</h5>
                     </a>
-                    <h6><span>1 x</span> $80.58</h6>
+                    <h6><span>1 x</span>'.$cart['coust_price'].'</h6>
                     <button class="close-button close_button">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
