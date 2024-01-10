@@ -136,14 +136,14 @@
                                                     <span class="add-icon">
                                                         <?php
                                                         if (isset($_SESSION['name'])) {
-                                                            echo '<i class="fa-solid fa-plus"></i>';
+                                                            echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100"  id="addToCartBtn">Add To Cart</a>';
                                                         } else {
-                                                            echo ' alert("Login First");';
+                                                            echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                                         }
-                                                        ?>
+                                                                    ?>
                                                     </span>
                                                 </button>
-                                                <div class="cart_qty qty-box">
+                                                <!-- <div class="cart_qty qty-box">
                                                     <div class="input-group">
                                                         <button type="button" class="qty-left-minus" data-type="minus" data-field="<?php echo $quantityInputId; ?>">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
@@ -153,7 +153,7 @@
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
 
