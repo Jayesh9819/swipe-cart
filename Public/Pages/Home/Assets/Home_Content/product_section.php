@@ -130,12 +130,12 @@
                                             <div class="add-to-cart-box">
                                                 <?php
                                                 if (isset($_SESSION['name'])) {
-                                                    echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100" onclick="addToCart(' . $uid . ', ' . $id . ', quantityValue_' . $id . ')" id="addToCartBtn">Add To Cart</a>';
+                                                    echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100" onclick="addToCart(' . $uid . ', ' . $id . ', 1 )" id="addToCartBtn">Add To Cart</a>';
                                                 } else {
                                                     echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                                 }
                                                 ?>
-                                                <div class="cart_qty qty-box">
+                                                <!-- <div class="cart_qty qty-box">
                                                     <div class="input-group">
                                                         <button type="button" class="qty-left-minus" data-type="minus" data-field="<?php echo $quantityInputId; ?>">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
@@ -145,7 +145,7 @@
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
