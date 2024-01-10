@@ -133,27 +133,16 @@
                                             </div>
                                             <div class="add-to-cart-box">
                                                 <button class="btn btn-add-cart addcart-button" id="<?php echo $addToCartBtnId; ?>">Add
-                                                    <span class="add-icon">
+                                                    <!-- <span class="add-icon"> -->
                                                         <?php
                                                         if (isset($_SESSION['name'])) {
                                                             echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100"  id="addToCartBtn">Add To Cart</a>';
                                                         } else {
                                                             echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                                         }
-                                                                    ?>
-                                                    </span>
+                                                        ?>
+                                                    <!-- </span> -->
                                                 </button>
-                                                <!-- <div class="cart_qty qty-box">
-                                                    <div class="input-group">
-                                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="<?php echo $quantityInputId; ?>">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input class="form-control input-number qty-input" type="text" name="quantity" id="<?php echo $quantityInputId; ?>" value="0">
-                                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="<?php echo $quantityInputId; ?>">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div> -->
                                             </div>
                                         </div>
 
