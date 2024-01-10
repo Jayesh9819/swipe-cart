@@ -31,16 +31,35 @@
                                         <h5>' . $product['product_name'] . '</h5>
                                     </a>
                                     <h6><span>' . $product['quantity'] . ' x</span>' . $product['coust_price'] . '</h6>
-                                    <a href="javascript:void(0);" class="" onclick="deleteCartItem('.$product['id'].')">
-                                    <i class="fa-solid fa-xmark"> hiii</i>
-                                </a>
-                                                                </div>
+                                    <a href="javascript:void(0);" class="delete-button" onclick="deleteCartItem(' . $product['id'] . ')">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </div>
                             </div>
                         </li>';
 
                     // Calculate the price for each product and add it to the total
                     $totalPrice += $product['quantity'] * $product['coust_price'];
-                 echo    '<script>
+                }
+            } else {
+                // Handle the case where the query fails
+                echo "Error: " . $conn->error;
+            }
+        ?>
+    </ul>
+
+    <div class="price-box">
+        <h5>Total :</h5>
+        <h4 class="theme-color fw-bold"><?php echo '₹' . number_format($totalPrice, 2); ?></h4>
+    </div>
+
+    <div class="button-group">
+        <a href="./Cart" class="btn btn-sm cart-button">View Cart</a>
+        <a href="./Checkout" class="btn btn-sm cart-button theme-bg-color text-white">Checkout</a>
+    </div>
+</div>
+
+<script>
 function deleteCartItem(product_id) {
     if (confirm("Are you sure you want to remove this item from the cart?")) {
         // Create an XMLHttpRequest object
@@ -69,26 +88,7 @@ function deleteCartItem(product_id) {
         xhr.send();
     }
 }
-</script>';
-
-                }
-            } else {
-                // Handle the case where the query fails
-                echo "Error: " . $conn->error;
-            }
-        ?>
-    </ul>
-
-    <div class="price-box">
-        <h5>Total :</h5>
-        <h4 class="theme-color fw-bold"><?php echo '₹' . number_format($totalPrice, 2); ?></h4>
-    </div>
-
-    <div class="button-group">
-        <a href="./Cart" class="btn btn-sm cart-button">View Cart</a>
-        <a href="./Checkout" class="btn btn-sm cart-button theme-bg-color text-white">Checkout</a>
-    </div>
-</div>
+</script>
 
 <?php
         } else {
