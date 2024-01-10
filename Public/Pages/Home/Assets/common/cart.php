@@ -2,6 +2,16 @@
     <ul class="cart-list">
         <?php
         if (isset($_SESSION['name'])) {
+            include './App/Logic/db_connect.php';
+            $id = $_SESSION['id'];
+            $sql = 'SELECT p.*
+            FROM cart c
+            JOIN product p ON c.product_id = p.id
+            WHERE c.user_id = $id';
+            $result = $conn->query($sql);
+            $cart = $result->fetch_assoc();
+print_r($row);
+
 
 
             echo '<li class="product-box-contain">
