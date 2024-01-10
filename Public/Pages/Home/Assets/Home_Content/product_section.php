@@ -182,11 +182,11 @@
                         });
                     <?php } ?>
 
-                    function addToCart(uid, pid) {
+                    function addToCart(uid, pid,quantity) {
                         const xhr = new XMLHttpRequest();
                         xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
                         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                        xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + <?php echo "quantityValues[$id]"; ?>);
+                        xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
 
                         xhr.onreadystatechange = function() {
                             if (xhr.readyState === 4) {
