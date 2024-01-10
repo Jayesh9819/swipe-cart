@@ -160,33 +160,25 @@
                                         <!-- JavaScript for each product -->
                                         <script>
                                             $(document).ready(function() {
-                                                <?php
-                                                while ($row = $result->fetch_assoc()) {
-                                                    $uid = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
-                                                    $id = $row['id'];
-                                                    $quantityInputId = "quantity_" . $id;
-                                                    $addToCartBtnId = "addToCartBtn_" . $id;
-                                                ?>
-                                                    var quantityValue_<?php echo $id; ?> = 1;
+                                                var quantityValue_<?php echo $id; ?> = 1;
 
-                                                    $(".qty-btn").on("click", function() {
-                                                        var inputField = $("#" + "<?php echo $quantityInputId; ?>");
-                                                        var currentVal = parseInt(inputField.val());
+                                                $(".qty-btn").on("click", function() {
+                                                    var inputField = $("#" + "<?php echo $quantityInputId; ?>");
+                                                    var currentVal = parseInt(inputField.val());
 
-                                                        if ($(this).data("type") === "plus") {
-                                                            inputField.val(currentVal + 1);
-                                                            quantityValue_<?php echo $id; ?> = currentVal + 1;
-                                                        } else if ($(this).data("type") === "minus" && currentVal > 1) {
-                                                            inputField.val(currentVal - 1);
-                                                            quantityValue_<?php echo $id; ?> = currentVal - 1;
-                                                        }
-                                                    });
+                                                    if ($(this).data("type") === "plus") {
+                                                        inputField.val(currentVal + 1);
+                                                        quantityValue_<?php echo $id; ?> = currentVal + 1;
+                                                    } else if ($(this).data("type") === "minus" && currentVal > 1) {
+                                                        inputField.val(currentVal - 1);
+                                                        quantityValue_<?php echo $id; ?> = currentVal - 1;
+                                                    }
+                                                });
 
-                                                    $("#" + "<?php echo $addToCartBtnId; ?>").on("click", function(e) {
-                                                        e.preventDefault();
-                                                        addToCart(<?php echo $uid; ?>, <?php echo $id; ?>, quantityValue_<?php echo $id; ?>);
-                                                    });
-                                                <?php } ?>
+                                                $("#" + "<?php echo $addToCartBtnId; ?>").on("click", function(e) {
+                                                    e.preventDefault();
+                                                    addToCart(<?php echo $uid; ?>, <?php echo $id; ?>, quantityValue_<?php echo $id; ?>);
+                                                });
                                             });
                                         </script>
                                     </div>
