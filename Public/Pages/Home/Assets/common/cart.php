@@ -32,7 +32,7 @@
                                     </a>
                                     <h6><span>' . $product['quantity'] . ' x</span>' . $product['coust_price'] . '</h6>
                                     <a href="javascript:void(0);" class="" onclick="deleteCartItem('.$product['id'].'">
-                                    <i class="fa-solid fa-xmark"></i>
+                                    <i class="fa-solid fa-xmark"> hiii</i>
                                 </a>
                                                                 </div>
                             </div>
