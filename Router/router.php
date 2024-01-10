@@ -18,9 +18,9 @@ if ($uri == "/" || $uri == "/index.php") {
         // ? This is Routes which will automatically routed when index page is loaded....
 
         //? Home 
-        $prefix . '/productpage'                           => './Public/Pages/Home/productpage.php',
+        $prefix . $root . '/productpage'                           => './Public/Pages/Home/productpage.php',
 
-        $prefix . '/Welcome'                           => './Public/Pages/Home/home.php',
+        $prefix . $root . '/Welcome'                           => './Public/Pages/Home/home.php',
         $prefix . $root . '/About_Us'                          => './Public/Pages/Home/about_us.php',
         $prefix . $root . '/Contact_Us'                        => './Public/Pages/Home/contact-us.php',
         $prefix . $root . '/Your_Wishlist'                     => './Public/Pages/Home/wishlist.php',
