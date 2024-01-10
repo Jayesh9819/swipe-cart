@@ -3,6 +3,8 @@ class order{
     public function addToCart()
     {
         include './db_connect.php';
+        $response = array('success' => false, 'message' => '');
+
         $pid = $_GET['pid'];
         $uid = $_GET['uid'];
         $quantity = $_GET['quantity'];
@@ -57,8 +59,8 @@ class order{
             $insertStmt->bind_param("iii", $pid, $uid, $quantity);
 
             if ($insertStmt->execute()) {
-                $_SESSION['status'] = 'success';
-                header("Location: ../../../index.php/productpage?id=$pid");
+                $response['success'] = true;
+                $response['message'] = "Item removed from the cart successfully!";
             } else {
                 echo "Error adding record to cart: " . $insertStmt->error;
             }
@@ -109,7 +111,7 @@ if (isset($_GET['action'])) {
     //echo "Action: $action<br>";
 
     switch ($action) {
-        case 'addtocart':
+        case 'addToCart':
             $order->addToCart();
             break;
 

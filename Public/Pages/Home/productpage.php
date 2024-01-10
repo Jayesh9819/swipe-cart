@@ -166,7 +166,9 @@
                                             <?php
                                             if (isset($_SESSION['name'])) {
                                                 $uid = $_SESSION['id'];
-                                                echo '<a href="../App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '&quantity=" class="btn btn-md bg-dark cart-button text-white w-100" id="addToCartBtn">Add To Cart</a>';
+                                                // echo '<a href="../App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '&quantity=" class="btn btn-md bg-dark cart-button text-white w-100" id="addToCartBtn">Add To Cart</a>';
+
+                                                echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100" onclick="addToCart(' . $uid . ',' . $id . ',1)" id="addToCartBtn">Add To Cart</a>';
                                             } else {
                                                 echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                             }
@@ -193,12 +195,50 @@
                                                 });
 
                                                 // Update the quantity in the URL when "Add To Cart" is clicked
-                                                $("#addToCartBtn").on("click", function() {
+                                                $("#addToCartBtn").on("click", function(e) {
+                                                    e.preventDefault(); // Prevent the default action of the link
                                                     var addToCartUrl = $(this).attr("href");
-                                                    addToCartUrl += quantityValue;
+                                                    addToCartUrl += "&quantity=" + quantityValue;
                                                     $(this).attr("href", addToCartUrl);
+                                                    addToCart(<?php echo $uid; ?>, <?php echo $id; ?>, quantityValue); // Call addToCart function
                                                 });
                                             });
+                                        </script>
+
+                                        <script>
+                                            function addToCart(uid, pid, quantity) {
+                                                // Create an XMLHttpRequest object
+                                                const xhr = new XMLHttpRequest();
+
+                                                // Specify the request method and URL (using POST for data modification)
+                                                xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
+
+                                                // Set up the content type for sending data
+                                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                                                // Send the product_id and action as POST data
+                                                xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
+
+                                                // Handle the response
+                                                xhr.onreadystatechange = function() {
+                                                    if (xhr.readyState === 4) {
+                                                        if (xhr.status === 200) {
+                                                            // Parse the response
+                                                            const response = JSON.parse(xhr.responseText);
+                                                            if (response.success) {
+                                                                alert("Item added to the cart successfully!");
+                                                                location.reload();
+                                                                // Update the cart display or perform other actions
+                                                            } else {
+                                                                alert("Error adding item to the cart: " + response.message);
+                                                            }
+                                                        } else {
+                                                            // Handle other HTTP status codes (e.g., 400, 404, 500)
+                                                            alert("Error: " + xhr.statusText);
+                                                        }
+                                                    }
+                                                };
+                                            }
                                         </script>
 
 
