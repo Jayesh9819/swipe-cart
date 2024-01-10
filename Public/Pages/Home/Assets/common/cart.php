@@ -57,7 +57,6 @@
         <a href="./Cart" class="btn btn-sm cart-button">View Cart</a>
         <a href="./Checkout" class="btn btn-sm cart-button theme-bg-color text-white">Checkout</a>
     </div>
-</div>
 
 <script>
 function deleteCartItem(product_id) {
@@ -108,3 +107,4 @@ function deleteCartItem(product_id) {
           </ul>';
         }
 ?>
+</div>
