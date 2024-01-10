@@ -15,7 +15,7 @@
             if ($result) {
                 // Fetch all rows (if there are multiple products in the cart)
                 $cart = $result->fetch_all(MYSQLI_ASSOC);
-                print_r($cart);
+                //print_r($cart);
             } else {
                 // Handle the case where the query fails
                 echo "Error: " . $conn->error;
@@ -26,7 +26,7 @@
             echo '<li class="product-box-contain">
             <div class="drop-cart">
                 <a href="product-left-thumbnail.html" class="drop-image">
-                    <img src="" class="blur-up lazyload"
+                    <img src=".$cart['main_image']." class="blur-up lazyload"
                         alt="">
                 </a>
 
