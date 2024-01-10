@@ -80,7 +80,7 @@ class order{
             $product_id = $_POST['product_id'];
         
             // Perform a query to delete the product from the cart
-            $delete_sql = "DELETE FROM cart WHERE id = $product_id";
+            $delete_sql = "DELETE FROM cart WHERE product_id = $product_id";
         
             if ($conn->query($delete_sql) === TRUE) {
                 $response['success'] = true;
