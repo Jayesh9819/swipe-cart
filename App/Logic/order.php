@@ -89,7 +89,7 @@ class order{
                 $response['message'] = "Error deleting the item from the cart: " . $conn->error;
             }
         } else {
-            $response['message'] = "Invalid product ID.$id";
+            $response['message'] = "Invalid product ID.in it";
         }
         
         $conn->close();
