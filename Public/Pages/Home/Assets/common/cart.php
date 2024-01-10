@@ -9,8 +9,8 @@
             JOIN product p ON c.product_id = p.id
             WHERE c.user_id = $id';
             $result = $conn->query($sql);
-            $cart = $result->fetch_assoc();
-print_r($row);
+            // $cart = $result->fetch_assoc();
+            print_r($result);
 
 
 
