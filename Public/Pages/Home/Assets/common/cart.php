@@ -4,20 +4,29 @@
         if (isset($_SESSION['name'])) {
             include './App/Logic/db_connect.php';
             $id = $_SESSION['id'];
-            $sql = 'SELECT p.*
+            $sql = "SELECT p.*
             FROM cart c
             JOIN product p ON c.product_id = p.id
-            WHERE c.user_id = $id';
+            WHERE c.user_id = $id";
+
             $result = $conn->query($sql);
-            // $cart = $result->fetch_assoc();
-            print_r($result);
+
+            // Check if the query was successful
+            if ($result) {
+                // Fetch all rows (if there are multiple products in the cart)
+                $cart = $result->fetch_all(MYSQLI_ASSOC);
+                print_r($cart);
+            } else {
+                // Handle the case where the query fails
+                echo "Error: " . $conn->error;
+            }
 
 
 
             echo '<li class="product-box-contain">
             <div class="drop-cart">
                 <a href="product-left-thumbnail.html" class="drop-image">
-                    <img src="../Other/Home_assets/assets/images/vegetable/product/1.png" class="blur-up lazyload"
+                    <img src="" class="blur-up lazyload"
                         alt="">
                 </a>
 
