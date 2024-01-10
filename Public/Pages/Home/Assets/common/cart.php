@@ -20,15 +20,15 @@ print_r($cart);
                 foreach ($cart as $product) {
                     echo '<li class="product-box-contain">
                             <div class="drop-cart">
-                                <a href="product-left-thumbnail.html" class="drop-image">
+                                <a href="./Cart" class="drop-image">
                                     <img src="' . $product['main_img'] . '" class="blur-up lazyload" alt="">
                                 </a>
                                 <div class="drop-contain">
                                     <a href="./productpage?id=' . $product['id'] . '">
                                         <h5>' . $product['product_name'] . '</h5>
                                     </a>
-                                    <h6><span> x</span>' . $product['coust_price'] . '</h6>
-                                    <button class="close-button close_button">
+                                    <h6><span>'.$product['quantity'].' x</span>' . $product['coust_price'] . '</h6>
+                                    <button  class="close-button close_button">
                                         <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </div>
