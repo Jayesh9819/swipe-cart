@@ -106,7 +106,7 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];
 
     // Print the value of the "action" parameter
-    echo "Action: $action<br>";
+    //echo "Action: $action<br>";
 
     switch ($action) {
         case 'addtocart':

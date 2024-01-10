@@ -66,13 +66,13 @@ function deleteCartItem(product_id) {
     const xhr = new XMLHttpRequest();
 
     // Specify the request method and URL (using POST for data modification)
-    xhr.open("POST", "../App/Logic/order.php", true);
+    xhr.open("POST", "../App/Logic/order.php?action=deletecart", true);
 
     // Set up the content type for sending data
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     // Send the product_id and action as POST data
-    xhr.send("action=deletecart&product_id=" + product_id);
+    xhr.send("product_id=" + product_id);
 
     // Handle the response
     xhr.onreadystatechange = function() {
