@@ -1,8 +1,9 @@
 <?php
-class unity{
- function unity()
+class unity
+{
+    function unity()
     {
-         var_dump($_POST);
+        var_dump($_POST);
 
         error_log("Before database connection"); // Add more log statements as needed
         include './db_connect.php';
@@ -34,7 +35,7 @@ class unity{
             }
         }
     }
-     public function delete()
+    public function delete()
     {
         include './db_connect.php';
         if (isset($_GET['id'])) {
@@ -56,11 +57,7 @@ class unity{
 
         $conn->close();
     }
-
 }
-$unity =new unity();
+$unity = new unity();
 $unity->unity();
 $unity->delete();
-
-    
-    

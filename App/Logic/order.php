@@ -71,28 +71,32 @@ class order{
         // Close the check statement
         $checkStmt->close();
     }
-    public function deletecart(){
+    public function deletecart($id){
         include './db_connect.php';
 
+        $response = array('success' => false, 'message' => '');
+        
         if (isset($_GET['product_id'])) {
             $product_id = $_GET['product_id'];
-
-            // Perform a query to delete the category with the specified ID
-            $delete_sql = "DELETE FROM slider WHERE id = $category_id";
-
+        
+            // Perform a query to delete the product from the cart
+            $delete_sql = "DELETE FROM cart WHERE id = $product_id";
+        
             if ($conn->query($delete_sql) === TRUE) {
-                header('Location: ../../../index.php/banner');
                 $response['success'] = true;
-                $response['message'] = "Category deleted successfully!";
+                $response['message'] = "Item removed from the cart successfully!";
             } else {
-                echo "Error deleting the category: " . $conn->error;
+                $response['message'] = "Error deleting the item from the cart: " . $conn->error;
             }
         } else {
-            echo "Invalid category ID.";
+            $response['message'] = "Invalid product ID.";
         }
-
+        
         $conn->close();
-
+        
+        // Send the response back to the JavaScript
+        echo json_encode($response);
+        
     }
     
 }

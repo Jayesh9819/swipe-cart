@@ -31,15 +31,46 @@
                                         <h5>' . $product['product_name'] . '</h5>
                                     </a>
                                     <h6><span>' . $product['quantity'] . ' x</span>' . $product['coust_price'] . '</h6>
-                                    <a href="../App/Logic/order.php?action=deletecart&product_id=' . $product['id'] . '" class="close-button close_button">
+                                    <a href="javascript:void(0);" class="close-button close_button" onclick="deleteCartItem('.$product['id'].'">
                                     <i class="fa-solid fa-xmark"></i>
-                                    </a>
-                                </div>
+                                </a>
+                                                                </div>
                             </div>
                         </li>';
 
                     // Calculate the price for each product and add it to the total
                     $totalPrice += $product['quantity'] * $product['coust_price'];
+                 echo    '<script>
+function deleteCartItem(product_id) {
+    if (confirm("Are you sure you want to remove this item from the cart?")) {
+        // Create an XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+
+        // Specify the request method and URL
+        xhr.open("GET", "../App/Logic/order.php?action=deletecart&product_id=" + product_id, true);
+
+        // Set up the callback function to handle the response
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Handle the response, if needed
+                var response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    // Update the cart display or perform any other action
+                    alert("Item removed from the cart successfully!");
+                    // You may want to refresh the cart display or update it dynamically
+                    // based on the response.
+                } else {
+                    alert("Error removing item from the cart: " + response.message);
+                }
+            }
+        };
+
+        // Send the request
+        xhr.send();
+    }
+}
+</script>';
+
                 }
             } else {
                 // Handle the case where the query fails
