@@ -1,5 +1,6 @@
-<?php 
-class order{
+<?php
+class order
+{
     public function addToCart()
     {
         include './db_connect.php';
@@ -32,8 +33,8 @@ class order{
                     $updateStmt->bind_param("iii", $quantity, $pid, $uid);
 
                     if ($updateStmt->execute()) {
-                        $_SESSION['status'] = 'success';
-                        header("Location: ../../../index.php/productpage?id=$pid");
+                        $response['success'] = true;
+                        $response['message'] = "Item removed from the cart successfully!";
                     } else {
                         echo "Error updating quantity in cart: " . $updateStmt->error;
                     }
@@ -72,18 +73,21 @@ class order{
 
         // Close the check statement
         $checkStmt->close();
+        header('Content-Type: application/json');
+        echo json_encode($response);
     }
-    public function deletecart(){
+    public function deletecart()
+    {
         include './db_connect.php';
-        
+
         $response = array('success' => false, 'message' => '');
-        
+
         if (isset($_POST['product_id'])) {
             $product_id = $_POST['product_id'];
-        
+
             // Perform a query to delete the product from the cart
             $delete_sql = "DELETE FROM cart WHERE product_id = $product_id";
-        
+
             if ($conn->query($delete_sql) === TRUE) {
                 $response['success'] = true;
                 $response['message'] = "Item removed from the cart successfully!";
@@ -93,17 +97,15 @@ class order{
         } else {
             $response['message'] = "Invalid product ID.in it";
         }
-        
+
         $conn->close();
-        
+
         // Send the response back to the JavaScript with the correct content type
         header('Content-Type: application/json');
         echo json_encode($response);
-                
     }
-    
 }
-$order=new order();
+$order = new order();
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
 
@@ -135,9 +137,3 @@ if (isset($_GET['action'])) {
     // Handle case where no action is specified
     echo "No action specified.";
 }
-
-
-
-
-
-?>
