@@ -31,7 +31,7 @@
                                         <h5>' . $product['product_name'] . '</h5>
                                     </a>
                                     <h6><span>' . $product['quantity'] . ' x</span>' . $product['coust_price'] . '</h6>
-                                    <a href="javascript:void(0);" class="" onclick="deleteCartItem('.$product['id'].'">
+                                    <a href="javascript:void(0);" class="" onclick="deleteCartItem('.$product['id'].')">
                                     <i class="fa-solid fa-xmark"> hiii</i>
                                 </a>
                                                                 </div>
