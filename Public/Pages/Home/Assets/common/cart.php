@@ -15,7 +15,7 @@
             if ($result) {
                 // Fetch all rows (if there are multiple products in the cart)
                 $cart = $result->fetch_all(MYSQLI_ASSOC);
-print_r($cart);
+//print_r($cart);
                 // Iterate over each product in the cart
                 foreach ($cart as $product) {
                     echo '<li class="product-box-contain">
