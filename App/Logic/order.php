@@ -1,34 +1,75 @@
 <?php 
 class order{
-    public function addtocart(){
+    public function addToCart()
+    {
         include './db_connect.php';
-        $pid=$_GET['pid'];
-        $uid=$_GET['uid'];
-        $quantity=$_GET['quantity'];
+        $pid = $_GET['pid'];
+        $uid = $_GET['uid'];
+        $quantity = $_GET['quantity'];
+
         if (empty($pid) || empty($uid) || empty($quantity) || !is_numeric($pid) || !is_numeric($uid) || !is_numeric($quantity)) {
             echo "Invalid input data.";
             return;
         }
 
-        // Insert data into the cart table using prepared statement
-        $sql = "INSERT INTO cart (product_id, user_id, quantity) VALUES (?, ?, ?)";
-        $stmt = $conn->prepare($sql);
+        // Check if the product is already in the cart
+        $checkSql = "SELECT * FROM cart WHERE product_id = ? AND user_id = ?";
+        $checkStmt = $conn->prepare($checkSql);
 
-        if ($stmt) {
-            $stmt->bind_param("iii", $pid, $uid, $quantity);
+        if ($checkStmt) {
+            $checkStmt->bind_param("ii", $pid, $uid);
+            $checkStmt->execute();
+            $result = $checkStmt->get_result();
 
-            if ($stmt->execute()) {
-                $_SESSION['status'] = 'sucess';
+            if ($result->num_rows > 0) {
+                // Product already exists in the cart, update the quantity
+                $updateSql = "UPDATE cart SET quantity = quantity + ? WHERE product_id = ? AND user_id = ?";
+                $updateStmt = $conn->prepare($updateSql);
 
+                if ($updateStmt) {
+                    $updateStmt->bind_param("iii", $quantity, $pid, $uid);
+
+                    if ($updateStmt->execute()) {
+                        $_SESSION['status'] = 'success';
+                        header("Location: ../../../index.php/productpage?id=$pid");
+                    } else {
+                        echo "Error updating quantity in cart: " . $updateStmt->error;
+                    }
+
+                    $updateStmt->close();
+                } else {
+                    echo "Error preparing update statement: " . $conn->error;
+                }
+
+                // Close the check statement and return
+                $checkStmt->close();
+                return;
+            }
+        } else {
+            echo "Error preparing check statement: " . $conn->error;
+        }
+
+        // Product not in cart, insert new record
+        $insertSql = "INSERT INTO cart (product_id, user_id, quantity) VALUES (?, ?, ?)";
+        $insertStmt = $conn->prepare($insertSql);
+
+        if ($insertStmt) {
+            $insertStmt->bind_param("iii", $pid, $uid, $quantity);
+
+            if ($insertStmt->execute()) {
+                $_SESSION['status'] = 'success';
                 header("Location: ../../../index.php/productpage?id=$pid");
             } else {
-                echo "Error adding record to cart: " . $stmt->error;
+                echo "Error adding record to cart: " . $insertStmt->error;
             }
 
-            $stmt->close();
+            $insertStmt->close();
         } else {
-            echo "Error preparing statement: " . $this->conn->error;
+            echo "Error preparing insert statement: " . $conn->error;
         }
+
+        // Close the check statement
+        $checkStmt->close();
     }
     
 }
@@ -41,7 +82,7 @@ if (isset($_GET['action'])) {
 
     switch ($action) {
         case 'addtocart':
-            $order->addtocart();
+            $order->addToCart();
             break;
 
         case 'deleteBanner':
