@@ -4,10 +4,10 @@
         if (isset($_SESSION['name'])) {
             include './App/Logic/db_connect.php';
             $id = $_SESSION['id'];
-            $sql = "SELECT p.*,c.quantity
-            FROM cart c
-            JOIN product p ON c.product_id = p.id
-            WHERE c.user_id = $id";
+            $sql = "SELECT p.*, c.quantity
+                    FROM cart c
+                    JOIN product p ON c.product_id = p.id
+                    WHERE c.user_id = $id";
 
             $result = $conn->query($sql);
 
@@ -15,7 +15,10 @@
             if ($result) {
                 // Fetch all rows (if there are multiple products in the cart)
                 $cart = $result->fetch_all(MYSQLI_ASSOC);
-//print_r($cart);
+
+                // Initialize total price
+                $totalPrice = 0;
+
                 // Iterate over each product in the cart
                 foreach ($cart as $product) {
                     echo '<li class="product-box-contain">
@@ -27,13 +30,16 @@
                                     <a href="./productpage?id=' . $product['id'] . '">
                                         <h5>' . $product['product_name'] . '</h5>
                                     </a>
-                                    <h6><span>'.$product['quantity'].' x</span>' . $product['coust_price'] . '</h6>
+                                    <h6><span>' . $product['quantity'] . ' x</span>' . $product['coust_price'] . '</h6>
                                     <button  class="close-button close_button">
                                         <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </div>
                             </div>
                         </li>';
+
+                    // Calculate the price for each product and add it to the total
+                    $totalPrice += $product['quantity'] * $product['coust_price'];
                 }
             } else {
                 // Handle the case where the query fails
@@ -44,7 +50,7 @@
 
     <div class="price-box">
         <h5>Total :</h5>
-        <h4 class="theme-color fw-bold">$106.58</h4>
+        <h4 class="theme-color fw-bold"><?php echo '₹' . number_format($totalPrice, 2); ?></h4>
     </div>
 
     <div class="button-group">
