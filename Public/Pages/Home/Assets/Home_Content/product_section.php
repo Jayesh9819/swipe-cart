@@ -159,50 +159,52 @@
             <script>
                 $(document).ready(function() {
                     <?php
+                    // Define an array to store quantityValue for each product
+                    $quantityValues = array();
+
                     while ($row = $result->fetch_assoc()) {
                         $uid = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
                         $id = $row['id'];
+                        $quantityValues[$id] = 1;
                         $quantityInputId = "quantity_" . $id;
                     ?>
-                        var quantityValue_<?php echo $id; ?> = 1;
-
                         $(".qty-btn").on("click", function() {
                             var inputField = $("#" + "<?php echo $quantityInputId; ?>");
                             var currentVal = parseInt(inputField.val());
 
                             if ($(this).data("type") === "plus") {
                                 inputField.val(currentVal + 1);
-                                quantityValue_<?php echo $id; ?> = currentVal + 1;
+                                <?php echo "quantityValues[$id]"; ?> = currentVal + 1;
                             } else if ($(this).data("type") === "minus" && currentVal > 1) {
                                 inputField.val(currentVal - 1);
-                                quantityValue_<?php echo $id; ?> = currentVal - 1;
+                                <?php echo "quantityValues[$id]"; ?> = currentVal - 1;
                             }
                         });
                     <?php } ?>
-                });
 
-                function addToCart(uid, pid, quantity) {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
+                    function addToCart(uid, pid) {
+                        const xhr = new XMLHttpRequest();
+                        xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
+                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + <?php echo "quantityValues[$id]"; ?>);
 
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === 4) {
-                            if (xhr.status === 200) {
-                                const response = JSON.parse(xhr.responseText);
-                                if (response.success) {
-                                    alert("Item added to the cart successfully!");
-                                    window.location.reload(); // Reload the page after successful addition
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === 4) {
+                                if (xhr.status === 200) {
+                                    const response = JSON.parse(xhr.responseText);
+                                    if (response.success) {
+                                        alert("Item added to the cart successfully!");
+                                        window.location.reload(); // Reload the page after successful addition
+                                    } else {
+                                        alert("Error adding item to the cart: " + response.message);
+                                    }
                                 } else {
-                                    alert("Error adding item to the cart: " + response.message);
+                                    alert("Error: " + xhr.statusText);
                                 }
-                            } else {
-                                alert("Error: " + xhr.statusText);
                             }
-                        }
-                    };
-                }
+                        };
+                    }
+                });
             </script>
 
             <div class="section-t-space">
