@@ -84,7 +84,7 @@ function deleteCartItem(product_id) {
             alert("Item removed from the cart successfully!");
             // Update the cart display or perform other actions
           } else {
-            alert("Error removing item from the cart: " + response.message);
+            alert("Error removing item from the cart mm: " + response.message);
           }
         } else {
           // Handle other HTTP status codes (e.g., 400, 404, 500)
