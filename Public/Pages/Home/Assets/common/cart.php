@@ -82,6 +82,8 @@ function deleteCartItem(product_id) {
           const response = JSON.parse(xhr.responseText);
           if (response.success) {
             alert("Item removed from the cart successfully!");
+            location.reload();
+
             // Update the cart display or perform other actions
           } else {
             alert("Error removing item from the cart mm: " + response.message);
