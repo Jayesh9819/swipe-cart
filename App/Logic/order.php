@@ -5,9 +5,9 @@ class order{
         include './db_connect.php';
         $response = array('success' => false, 'message' => '');
 
-        $pid = $_GET['pid'];
-        $uid = $_GET['uid'];
-        $quantity = $_GET['quantity'];
+        $pid = $_POST['pid'];
+        $uid = $_POST['uid'];
+        $quantity = $_POST['quantity'];
 
         if (empty($pid) || empty($uid) || empty($quantity) || !is_numeric($pid) || !is_numeric($uid) || !is_numeric($quantity)) {
             echo "Invalid input data.";
