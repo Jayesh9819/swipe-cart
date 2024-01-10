@@ -83,6 +83,9 @@
             </div>
 
 
+            <!-- Include the jQuery library -->
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
             <div class="product-border overflow-hidden wow fadeInUp">
                 <div class="product-box-slider no-arrow">
                     <?php
@@ -93,6 +96,12 @@
 
                     // Loop through the category data and generate HTML
                     while ($row = $result->fetch_assoc()) {
+                        $uid = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
+                        $id = $row['id'];
+
+                        // Generate unique identifiers for each product
+                        $quantityInputId = "quantity_" . $id;
+                        $addToCartBtnId = "addToCartBtn_" . $id;
                     ?>
                         <div>
                             <div class="row m-0">
@@ -107,12 +116,10 @@
                                             <a href="product-left-thumbnail.html">
                                                 <h6 class="name h-100"><?php echo $row['product_name']; ?></h6>
                                             </a>
-
                                             <h5 class="sold text-content">
                                                 <span class="theme-color price"><?php echo $row['coust_price']; ?></span>
                                                 <del><?php echo $row['MRP']; ?></del>
                                             </h5>
-
                                             <div class="product-rating mt-sm-2 mt-1">
                                                 <ul class="rating">
                                                     <?php
@@ -122,114 +129,90 @@
                                                     }
                                                     ?>
                                                 </ul>
-
                                                 <h6 class="theme-color">In Stock</h6>
                                             </div>
-
                                             <div class="add-to-cart-box">
-                                                <button class="btn btn-add-cart addcart-button">Add
+                                                <button class="btn btn-add-cart addcart-button" id="<?php echo $addToCartBtnId; ?>">Add
                                                     <span class="add-icon">
                                                         <?php
                                                         if (isset($_SESSION['name'])) {
-                                                            $uid = $_SESSION['id'];
-                                                            $id=$row['id'];
-
-                                                            echo '<a href="javascript:void(0);"  onclick="addToCart(' . $uid . ',' . $id . ',0)" id="addToCartBtn"><i class="fa-solid fa-plus"></i></a>';
+                                                            echo '<i class="fa-solid fa-plus"></i>';
                                                         } else {
-                                                            echo ' alert("Login First");
-                                                ';
+                                                            echo ' alert("Login First");';
                                                         }
                                                         ?>
                                                     </span>
                                                 </button>
                                                 <div class="cart_qty qty-box">
                                                     <div class="input-group">
-                                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="<?php echo $quantityInputId; ?>">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </button>
-                                                        <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                        <input class="form-control input-number qty-input" type="text" name="quantity" id="<?php echo $quantityInputId; ?>" value="0">
+                                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="<?php echo $quantityInputId; ?>">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-                                            <script>
-                                                $(document).ready(function() {
-                                                    // Initial quantity value
-                                                    var quantityValue = 1;
-
-                                                    $(".qty-btn").on("click", function() {
-                                                        var inputField = $("#quantity");
-                                                        var currentVal = parseInt(inputField.val());
-
-                                                        if ($(this).data("type") === "plus") {
-                                                            inputField.val(currentVal + 1);
-                                                            quantityValue = currentVal + 1;
-                                                        } else if ($(this).data("type") === "minus" && currentVal > 1) {
-                                                            inputField.val(currentVal - 1);
-                                                            quantityValue = currentVal - 1;
-                                                        }
-                                                    });
-
-                                                    // Update the quantity in the URL when "Add To Cart" is clicked
-                                                    $("#addToCartBtn").on("click", function(e) {
-                                                        e.preventDefault(); // Prevent the default action of the link
-                                                        var addToCartUrl = $(this).attr("href");
-                                                        addToCartUrl += "&quantity=" + quantityValue;
-                                                        $(this).attr("href", addToCartUrl);
-                                                        addToCart(<?php echo $uid; ?>, <?php echo $id; ?>, quantityValue); // Call addToCart function
-                                                    });
-                                                });
-                                            </script>
-
-                                            <script>
-                                                function addToCart(uid, pid, quantity) {
-                                                    // Create an XMLHttpRequest object
-                                                    const xhr = new XMLHttpRequest();
-
-                                                    // Specify the request method and URL (using POST for data modification)
-                                                    xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
-
-                                                    // Set up the content type for sending data
-                                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-                                                    // Send the product_id and action as POST data
-                                                    xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
-
-                                                    // Handle the response
-                                                    xhr.onreadystatechange = function() {
-                                                        if (xhr.readyState === 4) {
-                                                            if (xhr.status === 200) {
-                                                                // Parse the response
-                                                                const response = JSON.parse(xhr.responseText);
-                                                                if (response.success) {
-                                                                    alert("Item added to the cart successfully!");
-                                                                    location.reload();
-                                                                    // Update the cart display or perform other actions
-                                                                } else {
-                                                                    alert("Error adding item to the cart: " + response.message);
-                                                                }
-                                                            } else {
-                                                                // Handle other HTTP status codes (e.g., 400, 404, 500)
-                                                                alert("Error: " + xhr.statusText);
-                                                            }
-                                                        }
-                                                    };
-                                                }
-                                            </script>
-
                                         </div>
+
+                                        <!-- JavaScript for each product -->
+                                        <script>
+                                            $(document).ready(function() {
+                                                var quantityValue_<?php echo $id; ?> = 1;
+
+                                                $(".qty-btn").on("click", function() {
+                                                    var inputField = $("#" + "<?php echo $quantityInputId; ?>");
+                                                    var currentVal = parseInt(inputField.val());
+
+                                                    if ($(this).data("type") === "plus") {
+                                                        inputField.val(currentVal + 1);
+                                                        quantityValue_<?php echo $id; ?> = currentVal + 1;
+                                                    } else if ($(this).data("type") === "minus" && currentVal > 1) {
+                                                        inputField.val(currentVal - 1);
+                                                        quantityValue_<?php echo $id; ?> = currentVal - 1;
+                                                    }
+                                                });
+
+                                                $("#" + "<?php echo $addToCartBtnId; ?>").on("click", function(e) {
+                                                    e.preventDefault();
+                                                    addToCart(<?php echo $uid; ?>, <?php echo $id; ?>, quantityValue_<?php echo $id; ?>);
+                                                });
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     <?php } ?>
-
                 </div>
             </div>
+
+            <script>
+                function addToCart(uid, pid, quantity) {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
+
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                const response = JSON.parse(xhr.responseText);
+                                if (response.success) {
+                                    alert("Item added to the cart successfully!");
+                                    location.reload();
+                                } else {
+                                    alert("Error adding item to the cart: " + response.message);
+                                }
+                            } else {
+                                alert("Error: " + xhr.statusText);
+                            }
+                        }
+                    };
+                }
+            </script>
 
             <div class="section-t-space">
                 <div class="banner-contain">
