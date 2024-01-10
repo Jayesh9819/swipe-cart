@@ -71,9 +71,9 @@ class order{
         // Close the check statement
         $checkStmt->close();
     }
-    public function deletecart($id){
+    public function deletecart(){
         include './db_connect.php';
-
+        
         $response = array('success' => false, 'message' => '');
         
         if (isset($_GET['product_id'])) {
@@ -94,9 +94,10 @@ class order{
         
         $conn->close();
         
-        // Send the response back to the JavaScript
+        // Send the response back to the JavaScript with the correct content type
+        header('Content-Type: application/json');
         echo json_encode($response);
-        
+                
     }
     
 }
