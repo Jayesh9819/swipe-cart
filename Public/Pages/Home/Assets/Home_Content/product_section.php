@@ -129,8 +129,18 @@
                                             <div class="add-to-cart-box">
                                                 <button class="btn btn-add-cart addcart-button">Add
                                                     <span class="add-icon">
-                                                        <i class="fa-solid fa-plus"></i>
-                                                    </span>
+                                                    <?php
+                                            if (isset($_SESSION['name'])) {
+                                                $uid = $_SESSION['id'];
+
+                                                       echo '<a href="javascript:void(0);"  onclick="addToCart(' . $uid . ',' . $id . ',0)" id="addToCartBtn"><i class="fa-solid fa-plus"></i></a>';
+                                            }else{
+                                                echo ' alert("Login First");
+                                                ';
+
+                                            }
+                                            ?>
+                                                        </span>
                                                 </button>
                                                 <div class="cart_qty qty-box">
                                                     <div class="input-group">
@@ -144,6 +154,73 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                                            <script>
+                                                $(document).ready(function() {
+                                                    // Initial quantity value
+                                                    var quantityValue = 1;
+
+                                                    $(".qty-btn").on("click", function() {
+                                                        var inputField = $("#quantity");
+                                                        var currentVal = parseInt(inputField.val());
+
+                                                        if ($(this).data("type") === "plus") {
+                                                            inputField.val(currentVal + 1);
+                                                            quantityValue = currentVal + 1;
+                                                        } else if ($(this).data("type") === "minus" && currentVal > 1) {
+                                                            inputField.val(currentVal - 1);
+                                                            quantityValue = currentVal - 1;
+                                                        }
+                                                    });
+
+                                                    // Update the quantity in the URL when "Add To Cart" is clicked
+                                                    $("#addToCartBtn").on("click", function(e) {
+                                                        e.preventDefault(); // Prevent the default action of the link
+                                                        var addToCartUrl = $(this).attr("href");
+                                                        addToCartUrl += "&quantity=" + quantityValue;
+                                                        $(this).attr("href", addToCartUrl);
+                                                        addToCart(<?php echo $uid; ?>, <?php echo $id; ?>, quantityValue); // Call addToCart function
+                                                    });
+                                                });
+                                            </script>
+
+                                            <script>
+                                                function addToCart(uid, pid, quantity) {
+                                                    // Create an XMLHttpRequest object
+                                                    const xhr = new XMLHttpRequest();
+
+                                                    // Specify the request method and URL (using POST for data modification)
+                                                    xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
+
+                                                    // Set up the content type for sending data
+                                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                                                    // Send the product_id and action as POST data
+                                                    xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
+
+                                                    // Handle the response
+                                                    xhr.onreadystatechange = function() {
+                                                        if (xhr.readyState === 4) {
+                                                            if (xhr.status === 200) {
+                                                                // Parse the response
+                                                                const response = JSON.parse(xhr.responseText);
+                                                                if (response.success) {
+                                                                    alert("Item added to the cart successfully!");
+                                                                    location.reload();
+                                                                    // Update the cart display or perform other actions
+                                                                } else {
+                                                                    alert("Error adding item to the cart: " + response.message);
+                                                                }
+                                                            } else {
+                                                                // Handle other HTTP status codes (e.g., 400, 404, 500)
+                                                                alert("Error: " + xhr.statusText);
+                                                            }
+                                                        }
+                                                    };
+                                                }
+                                            </script>
+
                                         </div>
                                     </div>
                                 </div>
