@@ -129,18 +129,18 @@
                                             <div class="add-to-cart-box">
                                                 <button class="btn btn-add-cart addcart-button">Add
                                                     <span class="add-icon">
-                                                    <?php
-                                            if (isset($_SESSION['name'])) {
-                                                $uid = $_SESSION['id'];
+                                                        <?php
+                                                        if (isset($_SESSION['name'])) {
+                                                            $uid = $_SESSION['id'];
+                                                            $id=$row['id'];
 
-                                                       echo '<a href="javascript:void(0);"  onclick="addToCart(' . $uid . ',' . $id . ',0)" id="addToCartBtn"><i class="fa-solid fa-plus"></i></a>';
-                                            }else{
-                                                echo ' alert("Login First");
+                                                            echo '<a href="javascript:void(0);"  onclick="addToCart(' . $uid . ',' . $id . ',0)" id="addToCartBtn"><i class="fa-solid fa-plus"></i></a>';
+                                                        } else {
+                                                            echo ' alert("Login First");
                                                 ';
-
-                                            }
-                                            ?>
-                                                        </span>
+                                                        }
+                                                        ?>
+                                                    </span>
                                                 </button>
                                                 <div class="cart_qty qty-box">
                                                     <div class="input-group">
