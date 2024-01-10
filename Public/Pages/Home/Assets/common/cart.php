@@ -61,35 +61,40 @@
 
 <script>
 function deleteCartItem(product_id) {
-    if (confirm("Are you sure you want to remove this item from the cart?")) {
-        // Create an XMLHttpRequest object
-        var xhr = new XMLHttpRequest();
+  if (confirm("Are you sure you want to remove this item from the cart?")) {
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
 
-        // Specify the request method and URL
-        xhr.open("GET", "../App/Logic/order.php?action=deletecart&product_id=" + product_id, true);
+    // Specify the request method and URL (using POST for data modification)
+    xhr.open("POST", "../App/Logic/order.php", true);
 
-        // Set up the callback function to handle the response
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                // Handle the response, if needed
-                var response = JSON.parse(xhr.responseText);
-                if (response.success) {
-                    // Update the cart display or perform any other action
-                    alert("Item removed from the cart successfully!");
-                    // You may want to refresh the cart display or update it dynamically
-                    // based on the response.
-                } else {
-                    alert("Error removing item from the cart: " + response.message);
-                }
-            }
-        };
+    // Set up the content type for sending data
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-        // Send the request
-        xhr.send();
-    }
+    // Send the product_id and action as POST data
+    xhr.send("action=deletecart&product_id=" + product_id);
+
+    // Handle the response
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Parse the response
+          const response = JSON.parse(xhr.responseText);
+          if (response.success) {
+            alert("Item removed from the cart successfully!");
+            // Update the cart display or perform other actions
+          } else {
+            alert("Error removing item from the cart: " + response.message);
+          }
+        } else {
+          // Handle other HTTP status codes (e.g., 400, 404, 500)
+          alert("Error: " + xhr.statusText);
+        }
+      }
+    };
+  }
 }
 </script>
-
 <?php
         } else {
             echo '<ul class="cart-list">
