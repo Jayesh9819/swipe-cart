@@ -71,6 +71,29 @@ class order{
         // Close the check statement
         $checkStmt->close();
     }
+    public function deletecart(){
+        include './db_connect.php';
+
+        if (isset($_GET['product_id'])) {
+            $product_id = $_GET['product_id'];
+
+            // Perform a query to delete the category with the specified ID
+            $delete_sql = "DELETE FROM slider WHERE id = $category_id";
+
+            if ($conn->query($delete_sql) === TRUE) {
+                header('Location: ../../../index.php/banner');
+                $response['success'] = true;
+                $response['message'] = "Category deleted successfully!";
+            } else {
+                echo "Error deleting the category: " . $conn->error;
+            }
+        } else {
+            echo "Invalid category ID.";
+        }
+
+        $conn->close();
+
+    }
     
 }
 $order=new order();
@@ -85,8 +108,8 @@ if (isset($_GET['action'])) {
             $order->addToCart();
             break;
 
-        case 'deleteBanner':
-            $frontend->deleteBanner();
+        case 'deletecart':
+            $order->deletecart();
             break;
 
         case 'addOffer':

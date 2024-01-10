@@ -31,9 +31,9 @@
                                         <h5>' . $product['product_name'] . '</h5>
                                     </a>
                                     <h6><span>' . $product['quantity'] . ' x</span>' . $product['coust_price'] . '</h6>
-                                    <button  class="close-button close_button">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
+                                    <a href="../App/Logic/order.php?action=deletecart&product_id=' . $product['id'] . '" class="close-button close_button">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    </a>
                                 </div>
                             </div>
                         </li>';
