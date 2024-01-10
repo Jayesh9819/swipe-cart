@@ -76,8 +76,8 @@ class order{
         
         $response = array('success' => false, 'message' => '');
         
-        if (isset($_GET['product_id'])) {
-            $product_id = $_GET['product_id'];
+        if (isset($_POST['product_id'])) {
+            $product_id = $_POST['product_id'];
         
             // Perform a query to delete the product from the cart
             $delete_sql = "DELETE FROM cart WHERE id = $product_id";
