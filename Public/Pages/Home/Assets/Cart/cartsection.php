@@ -129,6 +129,8 @@
             <script>
     // Add event listeners to quantity input elements
     document.querySelectorAll('.qty-input').forEach(function (input) {
+        console.log("Script is running!");
+
         input.addEventListener('input', function () {
             updateTotal(input);
         });
