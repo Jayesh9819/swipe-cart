@@ -122,7 +122,7 @@
                 }
             }else{
                     echo "add product";
-                }
+                }}
                                     ?>
 
                                 <tr class="product-box-contain">
