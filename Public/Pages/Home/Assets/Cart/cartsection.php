@@ -63,7 +63,8 @@
                                                                             <button type="button" class="btn qty-left-minus" data-type="minus" data-field="">
                                                                                 <i class="fa fa-minus ms-0" aria-hidden="true"></i>
                                                                             </button>
-                                                                            <input class="form-control input-number qty-input" type="text" name="quantity" value="<?php $quant=$cartpage['quantity']; echo $quant; ?>" data-product-id="<?php echo $cartpage['id']; ?>">
+                                                                            <input class="form-control input-number qty-input" type="text" name="quantity" value="<?php $quant = $cartpage['quantity'];
+                                                                                                                                                                    echo $quant; ?>" data-product-id="<?php echo $cartpage['id']; ?>">
                                                                             <button type="button" class="btn qty-right-plus" data-type="plus" data-field="">
                                                                                 <i class="fa fa-plus ms-0" aria-hidden="true"></i>
                                                                             </button>
@@ -72,7 +73,7 @@
                                                                 </li>
 
                                                                 <li>
-                                                                <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
+                                                                    <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -107,6 +108,33 @@
                                                     <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
                                                 </td>
 
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $('.qty-left-minus').click(function() {
+                                                            var input = $(this).next('.qty-input');
+                                                            var qty = parseInt(input.val());
+                                                            if (qty > 1) {
+                                                                qty--;
+                                                                input.val(qty);
+                                                                updateTotal(input.data('product-id'), qty);
+                                                            }
+                                                        });
+                                                        $('.qty-right-plus').click(function() {
+                                                            var input = $(this).prev('.qty-input');
+                                                            var qty = parseInt(input.val());
+                                                            qty++;
+                                                            input.val(qty);
+                                                            updateTotal(input.data('product-id'), qty);
+                                                        });
+                                                    });
+
+                                                    function updateTotal(productId, qty) {
+                                                        var price = $('#product-price-' + productId).val();
+                                                        var total = price * qty;
+                                                        $('#product-total-' + productId).text(total.toFixed(2));
+                                                    }
+                                                </script>
+
                                                 <td class="save-remove">
                                                     <h4 class="table-title text-content">Action</h4>
                                                     <a class="save notifi-wishlist" href="javascript:void(0)">Save for later</a>
@@ -123,71 +151,11 @@
 
                             </tbody>
                         </table>
-                        <script>
-    // Add event listeners to quantity input elements
-    $(document).ready(function () {
-            // Add event listeners to quantity input elements
-            $('.qty-input').on('input', function () {
-                updateTotal($(this));
-            });
-
-            // Function to update total based on quantity
-            function updateTotal(input) {
-                var productId = input.data('product-id');
-                var quantity = parseInt(input.val());
-                var price = parseFloat(<?php echo $price; ?>); // Assuming price is a decimal, adjust accordingly
-
-                var totalElement = $('.product-total[data-product-id="' + productId + '"]');
-                var newTotal = price * quantity;
-
-                // Update the total amount
-                totalElement.text(newTotal.toFixed(2)); // Adjust decimal places if necessary
-            }
-
-            // Increment quantity on button click
-            $('.qty-right-plus').on('click', function () {
-                var input = $(this).siblings('.qty-input');
-                var currentQuantity = parseInt(input.val());
-                input.val(currentQuantity + 1).trigger('input');
-            });
-
-            // Decrement quantity on button click
-            $('.qty-left-minus').on('click', function () {
-                var input = $(this).siblings('.qty-input');
-                var currentQuantity = parseInt(input.val());
-                if (currentQuantity > 1) {
-                    input.val(currentQuantity - 1).trigger('input');
-                }
-            });
-        });
-</script>
-
                     </div>
                 </div>
             </div>
-            <script>
-    // Add event listeners to quantity input elements
-    document.querySelectorAll('.qty-input').forEach(function (input) {
-        console.log("Script is running!");
 
-        input.addEventListener('input', function () {
-            updateTotal(input);
-        });
-    });
 
-    // Function to update total based on quantity
-    function updateTotal(input) {
-        var productId = input.getAttribute('data-product-id');
-        var quantity = parseInt(input.value);
-        var price = parseFloat(<?php echo $price; ?>); // Assuming price is a decimal, adjust accordingly
-
-        var totalElement = document.querySelector('.product-total[data-product-id="' + productId + '"]');
-        var newTotal = price * quantity;
-
-        // Update the total amount
-        totalElement.textContent = newTotal.toFixed(2); // Adjust decimal places if necessary
-    }
-</script>
             <div class="col-xxl-3">
                 <div class="summery-box p-sticky">
                     <div class="summery-header">
