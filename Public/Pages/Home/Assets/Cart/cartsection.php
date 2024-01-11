@@ -26,7 +26,7 @@
                 $totalPrice = 0;
 
                 // Iterate over each product in the cart
-                foreach ($cartpage as $product) {
+                foreach ($cartpage as $cartpage) {
                                         
                                         ?>
                                 <tr class="product-box-contain">
