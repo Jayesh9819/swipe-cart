@@ -127,15 +127,7 @@
                                                 </ul>
                                                 <h6 class="theme-color">In Stock</h6>
                                             </div>
-                                            <div class="add-to-cart-box">
-                                                <?php
-                                                if (isset($_SESSION['name'])) {
-                                                    echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100" onclick="addToCart(' . $uid . ', ' . $id . ', 1 )" id="addToCartBtn">Add To Cart</a>';
-                                                } else {
-                                                    echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
-                                                }
-                                                ?>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -146,52 +138,6 @@
             </div>
 
             <!-- Move the quantity button click event outside of the loop -->
-            <script>
-                $(document).ready(function() {
-                    $(".qty-btn").on("click", function() {
-                        var productId = $(this).data("product-id");
-                        var inputField = $("#quantity_" + productId);
-                        var currentVal = parseInt(inputField.val());
-
-                        if ($(this).data("type") === "plus") {
-                            inputField.val(currentVal + 1);
-                        } else if ($(this).data("type") === "minus" && currentVal > 1) {
-                            inputField.val(currentVal - 1);
-                        }
-                    });
-
-                    <?php
-                    while ($row = $result->fetch_assoc()) {
-                        $uid = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
-                        $id = $row['id'];
-                    ?>
-                        // Quantity values are updated directly from data attributes
-                        function addToCart(uid, pid) {
-                            const quantity = $("#quantity_<?php echo $id; ?>").val();
-                            const xhr = new XMLHttpRequest();
-                            xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
-                            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                            xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
-
-                            xhr.onreadystatechange = function() {
-                                if (xhr.readyState === 4) {
-                                    if (xhr.status === 200) {
-                                        const response = JSON.parse(xhr.responseText);
-                                        if (response.success) {
-                                            alert("Item added to the cart successfully!");
-                                            window.location.reload(); // Reload the page after successful addition
-                                        } else {
-                                            alert("Error adding item to the cart: " + response.message);
-                                        }
-                                    } else {
-                                        alert("Error: " + xhr.statusText);
-                                    }
-                                }
-                            };
-                        }
-                    <?php } ?>
-                });
-            </script>
 
             <div class="section-t-space">
                 <div class="banner-contain">
