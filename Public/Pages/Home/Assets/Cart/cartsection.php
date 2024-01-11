@@ -147,8 +147,6 @@
         totalElement.textContent = newTotal.toFixed(2); // Adjust decimal places if necessary
     }
 </script>
-
-
             <div class="col-xxl-3">
                 <div class="summery-box p-sticky">
                     <div class="summery-header">
