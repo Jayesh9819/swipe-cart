@@ -167,9 +167,9 @@
                                             if (isset($_SESSION['name'])) {
                                                 $uid = $_SESSION['id'];
                                                 $sql = "SELECT * FROM cart WHERE user_id=$uid AND product_id=$id";
-                                                $result = $conn->query($sql);
+                                                $check = $conn->query($sql);
 
-                                                if ($result->num_rows > 0) {
+                                                if ($check->num_rows > 0) {
                                                     echo '<a class="btn btn-md bg-success cart-button text-white w-100">Added To Cart</a>';
                                                 } else {
                                                     echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100" onclick="addToCart(' . $uid . ',' . $id . ',1)" id="addToCartBtn">Add To Cart</a>';
