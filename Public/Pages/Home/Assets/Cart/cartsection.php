@@ -107,6 +107,7 @@
                                                     <h4 class="table-title text-content">Total</h4>
                                                     <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
                                                 </td>
+                                                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
                                                 <script>
                                                     $(document).ready(function() {
