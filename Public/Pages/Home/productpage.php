@@ -166,17 +166,15 @@
                                             <?php
                                             if (isset($_SESSION['name'])) {
                                                 $uid = $_SESSION['id'];
-                                                $sql = "SELECT * from cart where user_id=$uid AND product_id=$id";
-                                                $result=$conn->query($sql);
-                                                if($row=$result->fetch_assoc >0){
+                                                $sql = "SELECT * FROM cart WHERE user_id=$uid AND product_id=$id";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
                                                     echo '<a href="" class="btn btn-md bg-dark cart-button text-white w-100">Added To Cart</a>';
-
-                                                }else{
-                                                // echo '<a href="../App/Logic/order.php?action=addtocart&uid=' . $uid . '&pid=' . $id . '&quantity=" class="btn btn-md bg-dark cart-button text-white w-100" id="addToCartBtn">Add To Cart</a>';
-
-                                                echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100" onclick="addToCart(' . $uid . ',' . $id . ',0)" id="addToCartBtn">Add To Cart</a>';
-                                            } }
-                                            else {
+                                                } else {
+                                                    echo '<a href="javascript:void(0);" class="btn btn-md bg-dark cart-button text-white w-100" onclick="addToCart(' . $uid . ',' . $id . ',1)" id="addToCartBtn">Add To Cart</a>';
+                                                }
+                                            } else {
                                                 echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                             }
                                             ?>
