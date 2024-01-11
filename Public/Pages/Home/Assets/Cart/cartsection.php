@@ -130,7 +130,10 @@
                                                     });
 
                                                     function updateTotal(productId, qty) {
+                                                        console.log(productId);
+                                                        console.log(qty);
                                                         var price = $('#product-price-' + productId).val();
+                                                        console.log(price);
                                                         var total = price * qty;
                                                         console.log(total);
                                                         $('#product-total-' + productId).text(total.toFixed(2));
