@@ -107,38 +107,6 @@
                                                     <h4 class="table-title text-content">Total</h4>
                                                     <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
                                                 </td>
-                                                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-                                                <script>
-                                                    $(document).ready(function() {
-                                                        $('.qty-left-minus').click(function() {
-                                                            var input = $(this).next('.qty-input');
-                                                            var qty = parseInt(input.val());
-                                                            if (qty > 1) {
-                                                                qty--;
-                                                                input.val(qty);
-                                                                updateTotal(input.data('product-id'), qty);
-                                                            }
-                                                        });
-                                                        $('.qty-right-plus').click(function() {
-                                                            var input = $(this).prev('.qty-input');
-                                                            var qty = parseInt(input.val());
-                                                            qty++;
-                                                            input.val(qty);
-                                                            updateTotal(input.data('product-id'), qty);
-                                                        });
-                                                    });
-
-                                                    function updateTotal(productId, qty) {
-                                                        console.log(productId);
-                                                        console.log(qty);
-                                                        var price = $('#product-price-' + productId).val();
-                                                        console.log(price);
-                                                        var total = price * qty;
-                                                        console.log(total);
-                                                        $('#product-total-' + productId).text(total.toFixed(2));
-                                                    }
-                                                </script>
 
                                                 <td class="save-remove">
                                                     <h4 class="table-title text-content">Action</h4>
@@ -154,6 +122,38 @@
                                 }
                                 ?>
 
+                                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+                                <script>
+                                    $(document).ready(function() {
+                                        $('.qty-left-minus').click(function() {
+                                            var input = $(this).next('.qty-input');
+                                            var qty = parseInt(input.val());
+                                            if (qty > 1) {
+                                                qty--;
+                                                input.val(qty);
+                                                updateTotal(input.data('product-id'), qty);
+                                            }
+                                        });
+                                        $('.qty-right-plus').click(function() {
+                                            var input = $(this).prev('.qty-input');
+                                            var qty = parseInt(input.val());
+                                            qty++;
+                                            input.val(qty);
+                                            updateTotal(input.data('product-id'), qty);
+                                        });
+                                    });
+
+                                    function updateTotal(productId, qty) {
+                                        console.log(productId);
+                                        console.log(qty);
+                                        var price = $('#product-price-' + productId).val();
+                                        console.log(price);
+                                        var total = price * qty;
+                                        console.log(total);
+                                        $('#product-total-' + productId).text(total.toFixed(2));
+                                    }
+                                </script>
                             </tbody>
                         </table>
                     </div>
