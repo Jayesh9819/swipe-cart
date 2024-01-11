@@ -45,7 +45,7 @@
                                                                         By:</span> <?php echo $cartpage['seller_id']; ?></li>
 
 
-                                                                <li class="product-price-<?php echo $cartpage['id']; ?>">
+                                                                <li class="product-price-" data-product-id="<?php echo $cartpage['id']; ?>>"
                                                                     <!-- <h5 class="text-content d-inline-block">Price :</h5>
                                                         <span><?php $price =  $cartpage['coust_price'];
                                                                 echo $price ?></span>
