@@ -135,17 +135,6 @@
                                                     echo '<a href="./Login" class="btn btn-md bg-dark cart-button text-white w-100">Login</a>';
                                                 }
                                                 ?>
-                                                <!-- <div class="cart_qty qty-box">
-                                                    <div class="input-group">
-                                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="<?php echo $quantityInputId; ?>">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input class="form-control input-number qty-input" type="text" name="quantity" id="<?php echo $quantityInputId; ?>" value="0">
-                                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="<?php echo $quantityInputId; ?>">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -156,54 +145,51 @@
                 </div>
             </div>
 
+            <!-- Move the quantity button click event outside of the loop -->
             <script>
                 $(document).ready(function() {
-                    <?php
-                    // Define an array to store quantityValue for each product
-                    $quantityValues = array();
+                    $(".qty-btn").on("click", function() {
+                        var productId = $(this).data("product-id");
+                        var inputField = $("#quantity_" + productId);
+                        var currentVal = parseInt(inputField.val());
 
+                        if ($(this).data("type") === "plus") {
+                            inputField.val(currentVal + 1);
+                        } else if ($(this).data("type") === "minus" && currentVal > 1) {
+                            inputField.val(currentVal - 1);
+                        }
+                    });
+
+                    <?php
                     while ($row = $result->fetch_assoc()) {
                         $uid = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
                         $id = $row['id'];
-                        $quantityValues[$id] = 1;
-                        $quantityInputId = "quantity_" . $id;
                     ?>
-                        $(".qty-btn").on("click", function() {
-                            var inputField = $("#" + "<?php echo $quantityInputId; ?>");
-                            var currentVal = parseInt(inputField.val());
+                        // Quantity values are updated directly from data attributes
+                        function addToCart(uid, pid) {
+                            const quantity = $("#quantity_<?php echo $id; ?>").val();
+                            const xhr = new XMLHttpRequest();
+                            xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
+                            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                            xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
 
-                            if ($(this).data("type") === "plus") {
-                                inputField.val(currentVal + 1);
-                                <?php echo "quantityValues[$id]"; ?> = currentVal + 1;
-                            } else if ($(this).data("type") === "minus" && currentVal > 1) {
-                                inputField.val(currentVal - 1);
-                                <?php echo "quantityValues[$id]"; ?> = currentVal - 1;
-                            }
-                        });
-                    <?php } ?>
-
-                    function addToCart(uid, pid,quantity) {
-                        const xhr = new XMLHttpRequest();
-                        xhr.open("POST", "../App/Logic/order.php?action=addToCart", true);
-                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                        xhr.send("uid=" + uid + "&pid=" + pid + "&quantity=" + quantity);
-
-                        xhr.onreadystatechange = function() {
-                            if (xhr.readyState === 4) {
-                                if (xhr.status === 200) {
-                                    const response = JSON.parse(xhr.responseText);
-                                    if (response.success) {
-                                        alert("Item added to the cart successfully!");
-                                        window.location.reload(); // Reload the page after successful addition
+                            xhr.onreadystatechange = function() {
+                                if (xhr.readyState === 4) {
+                                    if (xhr.status === 200) {
+                                        const response = JSON.parse(xhr.responseText);
+                                        if (response.success) {
+                                            alert("Item added to the cart successfully!");
+                                            window.location.reload(); // Reload the page after successful addition
+                                        } else {
+                                            alert("Error adding item to the cart: " + response.message);
+                                        }
                                     } else {
-                                        alert("Error adding item to the cart: " + response.message);
+                                        alert("Error: " + xhr.statusText);
                                     }
-                                } else {
-                                    alert("Error: " + xhr.statusText);
                                 }
-                            }
-                        };
-                    }
+                            };
+                        }
+                    <?php } ?>
                 });
             </script>
 
