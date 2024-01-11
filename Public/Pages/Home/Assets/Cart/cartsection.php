@@ -33,7 +33,7 @@
                                     <td class="product-detail">
                                         <div class="product border-0">
                                             <a href="product-left-thumbnail.html" class="product-image">
-                                                <img src="../Other/Home_assets/assets/images/vegetable/product/1.png"
+                                                <img src="<?php echo $cartpage['main_img'] ;?>"
                                                     class="img-fluid blur-up lazyload" alt="">
                                             </a>
                                             <div class="product-detail">
@@ -47,9 +47,9 @@
 
 
                                                     <li>
-                                                        <h5 class="text-content d-inline-block">Price :</h5>
+                                                        <!-- <h5 class="text-content d-inline-block">Price :</h5>
                                                         <span><?php $price=  $cartpage['coust_price']; echo $price ?></span>
-                                                        <span class="text-content"><?php $mrp= $cartpage['MRP'] ; echo $mrp;?></span>
+                                                        <span class="text-content"><?php $mrp= $cartpage['MRP'] ; echo $mrp;?></span> -->
                                                     </li>
 
                                                     <li>
