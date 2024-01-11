@@ -63,8 +63,7 @@
                                                                             <button type="button" class="btn qty-left-minus" data-type="minus" data-field="">
                                                                                 <i class="fa fa-minus ms-0" aria-hidden="true"></i>
                                                                             </button>
-                                                                            <input class="form-control input-number qty-input" type="text" name="quantity" value="<?php $quant = $cartpage['quantity'];
-                                                                                                                                                                    echo $quant; ?>">
+                                                                            <input class="form-control input-number qty-input" type="text" name="quantity" value="<?php $quant=$cartpage['quantity']; echo $quant; ?>" data-product-id="<?php echo $cartpage['id']; ?>">
                                                                             <button type="button" class="btn qty-right-plus" data-type="plus" data-field="">
                                                                                 <i class="fa fa-plus ms-0" aria-hidden="true"></i>
                                                                             </button>
@@ -73,7 +72,7 @@
                                                                 </li>
 
                                                                 <li>
-                                                                    <h5>Total: <?php echo $price * $quant; ?></h5>
+                                                                <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -94,7 +93,7 @@
                                                                 <button type="button" class="btn qty-left-minus" data-type="minus" data-field="">
                                                                     <i class="fa fa-minus ms-0" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="<?php echo $cartpage['quantity']; ?>">
+                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="<?php echo $quant; ?>" data-product-id="<?php echo $cartpage['id']; ?>">
                                                                 <button type="button" class="btn qty-right-plus" data-type="plus" data-field="">
                                                                     <i class="fa fa-plus ms-0" aria-hidden="true"></i>
                                                                 </button>
@@ -105,7 +104,7 @@
 
                                                 <td class="subtotal">
                                                     <h4 class="table-title text-content">Total</h4>
-                                                    <h5><?php echo $price * $quant; ?></h5>
+                                                    <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
                                                 </td>
 
                                                 <td class="save-remove">
