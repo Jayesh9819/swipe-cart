@@ -123,6 +123,30 @@
 
                             </tbody>
                         </table>
+                        <script>
+    // Add event listeners to quantity input elements
+    document.querySelectorAll('.qty-input').forEach(function (input) {
+        console.log("Script is running!");
+
+        input.addEventListener('input', function () {
+            updateTotal(input);
+        });
+    });
+
+    // Function to update total based on quantity
+    function updateTotal(input) {
+        var productId = input.getAttribute('data-product-id');
+        var quantity = parseInt(input.value);
+        var price = parseFloat(<?php echo $price; ?>); // Assuming price is a decimal, adjust accordingly
+
+        var totalElement = document.querySelector('.product-total[data-product-id="' + productId + '"]');
+        var newTotal = price * quantity;
+
+        // Update the total amount
+        totalElement.textContent = newTotal.toFixed(2); // Adjust decimal places if necessary
+    }
+</script>
+
                     </div>
                 </div>
             </div>
