@@ -9,7 +9,7 @@
                                                 <h5>Category Information</h5>
                                             </div>
 
-<form action="../App/Logic/category.php/acategory" method="post" enctype="multipart/form-data" class="theme-form theme-form-2 mega-form">
+<form action="../App/Logic/category.php?action=acategory" method="post" enctype="multipart/form-data" class="theme-form theme-form-2 mega-form">
     <div class="mb-4 row align-items-center">
         <label class="form-label-title col-sm-3 mb-0">Category Name</label>
         <div class="col-sm-9">

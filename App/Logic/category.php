@@ -16,7 +16,7 @@ class category
                 $main_image_tmp = $_FILES['img']['tmp_name'];
                 $main_image_path = $uploadDir . $main_image_name;
                 move_uploaded_file($main_image_tmp, $main_image_path);
-                $main_image = "../Other/assets/category/".$main_image_name;
+                $main_image = "../Other/assets/category/" . $main_image_name;
             }
             $status = 1;
 
@@ -40,29 +40,59 @@ class category
             }
         }
     }
-    public function delete(){
-                include './db_connect.php';
+    public function delete()
+    {
+        include './db_connect.php';
 
         if (isset($_GET['id'])) {
-    $category_id = $_GET['id'];
+            $category_id = $_GET['id'];
 
-    // Perform a query to delete the category with the specified ID
-    $delete_sql = "DELETE FROM category WHERE id = $category_id";
-    
-    if ($conn->query($delete_sql) === TRUE) {
-        header('Location: ../../../index.php/category' );
-        $response['success'] = true;
-        $response['message'] = "Category deleted successfully!";
-    } else {
-        echo "Error deleting the category: " . $conn->error;
+            // Perform a query to delete the category with the specified ID
+            $delete_sql = "DELETE FROM category WHERE id = $category_id";
+
+            if ($conn->query($delete_sql) === TRUE) {
+                header('Location: ../../../index.php/category');
+                $response['success'] = true;
+                $response['message'] = "Category deleted successfully!";
+            } else {
+                echo "Error deleting the category: " . $conn->error;
+            }
+        } else {
+            echo "Invalid category ID.";
+        }
+
+        $conn->close();
+    }
+}
+$category = new category();
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+
+    // Print the value of the "action" parameter
+    echo "Action: $action<br>";
+
+    switch ($action) {
+        case 'acategory':
+            $category->acategory();
+            break;
+
+        case 'delete':
+            $category->delete();
+            break;
+
+        case 'addOffer':
+            $frontend->addOffer();
+            break;
+        case 'updateBanner':
+            $frontend->updateBanner();
+            break;
+
+        default:
+            // Handle invalid action
+            echo "Invalid action requested.";
+            break;
     }
 } else {
-    echo "Invalid category ID.";
+    // Handle case where no action is specified
+    echo "No action specified.";
 }
-
-$conn->close();
-    }
-}
-$category =new category();
-$category-> acategory();
-$category-> delete();

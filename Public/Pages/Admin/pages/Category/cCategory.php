@@ -55,7 +55,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                            <a href="../App/Logic/category.php/delete?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this product?')">
+                            <a href="../App/Logic/category.php?action=delete&id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this product?')">
                                 <i class="ri-delete-bin-line"></i>
                             </a>
                                                         </li>
