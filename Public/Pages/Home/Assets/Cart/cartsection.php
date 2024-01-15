@@ -14,6 +14,7 @@
                     FROM cart c
                     JOIN product p ON c.product_id = p.id
                     WHERE c.user_id = $id";
+                    //hiii
 
                                     $result = $conn->query($sql);
 
