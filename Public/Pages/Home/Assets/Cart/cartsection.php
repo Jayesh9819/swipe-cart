@@ -126,6 +126,24 @@
                                 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
                                 <script>
+                                    $(document).ready(function() {
+                                        $('.qty-left-minus').click(function() {
+                                            var input = $(this).next('.qty-input');
+                                            var qty = parseInt(input.val());
+                                            if (qty > 1) {
+                                                qty--;
+                                                input.val(qty);
+                                                updateTotal(input.data('product-id'), qty);
+                                            }
+                                        });
+                                        $('.qty-right-plus').click(function() {
+                                            var input = $(this).prev('.qty-input');
+                                            var qty = parseInt(input.val());
+                                            qty++;
+                                            input.val(qty);
+                                            updateTotal(input.data('product-id'), qty);
+                                        });
+                                    });
 
                                     function updateTotal(productId, qty) {
                                         console.log(productId);
