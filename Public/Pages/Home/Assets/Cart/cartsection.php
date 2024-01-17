@@ -48,7 +48,7 @@
 
                                                                 <li class="">
                                                                     <h5 class="text-content d-inline-block">Price :</h5>
-                                                                    <span class="?php echo $cartpage['id']; ?>"><?php $price =  $cartpage['coust_price'];
+                                                                    <span class="product-price-<?php echo $cartpage['id']; ?>"><?php $price =  $cartpage['coust_price'];
                                                                             echo $price ?></span>
                                                                     <span class="text-content"><?php $mrp = $cartpage['MRP'];
                                                                                                 echo $mrp; ?></span>
