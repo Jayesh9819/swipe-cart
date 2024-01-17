@@ -148,7 +148,7 @@
                                     function updateTotal(productId, qty) {
                                         console.log(productId);
                                         console.log(qty);
-                                        var price = $('#product-price-' + productId).val();
+                                        var price = $('.product-price-' + productId).text();
                                         console.log(price);
                                         var total = price * qty;
                                         console.log(total);
