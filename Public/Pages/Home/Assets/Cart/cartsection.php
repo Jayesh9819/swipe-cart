@@ -14,7 +14,7 @@
                     FROM cart c
                     JOIN product p ON c.product_id = p.id
                     WHERE c.user_id = $id";
-                    //hiii
+                                    //hiii
 
                                     $result = $conn->query($sql);
 
@@ -47,11 +47,11 @@
 
 
                                                                 <li class="product-price-" data-product-id="<?php echo $cartpage['id']; ?>">
-                                                                     <h5 class="text-content d-inline-block">Price :</h5>
-                                                        <span><?php $price =  $cartpage['coust_price'];
-                                                                echo $price ?></span>
-                                                        <span class="text-content"><?php $mrp = $cartpage['MRP'];
-                                                                                    echo $mrp; ?></span> 
+                                                                    <h5 class="text-content d-inline-block">Price :</h5>
+                                                                    <span><?php $price =  $cartpage['coust_price'];
+                                                                            echo $price ?></span>
+                                                                    <span class="text-content"><?php $mrp = $cartpage['MRP'];
+                                                                                                echo $mrp; ?></span>
                                                                 </li>
 
                                                                 <li>
@@ -126,25 +126,6 @@
                                 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
                                 <script>
-                                    $(document).ready(function() {
-                                        $('.qty-left-minus').click(function() {
-                                            var input = $(this).next('.qty-input');
-                                            var qty = parseInt(input.val());
-                                            if (qty > 1) {
-                                                qty--;
-                                                input.val(qty);
-                                                updateTotal(input.data('product-id'), qty);
-                                            }
-                                        });
-                                        $('.qty-right-plus').click(function() {
-                                            var input = $(this).prev('.qty-input');
-                                            var qty = parseInt(input.val());
-                                            qty++;
-                                            input.val(qty);
-                                            updateTotal(input.data('product-id'), qty);
-                                        });
-                                    });
-
                                     function updateTotal(productId, qty) {
                                         console.log(productId);
                                         console.log(qty);
