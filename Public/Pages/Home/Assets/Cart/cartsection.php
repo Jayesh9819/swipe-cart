@@ -83,7 +83,7 @@
 
                                                 <td class="price">
                                                     <h4 class="table-title text-content">Price</h4>
-                                                    <h5><?php echo $price; ?> <del class="text-content"><?php echo $mrp; ?></del></h5>
+                                                    <h5 class="product-price-" data-product-id="<?php echo $cartpage['id']; ?>><?php echo $price; ?> <del class="text-content"><?php echo $mrp; ?></del></h5>
                                                     <h6 class="theme-color">You Save :<?php echo $mrp - $price; ?> </h6>
                                                 </td>
 
