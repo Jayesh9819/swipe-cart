@@ -82,11 +82,34 @@ $site = $result->fetch_assoc();
                                     <i data-feather="heart"></i>
                                 </a>
                             </li>
+                            <?php 
+                            include "./App/Logic/db_connect.php";
+                            if(isset($_SESSION['id'])) {
+                                $userId = $_SESSION['id'];
+                            
+                                // Fetch the user's cart count from the database
+                                $sql = "SELECT COUNT(*) as cart_count FROM user_cart WHERE user_id = $userId";
+                                $result = $conn->query($sql);
+                            
+                                if ($result->num_rows > 0) {
+                                    $row = $result->fetch_assoc();
+                                    $cartCount = $row['cart_count'];
+                                } else {
+                                    $cartCount = 0;
+                                }
+                            } else {
+                                // If user is not logged in, set cart count to 0
+                                $cartCount = 0;
+                            }
+                            
+                            
+                            
+                            ?>
                             <li class="right-side">
                                 <div class="onhover-dropdown header-badge">
                                     <button type="button" class="btn p-0 position-relative header-wishlist">
                                         <i data-feather="shopping-cart"></i>
-                                        <span class="position-absolute top-0 start-100 translate-middle badge">2
+                                        <span class="position-absolute top-0 start-100 translate-middle badge"><?php echo $cartCount; ?>
                                             <span class="visually-hidden">unread messages</span>
                                         </span>
                                     </button>
