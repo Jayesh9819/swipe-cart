@@ -152,7 +152,7 @@
                                         console.log(price);
                                         var total = price * qty;
                                         console.log(total);
-                                        $('.product-total-' + productId).text(total.toFixed(2));
+                                        $('.product-total-' + productId).text(total.toFixed(0));
                                     }
                                 </script>
                             </tbody>
