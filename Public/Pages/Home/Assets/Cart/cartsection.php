@@ -92,11 +92,11 @@
                                                     <div class="quantity-price">
                                                         <div class="cart_qty">
                                                             <div class="input-group">
-                                                                <button type="button" class="btn qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="btn qt-left-minus" data-type="minus" data-field="">
                                                                     <i class="fa fa-minus ms-0" aria-hidden="true"></i>
                                                                 </button>
                                                                 <input class="form-control input-number qty-input" type="text" name="quantity" value="<?php echo $quant; ?>" data-product-id="<?php echo $cartpage['id']; ?>">
-                                                                <button type="button" class="btn qty-right-plus" data-type="plus" data-field="">
+                                                                <button type="button" class="btn qt-right-plus" data-type="plus" data-field="">
                                                                     <i class="fa fa-plus ms-0" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -127,7 +127,7 @@
 
                                 <script>
                                     $(document).ready(function() {
-                                        $('.qty-left-minus').click(function() {
+                                        $('.qt-left-minus').click(function() {
                                             var input = $(this).next('.qty-input');
                                             var qty = parseInt(input.val());
                                             if (qty > 1) {
@@ -136,7 +136,7 @@
                                                 updateTotal(input.data('product-id'), qty);
                                             }
                                         });
-                                        $('.qty-right-plus').click(function() {
+                                        $('.qt-right-plus').click(function() {
                                             var input = $(this).prev('.qty-input');
                                             var qty = parseInt(input.val());
                                             qty++;
