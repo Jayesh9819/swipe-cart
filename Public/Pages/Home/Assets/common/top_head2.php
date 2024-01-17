@@ -88,7 +88,7 @@ $site = $result->fetch_assoc();
                                 $userId = $_SESSION['id'];
                             
                                 // Fetch the user's cart count from the database
-                                $sql = "SELECT COUNT(*) as cart_count FROM user_cart WHERE user_id = $userId";
+                                $sql = "SELECT COUNT(*) as cart_count FROM cart WHERE user_id = $userId";
                                 $result = $conn->query($sql);
                             
                                 if ($result->num_rows > 0) {
