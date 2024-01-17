@@ -106,7 +106,7 @@
 
                                                 <td class="subtotal">
                                                     <h4 class="table-title text-content">Total</h4>
-                                                    <h5>Total: <span class="product-total" data-product-id="<?php echo $cartpage['id']; ?>"><?php echo $price * $quant; ?></span></h5>
+                                                    <h5>Total: <span class="product-total-<?php echo $cartpage['id']; ?>" data-product-id=""><?php echo $price * $quant; ?></span></h5>
                                                 </td>
 
                                                 <td class="save-remove">
@@ -152,7 +152,7 @@
                                         console.log(price);
                                         var total = price * qty;
                                         console.log(total);
-                                        $('#product-total-' + productId).text(total.toFixed(2));
+                                        $('.product-total-' + productId).text(total.toFixed(2));
                                     }
                                 </script>
                             </tbody>
