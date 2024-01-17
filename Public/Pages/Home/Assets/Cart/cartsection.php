@@ -46,9 +46,9 @@
                                                                         By:</span> <?php echo $cartpage['seller_id']; ?></li>
 
 
-                                                                <li class="product-price-" data-product-id="<?php echo $cartpage['id']; ?>">
+                                                                <li class="">
                                                                     <h5 class="text-content d-inline-block">Price :</h5>
-                                                                    <span><?php $price =  $cartpage['coust_price'];
+                                                                    <span class="?php echo $cartpage['id']; ?>"><?php $price =  $cartpage['coust_price'];
                                                                             echo $price ?></span>
                                                                     <span class="text-content"><?php $mrp = $cartpage['MRP'];
                                                                                                 echo $mrp; ?></span>
@@ -83,7 +83,7 @@
 
                                                 <td class="price">
                                                     <h4 class="table-title text-content">Price</h4>
-                                                    <h5 class="product-price-<?php echo $cartpage['id']; ?>" ><?php echo $price; ?> <del class="text-content"><?php echo $mrp; ?></del></h5>
+                                                    <h5 class="" ><?php echo $price; ?> <del class="text-content"><?php echo $mrp; ?></del></h5>
                                                     <h6 class="theme-color">You Save :<?php echo $mrp - $price; ?> </h6>
                                                 </td>
 
