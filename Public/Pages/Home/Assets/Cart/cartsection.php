@@ -175,7 +175,7 @@
                         <ul>
                             <li>
                                 <h4>Subtotal</h4>
-                                <h4 class="price">$125.65</h4>
+                                <h4 class="price"></h4>
                             </li>
 
                             <li>
