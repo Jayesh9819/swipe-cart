@@ -28,6 +28,12 @@
 
                                         // Iterate over each product in the cart
                                         foreach ($cartpage as $cartpage) {
+                                            $productTotal = $price * $quant;
+
+                                            // Update total sum
+                                            $totalSum += $productTotal;
+
+
 
                                 ?>
                                             <tr class="product-box-contain">
@@ -49,7 +55,7 @@
                                                                 <li class="">
                                                                     <h5 class="text-content d-inline-block">Price :</h5>
                                                                     <span class="product-price-<?php echo $cartpage['id']; ?>"><?php $price =  $cartpage['coust_price'];
-                                                                            echo $price ?></span>
+                                                                                                                                echo $price ?></span>
                                                                     <span class="text-content"><?php $mrp = $cartpage['MRP'];
                                                                                                 echo $mrp; ?></span>
                                                                 </li>
@@ -83,7 +89,7 @@
 
                                                 <td class="price">
                                                     <h4 class="table-title text-content">Price</h4>
-                                                    <h5 class="" ><?php echo $price; ?> <del class="text-content"><?php echo $mrp; ?></del></h5>
+                                                    <h5 class=""><?php echo $price; ?> <del class="text-content"><?php echo $mrp; ?></del></h5>
                                                     <h6 class="theme-color">You Save :<?php echo $mrp - $price; ?> </h6>
                                                 </td>
 
@@ -144,6 +150,9 @@
                                             updateTotal(input.data('product-id'), qty);
                                         });
                                     });
+                                    var subtotal = <?php echo $totalSum; ?>;
+                                    $('.summery-total .price').text(subtotal.toFixed(2));
+
 
                                     function updateTotal(productId, qty) {
                                         var price = $('.product-price-' + productId).text();
