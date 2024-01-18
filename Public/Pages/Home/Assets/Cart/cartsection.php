@@ -156,6 +156,13 @@
                                     // var subtotal = <?php echo $totalSum; ?>;
                                     // console.log(subtotal);
                                     // $('.summery-total').text(subtotal.toFixed(2));
+                                    $(document).ready(function() {
+                                        $('.qt-left-minus, .qt-right-plus').click(function() {
+                                            var input = $(this).closest('.cart_qty').find('.qty-input');
+                                            var qty = parseInt(input.val());
+                                            updateTotal(input.data('product-id'), qty);
+                                        });
+                                    });
 
 
                                     function updateTotal(productId, qty) {
@@ -174,12 +181,12 @@
                                             var productId = $(this).data('product-id');
                                             console.log(productId);
 
-                                            var price = $('.product-total-' + productId).text();
-                                            subtotal += price;                                            // console.log(price);
-                                            // var qty = parseInt($(this).val());
-                                            // console.log(qty);
-                                            // subtotal += price * qty;
-                                             console.log(subtotal);
+                                            var price = $('.product-price-' + productId).text();
+                                            console.log(price);
+                                            var qty = parseInt($(this).val());
+                                            console.log(qty);
+                                            subtotal += price * qty;
+                                            console.log(subtotal);
                                         });
 
                                         // Update the subtotal on the frontend
