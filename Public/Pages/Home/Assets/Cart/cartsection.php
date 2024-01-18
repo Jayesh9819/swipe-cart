@@ -174,12 +174,12 @@
                                             var productId = $(this).data('product-id');
                                             console.log(productId);
 
-                                            var price = $('.product-price-' + productId).text();
-                                            console.log(price);
-                                            var qty = parseInt($(this).val());
-                                            console.log(qty);
-                                            subtotal += price * qty;
-                                            console.log(subtotal);
+                                            var price = $('.product-total-' + productId).text();
+                                            subtotal += price;                                            // console.log(price);
+                                            // var qty = parseInt($(this).val());
+                                            // console.log(qty);
+                                            // subtotal += price * qty;
+                                             console.log(subtotal);
                                         });
 
                                         // Update the subtotal on the frontend
