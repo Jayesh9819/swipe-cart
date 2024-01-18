@@ -157,41 +157,49 @@
                                     // console.log(subtotal);
                                     // $('.summery-total').text(subtotal.toFixed(2));
                                     $(document).ready(function() {
-                                        $('.qt-left-minus, .qt-right-plus').click(function() {
-                                            var input = $(this).closest('.cart_qty').find('.qty-input');
-                                            var qty = parseInt(input.val());
-                                            updateTotal(input.data('product-id'), qty);
-                                        });
-                                    });
+    // Create an object to store quantities for each product ID
+    var quantities = {};
 
+    $('.qt-left-minus, .qt-right-plus').click(function() {
+        var input = $(this).closest('.cart_qty').find('.qty-input');
+        var productId = input.data('product-id');
+        var qty = parseInt(input.val());
 
-                                    function updateTotal(productId, qty) {
-                                        var price = $('.product-price-' + productId).text();
-                                        var total = price * qty;
-                                        $('.product-total-' + productId).text(total.toFixed(0));
-                                        recalculateSubtotal();
+        // Update the quantity in the object
+        quantities[productId] = qty;
 
-                                    }
+        updateTotal(productId, qty);
+    });
 
-                                    function recalculateSubtotal() {
-                                        var subtotal = 0;
+    function updateTotal(productId, qty) {
+        var price = parseFloat($('.product-price-' + productId).text());
+        var total = price * qty;
+        $('.product-total-' + productId).text(total.toFixed(0));
 
-                                        // Iterate over each product in the cart
-                                        $('.qty-input').each(function() {
-                                            var productId = $(this).data('product-id');
-                                            console.log(productId);
+        // Recalculate the subtotal after updating a product's quantity
+        recalculateSubtotal();
+    }
 
-                                            var price = $('.product-price-' + productId).text();
-                                            console.log(price);
-                                            var qty = parseInt($(this).val());
-                                            console.log(qty);
-                                            subtotal += price * qty;
-                                            console.log(subtotal);
-                                        });
+    function recalculateSubtotal() {
+        var subtotal = 0;
 
-                                        // Update the subtotal on the frontend
-                                        $('.summery-total .price').text(subtotal.toFixed(2));
-                                    }
+        // Iterate over each product in the cart
+        $('.qty-input').each(function() {
+            var productId = $(this).data('product-id');
+            var price = parseFloat($('.product-price-' + productId).text());
+
+            // Check if the product ID exists in the quantities object
+            if (quantities.hasOwnProperty(productId)) {
+                var qty = quantities[productId];
+                subtotal += price * qty;
+            }
+        });
+
+        // Update the subtotal on the frontend
+        $('.summery-total .price').text(subtotal.toFixed(2));
+    }
+});
+
                                 </script>
                             </tbody>
                         </table>
