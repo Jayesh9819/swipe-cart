@@ -119,13 +119,12 @@
                                                     <a class="remove close_button" href="javascript:void(0)">Remove</a>
                                                 </td>
                                             </tr>
-                                            
-                                <?php
-                                                                            $productTotal = $price * $quant;
 
-                                                                            // Update total sum
-                                                                            $totalSum += $productTotal;
-                                
+                                <?php
+                                            $productTotal = $price * $quant;
+
+                                            // Update total sum
+                                            $totalSum += $productTotal;
                                         }
                                     } else {
                                         echo "add product";
@@ -154,15 +153,33 @@
                                             updateTotal(input.data('product-id'), qty);
                                         });
                                     });
-                                    var subtotal = <?php echo $totalSum; ?>;
-                                    console.log(subtotal);
-                                    $('.summery-total').text(subtotal.toFixed(2));
+                                    // var subtotal = <?php echo $totalSum; ?>;
+                                    // console.log(subtotal);
+                                    // $('.summery-total').text(subtotal.toFixed(2));
 
 
                                     function updateTotal(productId, qty) {
                                         var price = $('.product-price-' + productId).text();
                                         var total = price * qty;
                                         $('.product-total-' + productId).text(total.toFixed(0));
+                                        recalculateSubtotal();
+
+                                    }
+
+                                    function recalculateSubtotal() {
+                                        var subtotal = 0;
+
+                                        // Iterate over each product in the cart
+                                        $('.qty-input').each(function() {
+                                            var productId = $(this).data('product-id');
+                                            var price = $('.product-price-' + productId).text();
+                                            var qty = parseInt($(this).val());
+                                            subtotal += price * qty;
+                                            console.log(subtotal);
+                                        });
+
+                                        // Update the subtotal on the frontend
+                                        $('.summery-total .price').text(subtotal.toFixed(2));
                                     }
                                 </script>
                             </tbody>
