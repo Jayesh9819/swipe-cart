@@ -155,6 +155,7 @@
                                         });
                                     });
                                     var subtotal = <?php echo $totalSum; ?>;
+                                    console.log(subtotal);
                                     $('.summery-total .price').text(subtotal.toFixed(2));
 
 
