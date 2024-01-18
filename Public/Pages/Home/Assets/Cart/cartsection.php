@@ -150,56 +150,55 @@
                                             var qty = parseInt(input.val());
                                             qty++;
                                             input.val(qty);
-                                            updateTotal(input.data('product-id'), qty);
+                                            // updateTotal(input.data('product-id'), qty);
                                         });
                                     });
                                     // var subtotal = <?php echo $totalSum; ?>;
                                     // console.log(subtotal);
                                     // $('.summery-total').text(subtotal.toFixed(2));
                                     $(document).ready(function() {
-    // Create an object to store quantities for each product ID
-    var quantities = {};
+                                        // Create an object to store quantities for each product ID
+                                        var quantities = {};
 
-    $('.qt-left-minus, .qt-right-plus').click(function() {
-        var input = $(this).closest('.cart_qty').find('.qty-input');
-        var productId = input.data('product-id');
-        var qty = parseInt(input.val());
+                                        $('.qt-left-minus, .qt-right-plus').click(function() {
+                                            var input = $(this).closest('.cart_qty').find('.qty-input');
+                                            var productId = input.data('product-id');
+                                            var qty = parseInt(input.val());
 
-        // Update the quantity in the object
-        quantities[productId] = qty;
+                                            // Update the quantity in the object
+                                            quantities[productId] = qty;
 
-        updateTotal(productId, qty);
-    });
+                                            updateTotal(productId, qty);
+                                        });
 
-    function updateTotal(productId, qty) {
-        var price = parseFloat($('.product-price-' + productId).text());
-        var total = price * qty;
-        $('.product-total-' + productId).text(total.toFixed(0));
+                                        function updateTotal(productId, qty) {
+                                            var price = parseFloat($('.product-price-' + productId).text());
+                                            var total = price * qty;
+                                            $('.product-total-' + productId).text(total.toFixed(0));
 
-        // Recalculate the subtotal after updating a product's quantity
-        recalculateSubtotal();
-    }
+                                            // Recalculate the subtotal after updating a product's quantity
+                                            recalculateSubtotal();
+                                        }
 
-    function recalculateSubtotal() {
-        var subtotal = 0;
+                                        function recalculateSubtotal() {
+                                            var subtotal = 0;
 
-        // Iterate over each product in the cart
-        $('.qty-input').each(function() {
-            var productId = $(this).data('product-id');
-            var price = parseFloat($('.product-price-' + productId).text());
+                                            // Iterate over each product in the cart
+                                            $('.qty-input').each(function() {
+                                                var productId = $(this).data('product-id');
+                                                var price = parseFloat($('.product-price-' + productId).text());
 
-            // Check if the product ID exists in the quantities object
-            if (quantities.hasOwnProperty(productId)) {
-                var qty = quantities[productId];
-                subtotal += price * qty;
-            }
-        });
+                                                // Check if the product ID exists in the quantities object
+                                                if (quantities.hasOwnProperty(productId)) {
+                                                    var qty = quantities[productId];
+                                                    subtotal += price * qty;
+                                                }
+                                            });
 
-        // Update the subtotal on the frontend
-        $('.summery-total .price').text(subtotal.toFixed(2));
-    }
-});
-
+                                            // Update the subtotal on the frontend
+                                            $('.summery-total .price').text(subtotal.toFixed(2));
+                                        }
+                                    });
                                 </script>
                             </tbody>
                         </table>
