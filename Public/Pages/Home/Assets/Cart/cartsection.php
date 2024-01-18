@@ -172,8 +172,12 @@
                                         // Iterate over each product in the cart
                                         $('.qty-input').each(function() {
                                             var productId = $(this).data('product-id');
+                                            console.log(productId);
+
                                             var price = $('.product-price-' + productId).text();
+                                            console.log(price);
                                             var qty = parseInt($(this).val());
+                                            console.log(qty);
                                             subtotal += price * qty;
                                             console.log(subtotal);
                                         });
