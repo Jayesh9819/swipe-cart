@@ -156,7 +156,7 @@
                                     });
                                     var subtotal = <?php echo $totalSum; ?>;
                                     console.log(subtotal);
-                                    $('.summery-total .price').text(subtotal.toFixed(2));
+                                    $('.summery-total').text(subtotal.toFixed(2));
 
 
                                     function updateTotal(productId, qty) {
@@ -189,7 +189,7 @@
                         <ul>
                             <li>
                                 <h4>Subtotal</h4>
-                                <h4 class="price"></h4>
+                                <h4 class="summery-total"></h4>
                             </li>
 
                             <li>
