@@ -121,10 +121,10 @@
                                             </tr>
 
                                 <?php
-                                            $productTotal = $price * $quant;
+                                            // $productTotal = $price * $quant;
 
-                                            // Update total sum
-                                            $totalSum += $productTotal;
+                                            // // Update total sum
+                                            // $totalSum += $productTotal;
                                         }
                                     } else {
                                         echo "add product";
@@ -206,7 +206,7 @@
                         <ul>
                             <li>
                                 <h4>Subtotal</h4>
-                                <h4 class="summery-total"></h4>
+                                <h4 class="price">0</h4>
                             </li>
 
                             <li>
