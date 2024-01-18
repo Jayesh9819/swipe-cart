@@ -25,13 +25,11 @@
 
                                         // Initialize total price
                                         $totalPrice = 0;
+                                        $totalSum = 0;
+
 
                                         // Iterate over each product in the cart
                                         foreach ($cartpage as $cartpage) {
-                                            $productTotal = $price * $quant;
-
-                                            // Update total sum
-                                            $totalSum += $productTotal;
 
 
 
@@ -121,7 +119,13 @@
                                                     <a class="remove close_button" href="javascript:void(0)">Remove</a>
                                                 </td>
                                             </tr>
+                                            
                                 <?php
+                                                                            $productTotal = $price * $quant;
+
+                                                                            // Update total sum
+                                                                            $totalSum += $productTotal;
+                                
                                         }
                                     } else {
                                         echo "add product";
