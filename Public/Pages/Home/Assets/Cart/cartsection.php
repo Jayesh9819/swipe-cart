@@ -182,6 +182,7 @@
 
                                         function recalculateSubtotal() {
                                             var subtotal = 0;
+                                            //
 
                                             // Iterate over each product in the cart
                                             $('.qty-input').each(function() {
